@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import CharacterDetail from '../components/CharacterDetail'
+import CharacterSummary from '../components/CharacterSummary'
+import './CharacterList.css'
 
 export default class CharacterList extends Component {
 
   constructor(props){
     super(props)
     this.state = {
-      characters:[1,2]
+      characters:[
+                  {name:"Gideon Brimleaf", highConcept:"Tiefling Black Metal Bard"},
+                  {name:"Tala Fernweaver", highConcept:"Draws on the powers of gods and demons"}
+                ]
     }
   }
 
@@ -14,15 +18,14 @@ export default class CharacterList extends Component {
 
     const characterList = this.state.characters.map(character =>{
       return (
-        <CharacterDetail characterDetails="character" />
+        <CharacterSummary characterDetails={character} />
       )
     })
 
     return (
-      <div>
-        <h3>This is where the characters will go</h3>
+      <ul>
         {characterList}
-      </div>
+      </ul>
     )
   }
 }
