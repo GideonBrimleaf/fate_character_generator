@@ -23,7 +23,7 @@ export default class CharacterList extends Component {
     })
 
     return (
-      <ul>
+      <ul className="characterList">
         {characterList}
       </ul>
     )

@@ -1,3 +1,6 @@
-li {
-  background-color: coral;
+.characterSummaryTile {
+  background-color: lightcyan;
+  color: black;
+  margin-right: 1em;
+  width: 300px;
 }

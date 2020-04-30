@@ -3,7 +3,7 @@ import './CharacterSummary.css'
 
 const CharacterSummary = (props) => {
   return (
-    <li className="characterSummary">
+    <li className="characterSummaryTile">
       <h3>{props.characterDetails.name}</h3>
       <p>{props.characterDetails.highConcept}</p>
     </li>
