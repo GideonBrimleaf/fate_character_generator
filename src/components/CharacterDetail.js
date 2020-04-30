@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CharacterDetail = () => {
+const CharacterDetail = (props) => {
   return (
     <div>
       <p>This is my character details</p>
