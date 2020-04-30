@@ -5,7 +5,7 @@ import CharacterList from './containers/CharacterList'
 function App() {
   return (
     <div className="App">
-      <h1>Here's my awesome app!</h1>
+      <h1>Welcome to the Fate Accelerated Character Manager!</h1>
       <CharacterList />
     </div>
   );
