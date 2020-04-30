@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CharacterDetail from '../components/CharacterDetail'
 
 export default class CharacterList extends Component {
 
@@ -13,6 +14,7 @@ export default class CharacterList extends Component {
     return (
       <div>
         <h3>This is where the characters will go</h3>
+        <CharacterDetail />
       </div>
     )
   }
