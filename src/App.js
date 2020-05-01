@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CharacterList from './containers/CharacterList'
 import CharacterForm from './containers/CharacterForm'
+import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
   return (
     <div className="App">
       <Router>
+        <NavBar />
         <Switch>
         <Route exact path="/" render={() => <CharacterList characters={this.state.characters} />} />
         <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />

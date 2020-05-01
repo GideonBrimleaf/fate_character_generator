@@ -1,0 +1,8 @@
+.nav-bar {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 1em;
+}
