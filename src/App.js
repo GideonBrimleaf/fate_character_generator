@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CharacterList from './containers/CharacterList'
 import CharacterForm from './containers/CharacterForm'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
 
@@ -24,9 +25,12 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-      <h1>Welcome to the Fate Accelerated Character Manager!</h1>
-      <CharacterList characters={this.state.characters}/>
-      <CharacterForm onCharacterCreated={this.addCharacter}  />
+      <Router>
+        <Switch>
+        <Route exact path="/" render={() => <CharacterList characters={this.state.characters} />} />
+        <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
+        </Switch>
+      </Router>
     </div>
   )
   }

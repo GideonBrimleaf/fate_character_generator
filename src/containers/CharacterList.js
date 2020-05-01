@@ -11,9 +11,12 @@ const CharacterList = (props) => {
   })
 
     return (
-      <ul className="characterList">
-        {characterList}
-      </ul>
+      <main>
+        <h1>Welcome to the Fate Accelerated Character Manager!</h1>
+        <ul className="characterList">
+          {characterList}
+        </ul>
+      </main>
     )
 }
 
