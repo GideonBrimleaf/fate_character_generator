@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './CharacterForm.css'
+import { withRouter } from 'react-router-dom'
 
-export default class CharacterForm extends Component {
+class CharacterForm extends Component {
 
   constructor(props){
     super(props)
@@ -30,6 +31,14 @@ export default class CharacterForm extends Component {
 
   handleSubmit(event){
     event.preventDefault()
+    const name = this.state.name.trim()
+    const highConcept = this.state.highConcept.trim()
+    const trouble = this.state.trouble.trim()
+
+    if(!name || !highConcept || !trouble){
+      return
+    }
+
     this.props.onCharacterCreated(this.state)
 
     this.setState({
@@ -37,40 +46,46 @@ export default class CharacterForm extends Component {
       highConcept:'',
       trouble:''
     })
+    this.props.history.push('/')
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="characterName">Character Name:</label>
-          <input 
-            type="text" 
-            id="characterName" 
-            placeholder="Make sure they have a cool name" 
-            value={this.state.name}
-            onChange={this.handleNameChange}
-            required
-          />
-        <label htmlFor="characterConcept">High Concept:</label>
-          <input 
-            type="text" 
-            id="characterConcept" 
-            placeholder="Make sure they sound banging!" 
-            value={this.state.highConcept}
-            onChange={this.handleHighConceptChange}
-            required
-          />  
-        <label htmlFor="characterTrouble">Trouble:</label>
-          <input 
-            type="text" 
-            id="characterTrouble" 
-            placeholder="Make it dark and mysterious" 
-            value={this.state.trouble}
-            onChange={this.handleTroubleChange}
-            required
-          />  
-        <input type="submit" value="Add Character"/>
-      </form>
+      <section>
+        <h1>Add a New Character</h1>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="characterName">Character Name:</label>
+            <input 
+              type="text" 
+              id="characterName" 
+              placeholder="Make sure they have a cool name" 
+              value={this.state.name}
+              onChange={this.handleNameChange}
+              required
+            />
+          <label htmlFor="characterConcept">High Concept:</label>
+            <input 
+              type="text" 
+              id="characterConcept" 
+              placeholder="Make sure they sound banging!" 
+              value={this.state.highConcept}
+              onChange={this.handleHighConceptChange}
+              required
+            />  
+          <label htmlFor="characterTrouble">Trouble:</label>
+            <input 
+              type="text" 
+              id="characterTrouble" 
+              placeholder="Make it dark and mysterious" 
+              value={this.state.trouble}
+              onChange={this.handleTroubleChange}
+              required
+            />  
+          <input type="submit" value="Add Character"/>
+        </form>
+      </section>
     )
   }
 }
+
+export default withRouter(CharacterForm)
