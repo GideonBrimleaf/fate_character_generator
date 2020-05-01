@@ -2,5 +2,6 @@
   background-color: lightcyan;
   color: black;
   margin-right: 1em;
-  width: 300px;
+  flex-basis: 0;
+  flex-grow: 1;
 }
