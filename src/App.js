@@ -11,8 +11,8 @@ class App extends Component {
     super(props)
     this.state = {
       characters:[
-                  {name:"Gideon Brimleaf", highConcept:"Tiefling Black Metal Bard", trouble:"Doomed to be cursed by dark forces"},
-                  {name:"Tala Fernweaver", highConcept:"Draws on the powers of gods and demons", trouble:"Doesn't know when to quit"}
+                  {id: 1, name:"Gideon Brimleaf", highConcept:"Tiefling Black Metal Bard", trouble:"Doomed to be cursed by dark forces"},
+                  {id:2, name:"Tala Fernweaver", highConcept:"Draws on the powers of gods and demons", trouble:"Doesn't know when to quit"}
                 ]
     }
     this.addCharacter = this.addCharacter.bind(this)

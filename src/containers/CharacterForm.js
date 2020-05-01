@@ -7,6 +7,7 @@ class CharacterForm extends Component {
   constructor(props){
     super(props)
     this.state={
+      id:'',
       name:'',
       highConcept:'',
       trouble:''
@@ -31,6 +32,8 @@ class CharacterForm extends Component {
 
   handleSubmit(event){
     event.preventDefault()
+
+    const id = Date.now()
     const name = this.state.name.trim()
     const highConcept = this.state.highConcept.trim()
     const trouble = this.state.trouble.trim()
@@ -39,7 +42,12 @@ class CharacterForm extends Component {
       return
     }
 
-    this.props.onCharacterCreated(this.state)
+    this.props.onCharacterCreated({
+      id:id,
+      name:name,
+      highConcept:highConcept,
+      trouble:trouble
+    })
 
     this.setState({
       name:'',
