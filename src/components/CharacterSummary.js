@@ -6,6 +6,7 @@ const CharacterSummary = (props) => {
     <li className="characterSummaryTile">
       <h3>{props.characterDetails.name}</h3>
       <p>{props.characterDetails.highConcept}</p>
+      <p>{props.characterDetails.trouble}</p>
     </li>
   )
 }
