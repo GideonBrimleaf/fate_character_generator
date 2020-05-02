@@ -8,10 +8,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
 
-  constructor(props){
-    super(props)
-  }
-
   addCharacter = (character) => {
     const updatedCharacters = [...JSON.parse(localStorage.getItem('characters')), character]
     this.setState({characters: updatedCharacters})
