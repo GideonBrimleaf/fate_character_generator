@@ -22,15 +22,11 @@ class App extends Component {
   addCharacter(character){
     const updatedCharacters = [...this.state.characters, character]
     this.setState({characters: updatedCharacters})
+    localStorage.setItem('characters', JSON.stringify(updatedCharacters))
   }
 
   render(){
-    console.log('Clearing local store');
-    localStorage.clear()
-    console.log('Saving data down to local storage');
-    localStorage.setItem('characters', JSON.stringify(this.state.characters))
     let storedCharacters = JSON.parse(localStorage.getItem('characters'))
-    console.log('data coming back from local storage', storedCharacters)
 
     return (
       <div className="App">
