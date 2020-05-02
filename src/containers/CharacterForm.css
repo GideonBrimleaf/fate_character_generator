@@ -1,9 +1,26 @@
 input {
   width: 30vw;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
 }
 
 form {
   display:flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.form-submit {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;
+  padding: 10px;
+  border-radius: 40px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin: 1rem
 }

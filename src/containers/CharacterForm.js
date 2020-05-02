@@ -62,7 +62,7 @@ class CharacterForm extends Component {
       <section>
         <h1>Add a New Character</h1>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="characterName">Character Name:</label>
+          <label htmlFor="characterName">Character Name</label>
             <input 
               type="text" 
               id="characterName" 
@@ -71,7 +71,7 @@ class CharacterForm extends Component {
               onChange={this.handleNameChange}
               required
             />
-          <label htmlFor="characterConcept">High Concept:</label>
+          <label htmlFor="characterConcept">High Concept</label>
             <input 
               type="text" 
               id="characterConcept" 
@@ -80,7 +80,7 @@ class CharacterForm extends Component {
               onChange={this.handleHighConceptChange}
               required
             />  
-          <label htmlFor="characterTrouble">Trouble:</label>
+          <label htmlFor="characterTrouble">Trouble</label>
             <input 
               type="text" 
               id="characterTrouble" 
@@ -89,7 +89,7 @@ class CharacterForm extends Component {
               onChange={this.handleTroubleChange}
               required
             />  
-          <input type="submit" value="Add Character"/>
+          <input className="form-submit" type="submit" value="Add Character"/>
         </form>
       </section>
     )
