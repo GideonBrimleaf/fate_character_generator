@@ -1,8 +1,25 @@
 .characterSummaryTile {
   background-color: lightcyan;
-  color: black;
   text-decoration: none;
   margin-right: 1em;
   flex-basis: 0;
   flex-grow: 1;
+}
+
+.character-link {
+  text-decoration: none;
+  color: black;
+}
+
+.delete-button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;
+  padding: 10px;
+  border-radius: 40px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin: 1rem
 }

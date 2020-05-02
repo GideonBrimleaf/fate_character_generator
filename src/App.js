@@ -25,6 +25,11 @@ class App extends Component {
     localStorage.setItem('characters', JSON.stringify(updatedCharacters))
   }
 
+  deleteCharacter(character){
+    // let storedCharacters = JSON.parse(localStorage.getItem('characters'))
+    console.log('the character to be deleted is ', character)
+  }
+
   render(){
     let storedCharacters = JSON.parse(localStorage.getItem('characters'))
 
