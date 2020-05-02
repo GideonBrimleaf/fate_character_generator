@@ -25,15 +25,21 @@ class App extends Component {
   }
 
   render(){
+    console.log('Clearing local store');
+    localStorage.clear()
+    console.log('Saving data down to local storage');
+    localStorage.setItem('characters', JSON.stringify(this.state.characters))
+    let storedCharacters = JSON.parse(localStorage.getItem('characters'))
+    console.log('data coming back from local storage', storedCharacters)
 
     return (
       <div className="App">
         <Router>
           <NavBar />
           <Switch>
-          <Route exact path="/" render={() => <CharacterList characters={this.state.characters} />} />
+          <Route exact path="/" render={() => <CharacterList characters={storedCharacters} />} />
           <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
-          <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
+          <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={storedCharacters}/>} />
           </Switch>
         </Router>
       </div>
