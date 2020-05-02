@@ -17,6 +17,7 @@ class App extends Component {
                 ]
     }
     this.addCharacter = this.addCharacter.bind(this)
+    this.deleteCharacter = this.deleteCharacter.bind(this)
   }
 
   addCharacter(character){
@@ -25,20 +26,24 @@ class App extends Component {
     localStorage.setItem('characters', JSON.stringify(updatedCharacters))
   }
 
-  deleteCharacter(character){
-    // let storedCharacters = JSON.parse(localStorage.getItem('characters'))
-    console.log('the character to be deleted is ', character)
+  deleteCharacter(characterToDelete){
+    const storedCharacters = JSON.parse(localStorage.getItem('characters'))
+    const filteredCharacters = storedCharacters.filter(character => {
+      return character.id !== characterToDelete.id
+    })
+    this.setState({characters: filteredCharacters})
+    localStorage.setItem('characters', JSON.stringify(filteredCharacters))
   }
 
   render(){
-    let storedCharacters = JSON.parse(localStorage.getItem('characters'))
+    const storedCharacters = JSON.parse(localStorage.getItem('characters'))
 
     return (
       <div className="App">
         <Router>
           <NavBar />
           <Switch>
-          <Route exact path="/" render={() => <CharacterList characters={storedCharacters} />} />
+          <Route exact path="/" render={() => <CharacterList characters={storedCharacters} deleteCharacter={this.deleteCharacter} />} />
           <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
           <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={storedCharacters}/>} />
           </Switch>

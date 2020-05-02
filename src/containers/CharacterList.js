@@ -6,7 +6,7 @@ const CharacterList = (props) => {
 
   const characterList = props.characters.map(character =>{
     return (
-      <CharacterSummary characterDetails={character} key={character.id}/>
+      <CharacterSummary characterDetails={character} key={character.id} deleteCharacter={props.deleteCharacter}/>
     )
   })
 
