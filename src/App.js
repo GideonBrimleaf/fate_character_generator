@@ -26,10 +26,6 @@ class App extends Component {
 
   render(){
 
-    const characterPaths = this.state.characters.map(character =>{
-      return <Route key={character.id} path={`/character/${character.id}`} render={() => <CharacterDetail character={character} />}/>
-    })
-
     return (
       <div className="App">
         <Router>
@@ -37,7 +33,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/" render={() => <CharacterList characters={this.state.characters} />} />
           <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
-          {characterPaths}
+          <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
           </Switch>
         </Router>
       </div>
