@@ -16,17 +16,15 @@ class App extends Component {
                   {id: 2, name:"Tala Fernweaver", highConcept:"Draws on the powers of gods and demons", trouble:"Doesn't know when to quit"}
                 ]
     }
-    this.addCharacter = this.addCharacter.bind(this)
-    this.deleteCharacter = this.deleteCharacter.bind(this)
   }
 
-  addCharacter(character){
+  addCharacter = (character) => {
     const updatedCharacters = [...this.state.characters, character]
     this.setState({characters: updatedCharacters})
     localStorage.setItem('characters', JSON.stringify(updatedCharacters))
   }
 
-  deleteCharacter(characterToDelete){
+  deleteCharacter = (characterToDelete) => {
     const storedCharacters = JSON.parse(localStorage.getItem('characters'))
     const filteredCharacters = storedCharacters.filter(character => {
       return character.id !== characterToDelete.id
