@@ -6,3 +6,8 @@
 .nav-item {
   margin-right: 1em;
 }
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
