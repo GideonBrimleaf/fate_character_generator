@@ -12,25 +12,21 @@ class CharacterForm extends Component {
       highConcept:'',
       trouble:''
     }
-    this.handleNameChange = this.handleNameChange.bind(this)
-    this.handleHighConceptChange = this.handleHighConceptChange.bind(this)
-    this.handleTroubleChange = this.handleTroubleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleNameChange(event){
+  handleNameChange = (event) => {
     this.setState({name:event.target.value})
   }
 
-  handleHighConceptChange(event){
+  handleHighConceptChange = (event) => {
     this.setState({highConcept:event.target.value})
   }
 
-  handleTroubleChange(event){
+  handleTroubleChange = (event) => {
     this.setState({trouble:event.target.value})
   }
 
-  handleSubmit(event){
+  handleSubmit = (event) => {
     event.preventDefault()
 
     const id = Date.now()
