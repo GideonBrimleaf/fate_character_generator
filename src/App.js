@@ -33,6 +33,18 @@ class App extends Component {
     localStorage.setItem('characters', JSON.stringify(filteredCharacters))
   }
 
+  componentDidMount(){
+    if(!localStorage.getItem('characters')){
+      const characterSeeds = {
+        characters:[
+                    {id: 1, name:"Gideon Brimleaf", highConcept:"Tiefling Black Metal Bard", trouble:"Doomed to be cursed by dark forces"},
+                    {id: 2, name:"Tala Fernweaver", highConcept:"Draws on the powers of gods and demons", trouble:"Doesn't know when to quit"}
+                  ]
+      }
+      localStorage.setItem('characters', JSON.stringify(characterSeeds))
+    }
+  }
+
   render(){
     const storedCharacters = JSON.parse(localStorage.getItem('characters'))
 
