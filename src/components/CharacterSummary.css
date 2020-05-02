@@ -1,6 +1,7 @@
 .characterSummaryTile {
   background-color: lightcyan;
   color: black;
+  text-decoration: none;
   margin-right: 1em;
   flex-basis: 0;
   flex-grow: 1;
