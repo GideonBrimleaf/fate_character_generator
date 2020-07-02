@@ -22,8 +22,8 @@ class App extends Component {
   }
 
   deleteCharacter = (characterToDelete) => {
-    const storedCharacters = JSON.parse(localStorage.getItem('characters'))
-    const filteredCharacters = storedCharacters.filter(character => {
+    // const storedCharacters = JSON.parse(localStorage.getItem('characters'))
+    const filteredCharacters = this.state.characters.filter(character => {
       return character.id !== characterToDelete.id
     })
     this.setState({characters: filteredCharacters})
