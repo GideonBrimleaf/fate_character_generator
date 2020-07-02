@@ -8,6 +8,13 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      characters: []
+    }
+  }
+
   addCharacter = (character) => {
     const updatedCharacters = [...JSON.parse(localStorage.getItem('characters')), character]
     this.setState({characters: updatedCharacters})
@@ -28,25 +35,24 @@ class App extends Component {
       fetch("./characters.json")
       .then(res => res.json())
       .then(data => localStorage.setItem('characters', JSON.stringify(data)))
+      .then(() => {
+        this.setState({characters: JSON.parse(localStorage.getItem('characters')).characters})
+      })
+    } else {
+      this.setState({characters: JSON.parse(localStorage.getItem('characters')).characters})
     }
   }
 
   render(){
-
-    let storedCharacters
-
-    if(localStorage.getItem('characters')){
-      storedCharacters = JSON.parse(localStorage.getItem('characters')).characters
-    }
 
     return (
       <div className="App">
         <Router>
           <NavBar />
           <Switch>
-          <Route exact path="/" render={() => <CharacterList characters={storedCharacters} deleteCharacter={this.deleteCharacter} />} />
+          <Route exact path="/" render={() => <CharacterList characters={this.state.characters} deleteCharacter={this.deleteCharacter} />} />
           <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
-          <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={storedCharacters}/>} />
+          <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
           </Switch>
         </Router>
       </div>
