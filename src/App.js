@@ -22,7 +22,6 @@ class App extends Component {
   }
 
   deleteCharacter = (characterToDelete) => {
-    // const storedCharacters = JSON.parse(localStorage.getItem('characters'))
     const filteredCharacters = this.state.characters.filter(character => {
       return character.id !== characterToDelete.id
     })
@@ -34,12 +33,12 @@ class App extends Component {
     if(!localStorage.getItem('characters')){
       fetch("./characters.json")
       .then(res => res.json())
-      .then(data => localStorage.setItem('characters', JSON.stringify(data)))
+      .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
       .then(() => {
-        this.setState({characters: JSON.parse(localStorage.getItem('characters')).characters})
+        this.setState({characters: JSON.parse(localStorage.getItem('characters'))})
       })
     } else {
-      this.setState({characters: JSON.parse(localStorage.getItem('characters')).characters})
+      this.setState({characters: JSON.parse(localStorage.getItem('characters'))})
     }
   }
 
