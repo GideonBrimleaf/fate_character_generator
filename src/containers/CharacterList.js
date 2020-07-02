@@ -4,6 +4,8 @@ import './CharacterList.css'
 
 const CharacterList = (props) => {
 
+  if (!props.characters) return null
+
   const characterList = props.characters.map(character =>{
     return (
       <CharacterSummary characterDetails={character} key={character.id} deleteCharacter={props.deleteCharacter}/>

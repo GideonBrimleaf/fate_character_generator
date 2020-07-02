@@ -25,18 +25,19 @@ class App extends Component {
 
   componentDidMount(){
     if(!localStorage.getItem('characters')){
-      const characterSeeds = {
-        characters:[
-                    {id: 1, name:"Gideon Brimleaf", highConcept:"Tiefling Black Metal Bard", trouble:"Doomed to be cursed by dark forces"},
-                    {id: 2, name:"Tala Fernweaver", highConcept:"Draws on the powers of gods and demons", trouble:"Doesn't know when to quit"}
-                  ]
-      }
-      localStorage.setItem('characters', JSON.stringify(characterSeeds))
+      fetch("./characters.json")
+      .then(res => res.json())
+      .then(data => localStorage.setItem('characters', JSON.stringify(data)))
     }
   }
 
   render(){
-    const storedCharacters = JSON.parse(localStorage.getItem('characters'))
+
+    let storedCharacters
+
+    if(localStorage.getItem('characters')){
+      storedCharacters = JSON.parse(localStorage.getItem('characters')).characters
+    }
 
     return (
       <div className="App">
