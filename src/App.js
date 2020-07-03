@@ -18,13 +18,17 @@ class App extends Component {
   addCharacter = (character) => {
     const updatedCharacters = [...JSON.parse(localStorage.getItem('characters')), character]
     this.setState({characters: updatedCharacters})
-    localStorage.setItem('characters', JSON.stringify(updatedCharacters))
 
+    const charactersToStore = JSON.stringify(updatedCharacters)
+    localStorage.setItem('characters', charactersToStore)
+    console.log(`characters to store`, charactersToStore)
     return fetch("http://localhost:3000/characters", {
       method:'POST',
-      body: JSON.stringify(updatedCharacters),
-      headers: {'Content-Type': 'application/json'}
+      body: charactersToStore,
+      headers: { 'Content-Type': 'application/json'}
     })
+    .then(res => res.json())
+    .catch(error => console.log(error))
   }
 
   deleteCharacter = (characterToDelete) => {
@@ -32,13 +36,18 @@ class App extends Component {
       return character.id !== characterToDelete.id
     })
     this.setState({characters: filteredCharacters})
-    localStorage.setItem('characters', JSON.stringify(filteredCharacters))
+
+    const charactersToStore = JSON.stringify(filteredCharacters)
+    console.log(`characters to store`, charactersToStore)
+    localStorage.setItem('characters', charactersToStore)
 
     return fetch("http://localhost:3000/characters", {
       method:'POST',
-      body: JSON.stringify(filteredCharacters),
-      headers: {'Content-Type': 'application/json'}
+      body: charactersToStore,
+      headers: { 'Content-Type': 'application/json'}
     })
+    .then(res => res.json())
+    .catch(error => console.log(error))
   }
 
   componentDidMount(){
