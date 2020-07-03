@@ -21,7 +21,7 @@ class App extends Component {
 
     const charactersToStore = JSON.stringify(updatedCharacters)
     localStorage.setItem('characters', charactersToStore)
-    console.log(`characters to store`, charactersToStore)
+
     return fetch("http://localhost:3000/characters", {
       method:'POST',
       body: charactersToStore,
@@ -38,7 +38,6 @@ class App extends Component {
     this.setState({characters: filteredCharacters})
 
     const charactersToStore = JSON.stringify(filteredCharacters)
-    console.log(`characters to store`, charactersToStore)
     localStorage.setItem('characters', charactersToStore)
 
     return fetch("http://localhost:3000/characters", {
