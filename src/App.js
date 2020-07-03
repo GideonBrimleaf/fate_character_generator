@@ -19,6 +19,12 @@ class App extends Component {
     const updatedCharacters = [...JSON.parse(localStorage.getItem('characters')), character]
     this.setState({characters: updatedCharacters})
     localStorage.setItem('characters', JSON.stringify(updatedCharacters))
+
+    return fetch("http://localhost:3000/characters", {
+      method:'POST',
+      body: JSON.stringify(updatedCharacters),
+      headers: {'Content-Type': 'application/json'}
+    })
   }
 
   deleteCharacter = (characterToDelete) => {
@@ -27,6 +33,12 @@ class App extends Component {
     })
     this.setState({characters: filteredCharacters})
     localStorage.setItem('characters', JSON.stringify(filteredCharacters))
+
+    return fetch("http://localhost:3000/characters", {
+      method:'POST',
+      body: JSON.stringify(filteredCharacters),
+      headers: {'Content-Type': 'application/json'}
+    })
   }
 
   componentDidMount(){
