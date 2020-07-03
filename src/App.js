@@ -31,7 +31,7 @@ class App extends Component {
 
   componentDidMount(){
     if(!localStorage.getItem('characters')){
-      fetch("./characters.json")
+      fetch("http://localhost:3000/characters")
       .then(res => res.json())
       .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
       .then(() => {
