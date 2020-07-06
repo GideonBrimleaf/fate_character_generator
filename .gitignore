@@ -27,3 +27,5 @@ characters.json
 .firebase/
 .firebaserc
 firebase.json
+
+things.todo
