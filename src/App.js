@@ -20,10 +20,10 @@ class App extends Component {
     const updatedCharacters = [...JSON.parse(localStorage.getItem('characters')), character]
     this.setState({characters: updatedCharacters})
 
-    const charactersToStore = JSON.stringify(updatedCharacters)
-    localStorage.setItem('characters', charactersToStore)
+    // const charactersToStore = JSON.stringify(updatedCharacters)
+    localStorage.setItem('characters', JSON.stringify(updatedCharacters))
 
-    return Helpers.updateCharacters(charactersToStore)
+    return Helpers.updateCharacters(updatedCharacters)
   }
 
   deleteCharacter = (characterToDelete) => {
@@ -32,10 +32,10 @@ class App extends Component {
     })
     this.setState({characters: filteredCharacters})
 
-    const charactersToStore = JSON.stringify(filteredCharacters)
-    localStorage.setItem('characters', charactersToStore)
+    // const charactersToStore = JSON.stringify(filteredCharacters)
+    localStorage.setItem('characters', JSON.stringify(filteredCharacters))
 
-    return Helpers.updateCharacters(charactersToStore)
+    return Helpers.updateCharacters(filteredCharacters)
   }
 
   componentDidMount(){

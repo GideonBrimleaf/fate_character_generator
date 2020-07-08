@@ -4,7 +4,7 @@ export default {
   updateCharacters(charactersToStore) {
     return fetch(devURL, {
       method:'POST',
-      body: charactersToStore,
+      body: JSON.stringify(charactersToStore),
       headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json())
