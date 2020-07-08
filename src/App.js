@@ -22,7 +22,7 @@ class App extends Component {
     const charactersToStore = JSON.stringify(updatedCharacters)
     localStorage.setItem('characters', charactersToStore)
 
-    return fetch("http://localhost:3000/characters", {
+    return fetch("http://localhost:8080/characters", {
       method:'POST',
       body: charactersToStore,
       headers: { 'Content-Type': 'application/json'}
@@ -40,7 +40,7 @@ class App extends Component {
     const charactersToStore = JSON.stringify(filteredCharacters)
     localStorage.setItem('characters', charactersToStore)
 
-    return fetch("http://localhost:3000/characters", {
+    return fetch("http://localhost:8080/characters", {
       method:'POST',
       body: charactersToStore,
       headers: { 'Content-Type': 'application/json'}
@@ -51,7 +51,7 @@ class App extends Component {
 
   componentDidMount(){
     if(!localStorage.getItem('characters')){
-      fetch("http://localhost:3000/characters")
+      fetch("http://localhost:8080/characters")
       .then(res => res.json())
       .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
       .then(() => {
