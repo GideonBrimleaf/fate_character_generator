@@ -5,6 +5,7 @@ import CharacterForm from './containers/CharacterForm'
 import NavBar from './components/NavBar'
 import CharacterDetail from './components/CharacterDetail'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Helpers from './helpers.js'
 
 class App extends Component {
 
@@ -22,13 +23,7 @@ class App extends Component {
     const charactersToStore = JSON.stringify(updatedCharacters)
     localStorage.setItem('characters', charactersToStore)
 
-    return fetch("http://localhost:8080/characters", {
-      method:'POST',
-      body: charactersToStore,
-      headers: { 'Content-Type': 'application/json'}
-    })
-    .then(res => res.json())
-    .catch(error => console.log(error))
+    return Helpers.updateCharacters(charactersToStore)
   }
 
   deleteCharacter = (characterToDelete) => {
@@ -40,13 +35,7 @@ class App extends Component {
     const charactersToStore = JSON.stringify(filteredCharacters)
     localStorage.setItem('characters', charactersToStore)
 
-    return fetch("http://localhost:8080/characters", {
-      method:'POST',
-      body: charactersToStore,
-      headers: { 'Content-Type': 'application/json'}
-    })
-    .then(res => res.json())
-    .catch(error => console.log(error))
+    return Helpers.updateCharacters(charactersToStore)
   }
 
   componentDidMount(){
