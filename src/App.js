@@ -20,8 +20,6 @@ class App extends Component {
     const updatedCharacters = [...JSON.parse(localStorage.getItem('characters')), character]
     this.setState({characters: updatedCharacters})
 
-    // localStorage.setItem('characters', JSON.stringify(updatedCharacters))
-
     return Helpers.updateCharacters(updatedCharacters)
   }
 
@@ -31,16 +29,12 @@ class App extends Component {
     })
     this.setState({characters: filteredCharacters})
 
-    // localStorage.setItem('characters', JSON.stringify(filteredCharacters))
-
     return Helpers.updateCharacters(filteredCharacters)
   }
 
   componentDidMount(){
     if(!localStorage.getItem('characters')){
-      fetch("http://localhost:8080/characters")
-      .then(res => res.json())
-      .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
+      Helpers.getCharacters()
       .then(() => {
         this.setState({characters: JSON.parse(localStorage.getItem('characters'))})
       })
