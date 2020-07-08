@@ -4,18 +4,22 @@ export default {
   updateCharacters(charactersToStore) {
     localStorage.setItem('characters', JSON.stringify(charactersToStore))
 
-    return fetch(devURL, {
-      method:'POST',
-      body: JSON.stringify(charactersToStore),
-      headers: { 'Content-Type': 'application/json'}
-    })
-    .then(res => res.json())
-    .catch(error => console.log(error))
+    if(process.env.NODE_ENV !== 'production') {
+      return fetch(devURL, {
+        method:'POST',
+        body: JSON.stringify(charactersToStore),
+        headers: { 'Content-Type': 'application/json'}
+      })
+      .then(res => res.json())
+      .catch(error => console.log(error))
+    }    
   },
 
   getCharacters() {
-    return fetch(devURL)
+    if(process.env.NODE_ENV !== 'production') {
+      return fetch(devURL)
       .then(res => res.json())
       .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
+    }
   }
 }
