@@ -1,4 +1,7 @@
+import fire from './fire'
+
 const devURL = 'http://localhost:8080/characters'
+const rootRef = fire.database().ref("characters")
 
 export default {
   updateCharacters(charactersToStore) {
@@ -20,6 +23,9 @@ export default {
       return fetch(devURL)
       .then(res => res.json())
       .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
+    }
+    else {
+      return rootRef.once('value').then(data => localStorage.setItem('characters', JSON.stringify(data.val())))
     }
   }
 }
