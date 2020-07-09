@@ -15,6 +15,8 @@ export default {
       })
       .then(res => res.json())
       .catch(error => console.log(error))
+    } else {
+      return rootRef.set(charactersToStore)
     }    
   },
 
