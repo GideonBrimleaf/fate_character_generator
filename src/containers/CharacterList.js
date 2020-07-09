@@ -15,7 +15,6 @@ const CharacterList = (props) => {
     return (
       <main>
         <h1>Welcome to the Fate Accelerated Character Manager!</h1>
-        <p>Running in {process.env.NODE_ENV}</p>
         <ul className="characterList">
           {characterList}
         </ul>
