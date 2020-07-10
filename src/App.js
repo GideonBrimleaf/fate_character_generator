@@ -7,6 +7,7 @@ import CharacterDetail from './components/CharacterDetail'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Helpers from './helpers.js'
 import { AuthProvider } from './Auth'
+import SignUp from './SignUp'
 
 class App extends Component {
 
@@ -55,6 +56,7 @@ class App extends Component {
             <Route exact path="/" render={() => <CharacterList characters={this.state.characters} deleteCharacter={this.deleteCharacter} />} />
             <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
             <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
+            <Route exact path="/signup" component={SignUp} />
             </Switch>
           </Router>
         </AuthProvider>
