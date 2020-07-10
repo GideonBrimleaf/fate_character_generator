@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import CharacterDetail from './components/CharacterDetail'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Helpers from './helpers.js'
+import { AuthProvider } from './Auth'
 
 class App extends Component {
 
@@ -47,14 +48,16 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Router>
-          <NavBar />
-          <Switch>
-          <Route exact path="/" render={() => <CharacterList characters={this.state.characters} deleteCharacter={this.deleteCharacter} />} />
-          <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
-          <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
-          </Switch>
-        </Router>
+        <AuthProvider>
+          <Router>
+            <NavBar />
+            <Switch>
+            <Route exact path="/" render={() => <CharacterList characters={this.state.characters} deleteCharacter={this.deleteCharacter} />} />
+            <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
+            <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
+            </Switch>
+          </Router>
+        </AuthProvider>
       </div>
     )
   }
