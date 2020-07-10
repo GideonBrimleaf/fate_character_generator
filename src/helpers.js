@@ -1,7 +1,7 @@
-import fire from './fire'
+import { db } from './fire'
 
 const devURL = 'http://localhost:8080/characters'
-const rootRef = fire.database().ref("characters")
+const rootRef = db.ref("characters")
 
 export default {
   updateCharacters(charactersToStore) {
