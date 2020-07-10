@@ -1,33 +1,35 @@
-import React, { useCallback } from 'react'
-import { withRouter } from 'react-router'
-import { auth, db } from './fire'
+import React, { useCallback } from "react";
+import { withRouter } from "react-router";
+import { auth } from "./fire";
 
 const SignUp = ({ history }) => {
   const handleSignUp = useCallback(async event => {
-    event.preventDefault()
-    const {email, password} = event.target.elements
+    event.preventDefault();
+    const { email, password } = event.target.elements;
     try {
-      await db.createUserWithEmailAndPassword(email.value, password.value)
-      history.push('/')
-    } catch(error) {
-      alert(error)
+      await auth.createUserWithEmailAndPassword(email.value, password.value);
+      history.push("/");
+    } catch (error) {
+      alert(error);
     }
-  }, [history])
+  }, [history]);
 
   return (
-    <section>
-      <h1>Sign Up</h1>
+    <div>
+      <h1>Sign up</h1>
       <form onSubmit={handleSignUp}>
         <label>
+          Email
           <input name="email" type="email" placeholder="Email" />
         </label>
         <label>
+          Password
           <input name="password" type="password" placeholder="Password" />
         </label>
         <button type="submit">Sign Up</button>
       </form>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default withRouter(SignUp)
+export default withRouter(SignUp);

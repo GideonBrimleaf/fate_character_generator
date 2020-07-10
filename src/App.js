@@ -9,6 +9,8 @@ import Helpers from './helpers.js'
 import { AuthProvider } from './Auth'
 import SignUp from './SignUp'
 import Login from './Login'
+import PrivateRoute from './PrivateRoute'
+import Home from './Home'
 
 class App extends Component {
 
@@ -59,7 +61,6 @@ class App extends Component {
             <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
-            <Route />
             </Switch>
           </Router>
         </AuthProvider>

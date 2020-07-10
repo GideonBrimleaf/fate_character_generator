@@ -1,44 +1,45 @@
-import React, { useCallback, useContext } from 'react'
-import { withRouter, Redirect } from 'react-router'
-import { db } from './fire'
-import { AuthContext } from './Auth'
+import React, { useCallback, useContext } from "react";
+import { withRouter, Redirect } from "react-router";
+import { auth } from "./fire";
+import { AuthContext } from "./Auth.js";
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
     async event => {
-      event.preventDefault()
-      const { email, password } = event.target.elements
+      event.preventDefault();
+      const { email, password } = event.target.elements;
       try {
-        await db.signInWithEmailAndPassword(email.value, password.value)
-        history.push('/')
-      } catch(error) {
-        alert(error)
+        await auth.signInWithEmailAndPassword(email.value, password.value);
+        history.push("/");
+      } catch (error) {
+        alert(error);
       }
-    }, [history]
-  )
+    },
+    [history]
+  );
 
-  const { currentUser } = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
 
-  if(currentUser) {
-    return <Redirect to="/" />
+  if (currentUser) {
+    return <Redirect to="/" />;
   }
 
   return (
-    <section>
-      <h1>Log In</h1>
+    <div>
+      <h1>Log in</h1>
       <form onSubmit={handleLogin}>
         <label>
-          Email:
+          Email
           <input name="email" type="email" placeholder="Email" />
         </label>
         <label>
-          Password:
+          Password
           <input name="password" type="password" placeholder="Password" />
         </label>
-        <button type="submit">Log In</button>
+        <button type="submit">Log in</button>
       </form>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default withRouter(Login)
+export default withRouter(Login);
