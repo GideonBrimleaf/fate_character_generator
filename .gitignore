@@ -29,5 +29,6 @@ characters.json
 .firebaserc
 firebase.json
 database.rules.json
+firebase-debug.log
 
 things.todo
