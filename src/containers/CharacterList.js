@@ -1,6 +1,7 @@
 import React from 'react'
 import CharacterSummary from '../components/CharacterSummary'
 import './CharacterList.css'
+import { auth } from "../fire"
 
 const CharacterList = (props) => {
 
@@ -18,6 +19,7 @@ const CharacterList = (props) => {
         <ul className="characterList">
           {characterList}
         </ul>
+        <button onClick={() => auth.signOut()}>Sign out</button>
       </main>
     )
 }

@@ -10,7 +10,6 @@ import { AuthProvider } from './Auth'
 import SignUp from './SignUp'
 import Login from './Login'
 import PrivateRoute from './PrivateRoute'
-import Home from './Home'
 
 class App extends Component {
 
@@ -56,11 +55,11 @@ class App extends Component {
           <Router>
             <NavBar />
             <Switch>
-            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/" component={CharacterList} characters={this.state.characters} deleteCharacter={this.deleteCharacter} />
             <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
             <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login" component={Login} /> 
             </Switch>
           </Router>
         </AuthProvider>
