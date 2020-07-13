@@ -55,10 +55,10 @@ class App extends Component {
             <NavBar />
             <Switch>
             <PrivateRoute exact path="/" component={CharacterList} data={{ characters:this.state.characters, deleteCharacter:this.deleteCharacter }} />
-            <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
+            <PrivateRoute path="/new" component={CharacterForm} data={{ onCharacterCreated:this.addCharacter }} />
             <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
             <Route exact path="/login" component={Login} /> 
-            </Switch>
+            </Switch> 
           </Router>
         </AuthProvider>
       </div>
