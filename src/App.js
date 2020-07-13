@@ -56,8 +56,7 @@ class App extends Component {
             <Switch>
             <PrivateRoute exact path="/" component={CharacterList} data={{ characters:this.state.characters, deleteCharacter:this.deleteCharacter }} />
             <PrivateRoute path="/new" component={CharacterForm} data={{ onCharacterCreated:this.addCharacter }} />
-            <PrivateRoute path="/character/:characterId" component={CharacterDetail} data={{ characters:this.state.characters }} />
-            {/* <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} /> */}
+            <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
             <Route exact path="/login" component={Login} /> 
             </Switch> 
           </Router>
