@@ -58,8 +58,7 @@ class App extends Component {
             <Switch>
             <PrivateRoute exact path="/">
               <Home />
-            </PrivateRoute>
-            {/* <Route exact path="/" render={() => <CharacterList characters={this.state.characters} deleteCharacter={this.deleteCharacter} />} /> */}
+            </PrivateRoute> 
             <Route path="/new" render={() => <CharacterForm onCharacterCreated={this.addCharacter} />} />
             <Route path="/character/:characterId" render={(matchProps) => <CharacterDetail {...matchProps} characters={this.state.characters}/>} />
             <Route exact path="/signup" component={SignUp} />
