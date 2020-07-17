@@ -5,3 +5,8 @@
   height: 90vh;
   text-decoration: none;
 }
+
+.character-stats {
+  display: flex;
+  justify-content: space-around;
+}

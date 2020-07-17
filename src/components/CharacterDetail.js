@@ -9,10 +9,14 @@ const CharacterDetail = (props) => {
 
   return (
     <main className="character-sheet">
-      <div className="character-information">
-        <h1>{foundCharacter.name}</h1>
-        <p>The whole character sheet goes here</p>
-      </div>
+      <h1>{foundCharacter.name}</h1>
+      <section className="character-stats">
+        <article>Refresh</article>
+        <article>Aspects</article>
+        <article>Approaches</article>
+        <article>Stunts</article>
+        <article>Consequences</article>
+      </section>
     </main>
   )
 }
