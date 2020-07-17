@@ -1,5 +1,6 @@
 import React from 'react'
 import './CharacterSummary.css'
+import '../App.css'
 import { Link } from 'react-router-dom'
 
 const CharacterSummary = (props) => {
@@ -15,7 +16,7 @@ const CharacterSummary = (props) => {
         <p>{props.characterDetails.highConcept}</p>
         <p>{props.characterDetails.trouble}</p>
       </Link>
-      <button className="delete-button" onClick={handleCharacterDeletion}>Delete</button>
+      <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button>
     </li>
   )
 }
