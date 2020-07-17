@@ -1,4 +1,5 @@
 import React from 'react'
+import './CharacterDetail.css'
 
 const CharacterDetail = (props) => {
 
@@ -7,9 +8,11 @@ const CharacterDetail = (props) => {
   })
 
   return (
-    <main>
-      <p>The character name is {foundCharacter.name}</p>
-      <p>The whole character sheet goes here</p>
+    <main className="character-sheet">
+      <div className="character-information">
+        <h1>{foundCharacter.name}</h1>
+        <p>The whole character sheet goes here</p>
+      </div>
     </main>
   )
 }
