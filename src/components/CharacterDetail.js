@@ -20,7 +20,7 @@ const CharacterDetail = (props) => {
       <section className="character-stats">
         <h1 className="character-name character-sheet-item-primary">{ foundCharacter.name }</h1>
         <article className="character-sheet-item-secondary">
-          <h5>Refresh</h5>
+          <h5 className="character-sheet-header">Refresh</h5>
           <ul className="stat-block">
             <li>{ foundCharacter.refresh }</li>
           </ul>
@@ -36,7 +36,7 @@ const CharacterDetail = (props) => {
       </section>
       <section className="character-stats">
         <article className="character-sheet-item-primary">
-          <h5>Stunts</h5>
+          <h5 className="character-sheet-header">Stunts</h5>
           <ul className="stat-block">
             { characterStunts }
           </ul>

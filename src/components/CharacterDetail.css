@@ -10,10 +10,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: calc(12px + 1vw);
-  text-align: justify;
 }
 
 .character-sheet-item-primary {
+  margin-bottom: 0px;
   flex: 2;
   padding: 0px 50px;
 }
@@ -24,5 +24,5 @@
 }
 
 .character-name {
-  font-size: calc(50px + 1vw);
+  font-size: calc(40px + 1vw);
 }

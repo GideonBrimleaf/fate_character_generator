@@ -13,7 +13,10 @@ const CharacterStatBlock = (props) => {
 
   const statItems = statItemNames.map(stat => {
     return (
-      <li>{ prettifyName(stat) }: { props.characterStats[stat] }</li>
+      <li>
+          <p className="stat-name">{ prettifyName(stat) }:</p> 
+          <p className="stat-description">{ props.characterStats[stat] }</p>
+      </li>
     )
   })
 
