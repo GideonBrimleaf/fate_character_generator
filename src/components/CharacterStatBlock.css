@@ -18,3 +18,19 @@
 .character-sheet-header {
   margin-bottom:0rem;
 }
+
+.stat-table {
+  margin: 0px auto;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.fred, .fred td, .fred tr {
+  border: 1px solid red;
+}
