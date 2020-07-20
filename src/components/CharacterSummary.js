@@ -13,8 +13,8 @@ const CharacterSummary = (props) => {
     <li className="characterSummaryTile">
       <Link className="character-link" to={`/character/${props.characterDetails.id}`}>
         <h3>{props.characterDetails.name}</h3>
-        <p>{props.characterDetails.highConcept}</p>
-        <p>{props.characterDetails.trouble}</p>
+        <p>{props.characterDetails.aspects.highConcept}</p>
+        <p>{props.characterDetails.aspects.trouble}</p>
       </Link>
       <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button>
     </li>

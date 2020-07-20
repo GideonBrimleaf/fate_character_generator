@@ -24,11 +24,11 @@ const CharacterDetail = (props) => {
         <article className="character-sheet-item-primary">
           <h5>Aspects</h5>
           <ul className="stat-block">
-            <li>{ foundCharacter.highConcept }</li>
-            <li>{ foundCharacter.trouble }</li>
-            <li>{ foundCharacter.relationship }</li>
-            <li>{ foundCharacter.aspectOne }</li>
-            <li>{ foundCharacter.aspectTwo }</li>
+            <li>{ foundCharacter.aspects.highConcept }</li>
+            <li>{ foundCharacter.aspects.trouble }</li>
+            <li>{ foundCharacter.aspects.relationship }</li>
+            <li>{ foundCharacter.aspects.aspectOne }</li>
+            <li>{ foundCharacter.aspects.aspectTwo }</li>
           </ul>
         </article>
         <article className="character-sheet-item-secondary">
