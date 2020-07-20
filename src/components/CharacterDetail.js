@@ -24,7 +24,7 @@ const CharacterDetail = (props) => {
         </article>
         <article>
           <h5>Aspects</h5>
-          <ul>
+          <ul className="stat-block">
             <li>{ foundCharacter.highConcept }</li>
             <li>{ foundCharacter.trouble }</li>
             <li>{ foundCharacter.relationship }</li>
@@ -34,7 +34,7 @@ const CharacterDetail = (props) => {
         </article>
         <article>
           <h5>Approaches</h5>
-          <ul>
+          <ul className="stat-block">
             <li>Careful: { foundCharacter.approaches.careful }</li>
             <li>Clever: { foundCharacter.approaches.clever }</li>
             <li>Flashy: { foundCharacter.approaches.flashy }</li>
@@ -45,13 +45,13 @@ const CharacterDetail = (props) => {
         </article>
         <article>
           <h5>Stunts</h5>
-          <ul>
+          <ul className="stat-block">
             { characterStunts }
           </ul>
         </article>
         <article>
           <h5>Consequences</h5>
-          <ul>
+          <ul className="stat-block">
             <li>Mild: { foundCharacter.consequences.mild }</li>
             <li>Moderate: { foundCharacter.consequences.moderate }</li>
             <li>Severe: { foundCharacter.consequences.severe }</li>

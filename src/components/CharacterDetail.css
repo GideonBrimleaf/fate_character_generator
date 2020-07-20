@@ -11,3 +11,8 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.stat-block {
+  list-style-type: none;
+  font-size: calc(10px + 1.5vw);
+}
