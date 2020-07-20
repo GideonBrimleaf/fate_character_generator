@@ -3,18 +3,6 @@
   padding-left: 0px;
 }
 
-.stat-name {
-  margin: 0px;
-  min-width: 150px;
-  display: inline-block;
-  text-align: right;
-}
-
-.stat-description {
-  margin: 0px;
-	display: inline-block;
-}
-
 .character-sheet-header {
   margin-bottom:0rem;
 }
