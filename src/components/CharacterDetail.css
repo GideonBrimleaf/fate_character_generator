@@ -26,8 +26,3 @@
 .character-name {
   font-size: calc(50px + 1vw);
 }
-
-.stat-block {
-  list-style-type: none;
-  padding-left: 0px;
-}
