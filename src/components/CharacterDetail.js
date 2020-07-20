@@ -1,27 +1,26 @@
 import React from 'react'
 import './CharacterDetail.css'
-import CharacterStunt from './CharacterStunt'
 
 const CharacterDetail = (props) => {
 
   const foundCharacter = props.characters.find(character => {
     return parseInt(props.match.params.characterId) === character.id
   })
-
+  
   const characterStunts = foundCharacter.stunts.map(stunt => {
-    return(
-      <CharacterStunt characterStunt={stunt} key={stunt} />
-    )
+    return (<li key={stunt}>{ stunt }</li>)
   })
 
   return (
     <main className="character-sheet">
-      <h1>{ foundCharacter.name }</h1>
       <section className="character-stats">
+        <h1>{ foundCharacter.name }</h1>
         <article>
           <h5>Refresh</h5>
           <p>{ foundCharacter.refresh }</p>
         </article>
+      </section>
+      <section className="character-stats">
         <article>
           <h5>Aspects</h5>
           <ul className="stat-block">

@@ -10,9 +10,9 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  font-size: calc(12px + 1vw);
 }
 
 .stat-block {
   list-style-type: none;
-  font-size: calc(10px + 1.5vw);
 }
