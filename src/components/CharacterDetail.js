@@ -14,14 +14,14 @@ const CharacterDetail = (props) => {
   return (
     <main className="character-sheet">
       <section className="character-stats">
-        <h1>{ foundCharacter.name }</h1>
-        <article>
+        <h1 className="character-name character-sheet-item-primary">{ foundCharacter.name }</h1>
+        <article className="character-sheet-item-secondary">
           <h5>Refresh</h5>
           <p>{ foundCharacter.refresh }</p>
         </article>
       </section>
       <section className="character-stats">
-        <article>
+        <article className="character-sheet-item-primary">
           <h5>Aspects</h5>
           <ul className="stat-block">
             <li>{ foundCharacter.highConcept }</li>
@@ -31,7 +31,7 @@ const CharacterDetail = (props) => {
             <li>{ foundCharacter.aspectTwo }</li>
           </ul>
         </article>
-        <article>
+        <article className="character-sheet-item-secondary">
           <h5>Approaches</h5>
           <ul className="stat-block">
             <li>Careful: { foundCharacter.approaches.careful }</li>
@@ -42,13 +42,17 @@ const CharacterDetail = (props) => {
             <li>Sneaky: { foundCharacter.approaches.sneaky }</li>
           </ul>
         </article>
-        <article>
+      </section>
+      <section className="character-stats">
+        <article className="character-sheet-item-primary">
           <h5>Stunts</h5>
           <ul className="stat-block">
             { characterStunts }
           </ul>
         </article>
-        <article>
+      </section>
+      <section className="character-stats">
+        <article className="character-sheet-item-primary">
           <h5>Consequences</h5>
           <ul className="stat-block">
             <li>Mild: { foundCharacter.consequences.mild }</li>

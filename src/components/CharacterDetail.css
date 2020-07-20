@@ -2,17 +2,32 @@
   color: black;
   background-color: lightcyan;
   width: 80vw;
-  height: 90vh;
-  text-decoration: none;
+  max-height: 90vh;
 }
 
 .character-stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   font-size: calc(12px + 1vw);
+  text-align: justify;
+}
+
+.character-sheet-item-primary {
+  flex: 2;
+  padding: 0px 50px;
+}
+
+.character-sheet-item-secondary {
+  flex: 1;
+  padding: 0px 50px;
+}
+
+.character-name {
+  font-size: calc(50px + 1vw);
 }
 
 .stat-block {
   list-style-type: none;
+  padding-left: 0px;
 }
