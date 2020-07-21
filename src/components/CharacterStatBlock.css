@@ -1,11 +1,34 @@
-.align-right {
+.stat-name {
   text-align: right;
 }
 
-.align-left {
+.primary-stat-description {
+  text-align: left;
+  min-width: calc(100px + 10vw);
+}
+
+.secondary-stat-description {
   text-align: left;
 }
 
 .fred, .fred td, .fred tr {
   border: 1px solid red;
+}
+
+@media (max-width: 700px) {
+  .secondary-stat-description {
+    text-align: center;
+    min-width: calc(100px + 10vw);
+  }
+}
+
+@media (max-width: 300px) {
+  .primary-stat-description {
+    text-align: left;
+    min-width: auto;
+  }
+  .secondary-stat-description {
+    text-align: center;
+    min-width: auto;
+  }
 }

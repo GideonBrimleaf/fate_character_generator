@@ -12,10 +12,11 @@ const CharacterStatBlock = (props) => {
   }
 
   const statItems = statItemNames.map(stat => {
+    console.log()
     return (
       <tr key={prettifyName(stat)}>
-        <td className='align-right'>{ prettifyName(stat) }:</td>
-        <td className='align-left'>{ props.characterStats[stat] }</td>
+        <td className='stat-name'>{ prettifyName(stat) }:</td>
+        <td className={`${props.statBlock}-stat-description`}>{ props.characterStats[stat] }</td>
       </tr>
     )
   })

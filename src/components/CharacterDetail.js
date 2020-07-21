@@ -25,10 +25,10 @@ const CharacterDetail = (props) => {
       </section>
       <section className="character-stats">
         <article className="character-sheet-item-primary">
-          <CharacterStatBlock characterStatCategory="Aspects" characterStats={ foundCharacter.aspects } />
+          <CharacterStatBlock characterStatCategory="Aspects" characterStats={ foundCharacter.aspects } statBlock="primary" />
         </article>
         <article className="character-sheet-item-secondary">
-          <CharacterStatBlock characterStatCategory="Approaches" characterStats={ foundCharacter.approaches } />
+          <CharacterStatBlock characterStatCategory="Approaches" characterStats={ foundCharacter.approaches } statBlock="secondary" />
         </article>
       </section>
       <section className="character-stats">
@@ -41,7 +41,7 @@ const CharacterDetail = (props) => {
       </section> 
       <section className="character-stats">
         <article className="character-sheet-item-primary">
-          <CharacterStatBlock characterStatCategory="Consequences" characterStats={ foundCharacter.consequences } />
+          <CharacterStatBlock characterStatCategory="Consequences" characterStats={ foundCharacter.consequences } statBlock="primary"/>
         </article>
         <article className="character-sheet-item-secondary">
           <StressBox />
