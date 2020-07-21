@@ -1,6 +1,7 @@
 import React from 'react'
 import './CharacterDetail.css'
 import CharacterStatBlock from './CharacterStatBlock'
+import StressBox from './StressBox'
 
 const CharacterDetail = (props) => {
 
@@ -41,6 +42,9 @@ const CharacterDetail = (props) => {
       <section className="character-stats">
         <article className="character-sheet-item-primary">
           <CharacterStatBlock characterStatCategory="Consequences" characterStats={ foundCharacter.consequences } />
+        </article>
+        <article className="character-sheet-item-secondary">
+          <StressBox />
         </article>
       </section>
     </main>
