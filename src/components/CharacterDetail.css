@@ -13,8 +13,11 @@ caption {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-size: calc(12px + 1vw);
   margin-bottom: 20px;
+}
+
+.character-sheet-text {
+  font-size: calc(12px + 0.75vw);
 }
 
 .character-sheet-item-primary {
@@ -33,7 +36,9 @@ caption {
 }
 
 .character-name {
-  font-size: calc(40px + 1vw);
+  font-size: calc(30px + 1vw);
+  padding-right: 20%;
+  padding-top: 1%;
 }
 
 .refresh-stat {
@@ -42,7 +47,6 @@ caption {
 
 .character-sheet-header {
   margin: 0px;
-  font-size: calc(12px + 1vw);
 }
 
 .stunt-header {
