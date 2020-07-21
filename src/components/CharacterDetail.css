@@ -7,6 +7,7 @@ caption {
   background-color: lightcyan;
   width: 80vw;
   max-height: 90vh;
+  margin-bottom: 2%;
 }
 
 .character-stats {
@@ -31,18 +32,14 @@ caption {
 }
 
 .character-sheet-item-refresh {
-  margin-right: 12%;
-  margin-top: 50px;
+  margin-right: 11%;
+  margin-top: 5%;
 }
 
 .character-name {
   font-size: calc(30px + 1vw);
   padding-right: 20%;
   padding-top: 1%;
-}
-
-.refresh-stat {
-  margin: 0px;
 }
 
 .character-sheet-header {
@@ -55,4 +52,5 @@ caption {
 
 .refresh-header {
   text-align: center;
+  display: inline;
 }
