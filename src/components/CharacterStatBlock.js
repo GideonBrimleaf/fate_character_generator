@@ -13,7 +13,7 @@ const CharacterStatBlock = (props) => {
 
   const statItems = statItemNames.map(stat => {
     return (
-      <tr>
+      <tr key={prettifyName(stat)}>
         <td className='align-right'>{ prettifyName(stat) }:</td>
         <td className='align-left'>{ props.characterStats[stat] }</td>
       </tr>

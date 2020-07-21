@@ -1,3 +1,7 @@
+caption {
+  font-weight: bold;
+}
+
 .character-sheet{
   color: black;
   background-color: lightcyan;
@@ -10,18 +14,41 @@
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: calc(12px + 1vw);
+  margin-bottom: 20px;
 }
 
 .character-sheet-item-primary {
   margin-bottom: 0px;
   flex: 1;
-  padding: 0px 0px 0px 50px;
+  padding: 0px 0px 0px 10%;
 }
 
 .character-sheet-item-secondary {
-  padding: 0px 50px 0px 0px;
+  padding: 0px 10% 0px 0px;
+}
+
+.character-sheet-item-refresh {
+  margin-right: 12%;
+  margin-top: 50px;
 }
 
 .character-name {
   font-size: calc(40px + 1vw);
+}
+
+.refresh-stat {
+  margin: 0px;
+}
+
+.character-sheet-header {
+  margin: 0px;
+  font-size: calc(12px + 1vw);
+}
+
+.stunt-header {
+  text-align: left;
+}
+
+.refresh-header {
+  text-align: center;
 }
