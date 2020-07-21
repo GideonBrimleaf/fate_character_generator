@@ -34,7 +34,7 @@ const CharacterDetail = (props) => {
       <section className="character-stats">
         <article className="character-sheet-item-primary">
           <h5 className="character-sheet-header stunt-header character-sheet-text">Stunts</h5>
-          <ul className="stat-block">
+          <ul>
             { characterStunts }
           </ul>
         </article>

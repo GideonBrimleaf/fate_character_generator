@@ -6,7 +6,6 @@ caption {
   color: black;
   background-color: lightcyan;
   width: 80vw;
-  max-height: 90vh;
   margin-bottom: 2%;
 }
 
@@ -28,7 +27,7 @@ caption {
 .character-sheet-item-primary {
   margin-bottom: 0px;
   flex: 1;
-  padding: 0px 0px 0px 10%;
+  padding: 0px 10% 0px 10%;
 }
 
 .character-sheet-item-secondary {
