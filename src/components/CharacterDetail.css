@@ -17,6 +17,10 @@ caption {
   margin-bottom: 20px;
 }
 
+.character-sheet-header {
+  margin: 0px;
+}
+
 .character-sheet-text {
   font-size: calc(12px + 0.75vw);
 }
@@ -40,10 +44,6 @@ caption {
   font-size: calc(30px + 1vw);
   padding-right: 20%;
   padding-top: 1%;
-}
-
-.character-sheet-header {
-  margin: 0px;
 }
 
 .stunt-header {

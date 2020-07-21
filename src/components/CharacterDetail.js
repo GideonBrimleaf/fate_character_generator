@@ -1,6 +1,5 @@
 import React from 'react'
 import './CharacterDetail.css'
-import './CharacterStatBlock.css'
 import CharacterStatBlock from './CharacterStatBlock'
 
 const CharacterDetail = (props) => {
