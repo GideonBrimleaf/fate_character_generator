@@ -1,0 +1,47 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #282c34 inset;
+  font-size: x-large;
+}
+
+input::placeholder {
+  text-align: left;
+  font-size: x-large;
+  color: white;
+}
+
+input {
+  min-height: 2.5vh;
+  background-color: #282c34;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-bottom-color: white;
+  caret-color: white;
+  color: white;
+  font-size: x-large;
+}
+
+input[type="email"]:focus {
+  outline: none;
+}
+
+input[type="email"]:focus:hover {
+  outline: none;
+}
+
+input[type="password"]:focus {
+  outline: none;
+}
+
+input[type="password"]:focus:hover {
+  outline: none;
+}
