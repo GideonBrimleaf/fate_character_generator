@@ -43,12 +43,11 @@ article > ul > li {
 
 .character-name {
   font-size: calc(30px + 1vw);
-  padding-right: 20%;
-  padding-top: 1%;
 }
 
 .stunt-header {
   text-align: left;
+  padding-left: 1vw;
   font-size: calc(12px + 0.75vw);
   
 }
