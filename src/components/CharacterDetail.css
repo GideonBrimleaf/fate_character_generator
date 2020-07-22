@@ -92,5 +92,6 @@ article > ul > li {
 
   .stunt-header {
     text-align: center;
+    padding-left: 0px;
   }
 }
