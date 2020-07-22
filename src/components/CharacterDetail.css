@@ -13,6 +13,7 @@ article > ul {
   background-color: lightcyan;
   width: 80vw;
   margin-bottom: 2%;
+  font-size: calc(12px + 0.75vw);
 }
 
 .character-stats {
@@ -22,10 +23,6 @@ article > ul {
 
 .character-sheet-header {
   margin: 0px;
-}
-
-.character-sheet-text {
-  font-size: calc(12px + 0.75vw);
 }
 
 .character-sheet-item-primary {
@@ -56,6 +53,13 @@ article > ul {
 .refresh-header {
   text-align: center;
   display: inline;
+}
+
+@media (min-width:1350px) {
+  .character-sheet {
+    max-width: 1080px;
+    font-size: 22.125px;
+  }
 }
 
 @media (max-width: 700px) {
