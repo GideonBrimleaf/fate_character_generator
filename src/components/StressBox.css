@@ -5,6 +5,11 @@
   background-color: #f0f0f0;
 }
 
+.checked-box {
+  width:25%;
+  background: linear-gradient(to top right, #fff calc(50% - 1px), #aaa, #fff calc(50% + 1px) )
+}
+
 @media (min-width:1350px) {
   .stress-box {
     width: 72px;
