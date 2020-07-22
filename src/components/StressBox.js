@@ -3,7 +3,7 @@ import './StressBox.css'
 
 const StressBox = () => {
   return (
-    <table className='fred'>
+    <table>
       <caption>Stress</caption>
       <tbody>
         <tr>

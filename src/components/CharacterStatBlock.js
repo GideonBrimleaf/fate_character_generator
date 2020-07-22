@@ -23,7 +23,7 @@ const CharacterStatBlock = (props) => {
 
   return (
     <>
-      <table className='fred'>
+      <table>
         <caption>{ props.characterStatCategory }</caption>
         <tbody>
           { statItems }

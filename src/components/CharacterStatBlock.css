@@ -3,11 +3,13 @@
 }
 
 .primary-stat-description {
+  background-color: #f0f0f0;
   text-align: left;
   min-width: calc(100px + 10vw);
 }
 
 .secondary-stat-description {
+  background-color: #f0f0f0;
   text-align: left;
 }
 
