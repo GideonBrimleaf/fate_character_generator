@@ -1,30 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import './StressBox.css'
 
 const StressBox = () => {
 
-  let checked = [false, false, false]
-
-  useEffect(() => {
-    if(!localStorage.getItem('checkedBoxes')) {
-      localStorage.setItem('checkedBoxes', JSON.stringify(checked))
-      console.log(`no local storage, items set to ${checked}`)
-    } else {
-      checked = JSON.parse(localStorage.getItem('checkedBoxes'))
-      console.log(`checked is now ${checked}`)
-    }
-  })
+  const [checked, setChecked] = useState(
+    localStorage.getItem('checkedBoxes') ? JSON.parse(localStorage.getItem('checkedBoxes')) : [false, false, false]
+    )
 
   const checkBox = (event) => {
     const boxNumber = event.target.innerText
+    const updatedChecked = [...checked]
     if (checked[boxNumber-1]) {
-      checked[boxNumber-1] = false
-      console.log(`box numbers ${boxNumber} are now ${checked[boxNumber-1]}`)
-      localStorage.setItem('checkedBoxes', JSON.stringify(checked))
+      updatedChecked[boxNumber-1] = false
+      localStorage.setItem('checkedBoxes', JSON.stringify(updatedChecked))
+      setChecked(updatedChecked)
     } else {
-      checked[boxNumber-1] = true
-      console.log(`box numbers ${boxNumber} are now ${checked}`)
-      localStorage.setItem('checkedBoxes', JSON.stringify(checked[boxNumber-1]))
+      updatedChecked[boxNumber-1] = true
+      localStorage.setItem('checkedBoxes', JSON.stringify(updatedChecked))
+      setChecked(updatedChecked)
     }
   }
 
