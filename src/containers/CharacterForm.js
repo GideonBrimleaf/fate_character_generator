@@ -9,8 +9,28 @@ class CharacterForm extends Component {
     this.state={
       id:'',
       name:'',
-      highConcept:'',
-      trouble:''
+      aspects: {
+        highConcept:'',
+        trouble:'',
+        relationship: '',
+        aspectOne: '',
+        aspectTwo: ''
+      },
+      approaches: {
+        careful: '',
+        clever: '',
+        flashy: '',
+        forceful: '',
+        quick: '',
+        sneaky: ''
+      },
+      stunts: [''],
+      consequences: {
+        mild: '',
+        moderate: '',
+        severe: ''
+      },
+      refresh : 3
     }
   }
 
@@ -19,11 +39,15 @@ class CharacterForm extends Component {
   }
 
   handleHighConceptChange = (event) => {
-    this.setState({highConcept:event.target.value})
+    const aspects = this.state.aspects
+    aspects.highConcept = event.target.value
+    this.setState({aspects : aspects})
   }
 
   handleTroubleChange = (event) => {
-    this.setState({trouble:event.target.value})
+    const aspects = this.state.aspects
+    aspects.trouble = event.target.value
+    this.setState({aspects : aspects})
   }
 
   handleSubmit = (event) => {
@@ -31,8 +55,8 @@ class CharacterForm extends Component {
 
     const id = Date.now()
     const name = this.state.name.trim()
-    const highConcept = this.state.highConcept.trim()
-    const trouble = this.state.trouble.trim()
+    const highConcept = this.state.aspects.highConcept.trim()
+    const trouble = this.state.aspects.trouble.trim()
 
     if(!name || !highConcept || !trouble){
       return
@@ -41,15 +65,54 @@ class CharacterForm extends Component {
     this.props.onCharacterCreated({
       id:id,
       name:name,
-      highConcept:highConcept,
-      trouble:trouble
+      aspects: {
+        highConcept:highConcept,
+        trouble:trouble,
+        relationship: '',
+        aspectOne: '',
+        aspectTwo: ''
+      },
+      approaches: {
+        careful: '',
+        clever: '',
+        flashy: '',
+        forceful: '',
+        quick: '',
+        sneaky: ''
+      },
+      stunts: [],
+      consequences: {
+        mild: '',
+        moderate: '',
+        severe: ''
+      },
+      refresh : 3
     })
 
     this.setState({
+      id:'',
       name:'',
-      highConcept:'',
-      trouble:''
+      aspects: {
+        highConcept:'',
+        trouble:''
+      },
+      approaches: {
+        careful: '',
+        clever: '',
+        flashy: '',
+        forceful: '',
+        quick: '',
+        sneaky: ''
+      },
+      stunts: [],
+      consequences: {
+        mild: '',
+        moderate: '',
+        severe: ''
+      },
+      refresh : 3
     })
+
     this.props.history.push('/')
   }
 
@@ -72,7 +135,7 @@ class CharacterForm extends Component {
               type="text" 
               id="characterConcept" 
               placeholder="Make sure they sound banging!" 
-              value={this.state.highConcept}
+              value={this.state.aspects.highConcept}
               onChange={this.handleHighConceptChange}
               required
             />  
@@ -81,10 +144,10 @@ class CharacterForm extends Component {
               type="text" 
               id="characterTrouble" 
               placeholder="Make it dark and mysterious" 
-              value={this.state.trouble}
+              value={this.state.aspects.trouble}
               onChange={this.handleTroubleChange}
               required
-            />  
+            />
           <input className="form-submit" type="submit" value="Add Character"/>
         </form>
       </section>
