@@ -133,11 +133,11 @@ class CharacterForm extends Component {
               onChange={this.handleNameChange}
               required
             />
-            <label htmlFor="refresh" className="character-sheet-header refresh-form-header character-sheet-text">Refesh:</label>
+            <label htmlFor="refresh" className="refresh-form-header character-sheet-text">Refesh:</label>
             <input
+              className="character-refresh-input"
               type="text"
               id="refresh"
-              value={this.state.refresh}
             />
           </section>
           <label htmlFor="characterConcept">High Concept</label>

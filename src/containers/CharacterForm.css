@@ -8,9 +8,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px lightcyan inset;
-  font-size: x-large;
 }
-
 
 .character-form-section {
   padding: 1%;
@@ -18,8 +16,32 @@ select:-webkit-autofill:focus {
 
 .refresh-form-header {
   align-self: flex-end;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .character-name-input {
+  background-color: lightcyan;
+  border-style: none;
+  text-align: center;
+  font-size: calc(30px + 1vw);
+  font-weight: bold;
+}
 
+.character-refresh-input {
+  background-color: lightcyan;
+  border-style: none;
+  font-weight: bold;
+  font-size: calc(12px + 0.75vw);
+  height: calc(12px + 0.75vw);
+  align-self: flex-end;
+  margin-bottom: 5px;
+}
+
+.character-name-input:focus {
+  outline: none;
+}
+
+.character-name-input:focus:hover {
+  outline: none;
 }
