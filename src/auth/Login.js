@@ -29,8 +29,8 @@ const Login = ({ history }) => {
     <div>
       <h1>Log In</h1>
       <form onSubmit={handleLogin}>
-        <input name="email" type="email" placeholder="Email:" />
-        <input name="password" type="password" placeholder="Password:" />
+        <input className="login-input" name="email" type="email" placeholder="Email:" />
+        <input className="login-input" name="password" type="password" placeholder="Password:" />
         <button className="primary-button" type="submit">Log in</button>
       </form>
     </div>

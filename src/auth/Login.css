@@ -1,6 +1,6 @@
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover, 
+.login-input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
@@ -12,13 +12,13 @@ select:-webkit-autofill:focus {
   font-size: x-large;
 }
 
-input::placeholder {
+.login-input::placeholder {
   text-align: left;
   font-size: x-large;
   color: white;
 }
 
-input {
+.login-input {
   min-height: 2.5vh;
   background-color: #282c34;
   border-top-style: none;
@@ -30,18 +30,18 @@ input {
   font-size: x-large;
 }
 
-input[type="email"]:focus {
+.login-input[type="email"]:focus {
   outline: none;
 }
 
-input[type="email"]:focus:hover {
+.login-input[type="email"]:focus:hover {
   outline: none;
 }
 
-input[type="password"]:focus {
+.login-input[type="password"]:focus {
   outline: none;
 }
 
-input[type="password"]:focus:hover {
+.login-input[type="password"]:focus:hover {
   outline: none;
 }

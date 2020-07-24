@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './CharacterForm.css'
+import '../components/CharacterDetail.css'
 import { withRouter } from 'react-router-dom'
 
 class CharacterForm extends Component {
@@ -118,18 +119,26 @@ class CharacterForm extends Component {
 
   render() {
     return (
-      <section>
+      <main>
         <h1>Add a New Character</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="characterName">Character Name</label>
+        <form className="character-sheet character-sheet-text" onSubmit={this.handleSubmit}>
+          <section className="character-stats">
             <input 
+              className="character-name character-sheet-item-primary"
               type="text" 
               id="characterName" 
-              placeholder="Make sure they have a cool name" 
+              placeholder="Character Name" 
               value={this.state.name}
               onChange={this.handleNameChange}
               required
             />
+            <label htmlFor="refresh" className="character-sheet-header refresh-header character-sheet-text">Refesh:</label>
+            <input
+              type="text"
+              id="refresh"
+              value={this.state.refresh}
+            />
+          </section>
           <label htmlFor="characterConcept">High Concept</label>
             <input 
               type="text" 
@@ -150,7 +159,7 @@ class CharacterForm extends Component {
             />
           <input className="form-submit" type="submit" value="Add Character"/>
         </form>
-      </section>
+      </main>
     )
   }
 }
