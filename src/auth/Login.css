@@ -12,6 +12,11 @@ select:-webkit-autofill:focus {
   font-size: x-large;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .login-input::placeholder {
   text-align: left;
   font-size: x-large;
@@ -28,6 +33,9 @@ select:-webkit-autofill:focus {
   caret-color: white;
   color: white;
   font-size: x-large;
+  min-width: 30vw;
+  text-align: center;
+  margin-bottom: 15%;
 }
 
 .login-input[type="email"]:focus {

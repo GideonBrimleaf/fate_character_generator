@@ -1,26 +1,25 @@
-input {
-  width: 30vw;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  text-align: center;
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px lightcyan inset;
+  font-size: x-large;
 }
 
-form {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+.character-form-section {
+  padding: 1%;
 }
 
-.form-submit {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #60a3bc;
-  padding: 10px;
-  border-radius: 40px;
-  display: inline-block;
-  border: none;
-  transition: all 0.4s ease 0s;
-  margin: 1rem
+.refresh-form-header {
+  align-self: flex-end;
+}
+
+.character-name-input {
+
 }
