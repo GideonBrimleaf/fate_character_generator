@@ -142,15 +142,15 @@ class CharacterForm extends Component {
             />
           </section>
           <section className="character-stats character-form-section">
-            <table>
+            <table className="character-sheet-item-primary">
               <caption>Aspects</caption>
               <tr>
                 <td className="stat-name">
                   <label htmlFor="characterConcept">High Concept:</label>
                 </td>
-                <td>
+                <td className="form-input">
                   <input
-                    className="primary-stat-description"
+                    className="character-sheet-text primary-input"
                     type="text" 
                     id="characterConcept" 
                     placeholder="Make sure they sound banging!" 
@@ -164,9 +164,9 @@ class CharacterForm extends Component {
                 <td className="stat-name">
                   <label className="form-label" htmlFor="characterTrouble">Trouble:</label>
                 </td>
-                <td>
+                <td className="form-input">
                   <input
-                    className="primary-stat-description"
+                    className="character-sheet-text primary-input"
                     type="text" 
                     id="characterTrouble" 
                     placeholder="Make it dark and mysterious" 
@@ -180,9 +180,9 @@ class CharacterForm extends Component {
                 <td className="stat-name">
                   <label className="form-label" htmlFor="characterConcept">Relationship:</label>
                 </td>
-                <td>
+                <td className="form-input">
                   <input
-                    className="primary-stat-description"
+                    className="character-sheet-text primary-input"
                     type="text" 
                     id="characterConcept" 
                     placeholder="Make sure they sound banging!" 
@@ -196,9 +196,9 @@ class CharacterForm extends Component {
                 <td className="stat-name">
                   <label className="form-label" htmlFor="characterTrouble">Aspect One:</label>
                 </td>
-                <td>
+                <td className="form-input">
                   <input
-                    className="primary-stat-description"
+                    className="character-sheet-text primary-input"
                     type="text" 
                     id="characterTrouble" 
                     placeholder="Make it dark and mysterious" 
@@ -212,9 +212,9 @@ class CharacterForm extends Component {
                 <td className="stat-name">
                   <label className="form-label" htmlFor="characterTrouble">Aspect Two:</label>
                 </td>
-                <td>
+                <td className="form-input">
                   <input
-                    className="primary-stat-description"
+                    className="character-sheet-text primary-input"
                     type="text" 
                     id="characterTrouble" 
                     placeholder="Make it dark and mysterious" 

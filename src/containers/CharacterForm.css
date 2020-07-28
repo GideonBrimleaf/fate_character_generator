@@ -49,13 +49,16 @@ input:focus:hover {
   margin-bottom: 5px;
 }
 
-.character-stat-input-block {
-  margin-top: 0px;
-  list-style-type: none;
-  padding: 0.5vw;
-  text-align: justify;
-}
-
 .form-label {
   text-align: right;
+}
+
+.form-input {
+  text-align: left;
+}
+
+.primary-input {
+  background-color: #f0f0f0;
+  text-align: left;
+  min-width: calc(200px + 10vw);
 }
