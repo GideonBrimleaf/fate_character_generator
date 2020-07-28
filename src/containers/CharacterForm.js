@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import './CharacterForm.css'
 import '../components/CharacterDetail.css'
+import '../components/CharacterStatBlock.css'
 import { withRouter } from 'react-router-dom'
 
 class CharacterForm extends Component {
@@ -122,7 +123,7 @@ class CharacterForm extends Component {
     return (
       <main>
         <h1>Add a New Character</h1>
-        <form className="character-sheet character-sheet-text" onSubmit={this.handleSubmit}>
+        <form autoComplete="off" className="character-sheet character-sheet-text" onSubmit={this.handleSubmit}>
           <section className="character-stats character-form-section">
             <input 
               className="character-name character-sheet-item-primary character-name-input"
@@ -140,24 +141,91 @@ class CharacterForm extends Component {
               id="refresh"
             />
           </section>
-          <label htmlFor="characterConcept">High Concept</label>
-            <input 
-              type="text" 
-              id="characterConcept" 
-              placeholder="Make sure they sound banging!" 
-              value={this.state.aspects.highConcept}
-              onChange={this.handleHighConceptChange}
-              required
-            />  
-          <label htmlFor="characterTrouble">Trouble</label>
-            <input 
-              type="text" 
-              id="characterTrouble" 
-              placeholder="Make it dark and mysterious" 
-              value={this.state.aspects.trouble}
-              onChange={this.handleTroubleChange}
-              required
-            />
+          <section className="character-stats character-form-section">
+            <table>
+              <caption>Aspects</caption>
+              <tr>
+                <td className="stat-name">
+                  <label htmlFor="characterConcept">High Concept:</label>
+                </td>
+                <td>
+                  <input
+                    className="primary-stat-description"
+                    type="text" 
+                    id="characterConcept" 
+                    placeholder="Make sure they sound banging!" 
+                    value={this.state.aspects.highConcept}
+                    onChange={this.handleHighConceptChange}
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="stat-name">
+                  <label className="form-label" htmlFor="characterTrouble">Trouble:</label>
+                </td>
+                <td>
+                  <input
+                    className="primary-stat-description"
+                    type="text" 
+                    id="characterTrouble" 
+                    placeholder="Make it dark and mysterious" 
+                    value={this.state.aspects.trouble}
+                    onChange={this.handleTroubleChange}
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="stat-name">
+                  <label className="form-label" htmlFor="characterConcept">Relationship:</label>
+                </td>
+                <td>
+                  <input
+                    className="primary-stat-description"
+                    type="text" 
+                    id="characterConcept" 
+                    placeholder="Make sure they sound banging!" 
+                    value={this.state.aspects.highConcept}
+                    onChange={this.handleHighConceptChange}
+                    required
+                  /> 
+                </td>
+              </tr>
+              <tr>
+                <td className="stat-name">
+                  <label className="form-label" htmlFor="characterTrouble">Aspect One:</label>
+                </td>
+                <td>
+                  <input
+                    className="primary-stat-description"
+                    type="text" 
+                    id="characterTrouble" 
+                    placeholder="Make it dark and mysterious" 
+                    value={this.state.aspects.trouble}
+                    onChange={this.handleTroubleChange}
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="stat-name">
+                  <label className="form-label" htmlFor="characterTrouble">Aspect Two:</label>
+                </td>
+                <td>
+                  <input
+                    className="primary-stat-description"
+                    type="text" 
+                    id="characterTrouble" 
+                    placeholder="Make it dark and mysterious" 
+                    value={this.state.aspects.trouble}
+                    onChange={this.handleTroubleChange}
+                    required
+                  />
+                </td>
+              </tr>
+            </table>
+          </section>
           <input className="primary-button" type="submit" value="Add Character"/>
         </form>
       </main>

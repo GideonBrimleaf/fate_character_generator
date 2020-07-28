@@ -10,6 +10,18 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px lightcyan inset;
 }
 
+input {
+  border-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus:hover {
+  outline: none;
+}
+
 .character-form-section {
   padding: 1%;
 }
@@ -22,7 +34,6 @@ select:-webkit-autofill:focus {
 
 .character-name-input {
   background-color: lightcyan;
-  border-style: none;
   text-align: center;
   font-size: calc(30px + 1vw);
   font-weight: bold;
@@ -31,7 +42,6 @@ select:-webkit-autofill:focus {
 
 .character-refresh-input {
   background-color: lightcyan;
-  border-style: none;
   font-weight: bold;
   font-size: calc(12px + 0.75vw);
   height: calc(12px + 0.75vw);
@@ -39,18 +49,13 @@ select:-webkit-autofill:focus {
   margin-bottom: 5px;
 }
 
-.character-refresh-input:focus {
-  outline: none;
+.character-stat-input-block {
+  margin-top: 0px;
+  list-style-type: none;
+  padding: 0.5vw;
+  text-align: justify;
 }
 
-.character-refresh-input:focus:hover {
-  outline: none;
-}
-
-.character-name-input:focus {
-  outline: none;
-}
-
-.character-name-input:focus:hover {
-  outline: none;
+.form-label {
+  text-align: right;
 }

@@ -22,14 +22,12 @@ const CharacterStatBlock = (props) => {
   })
 
   return (
-    <>
-      <table>
-        <caption>{ props.characterStatCategory }</caption>
-        <tbody>
-          { statItems }
-        </tbody>
-      </table>
-    </>
+    <table>
+      <caption>{ props.characterStatCategory }</caption>
+      <tbody>
+        { statItems }
+      </tbody>
+    </table>
   )
 }
 
