@@ -26,6 +26,7 @@ select:-webkit-autofill:focus {
   text-align: center;
   font-size: calc(30px + 1vw);
   font-weight: bold;
+  width: 10vw
 }
 
 .character-refresh-input {
@@ -36,6 +37,14 @@ select:-webkit-autofill:focus {
   height: calc(12px + 0.75vw);
   align-self: flex-end;
   margin-bottom: 5px;
+}
+
+.character-refresh-input:focus {
+  outline: none;
+}
+
+.character-refresh-input:focus:hover {
+  outline: none;
 }
 
 .character-name-input:focus {
