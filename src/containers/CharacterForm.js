@@ -155,7 +155,7 @@ class CharacterForm extends Component {
                     id="characterConcept" 
                     placeholder="Make sure they sound banging!" 
                     value={this.state.aspects.highConcept}
-                    onChange={this.handleHighConceptChange}
+                    onChange={(event) => this.handleHighConceptChange(event)}
                     required
                   />
                 </td>
@@ -171,7 +171,7 @@ class CharacterForm extends Component {
                     id="characterTrouble" 
                     placeholder="Make it dark and mysterious" 
                     value={this.state.aspects.trouble}
-                    onChange={this.handleTroubleChange}
+                    onChange={(event) => this.handleTroubleChange(event)}
                     required
                   />
                 </td>
