@@ -138,86 +138,88 @@ class CharacterForm extends Component {
           <section className="character-stats character-form-section">
             <table className="character-sheet-item-primary">
               <caption>Aspects</caption>
-              <tr>
-                <td className="stat-name">
-                  <label htmlFor="highConcept">High Concept:</label>
-                </td>
-                <td className="form-input">
-                  <input
-                    className="character-sheet-text primary-input"
-                    type="text" 
-                    id="highConcept" 
-                    placeholder="Make sure they sound banging!" 
-                    value={this.state.aspects.highConcept}
-                    onChange={(event) => this.handleFormChange(event, 'aspects')}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td className="stat-name">
-                  <label className="form-label" htmlFor="trouble">Trouble:</label>
-                </td>
-                <td className="form-input">
-                  <input
-                    className="character-sheet-text primary-input"
-                    type="text" 
-                    id="trouble" 
-                    placeholder="Make it dark and mysterious" 
-                    value={this.state.aspects.trouble}
-                    onChange={(event) => this.handleFormChange(event, 'aspects')}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td className="stat-name">
-                  <label className="form-label" htmlFor="relationship">Relationship:</label>
-                </td>
-                <td className="form-input">
-                  <input
-                    className="character-sheet-text primary-input"
-                    type="text" 
-                    id="relationship" 
-                    placeholder="Make sure they sound banging!" 
-                    value={this.state.aspects.relationship}
-                    onChange={(event) => this.handleFormChange(event, 'aspects')}
-                    required
-                  /> 
-                </td>
-              </tr>
-              <tr>
-                <td className="stat-name">
-                  <label className="form-label" htmlFor="aspectOne">Aspect One:</label>
-                </td>
-                <td className="form-input">
-                  <input
-                    className="character-sheet-text primary-input"
-                    type="text" 
-                    id="aspectOne" 
-                    placeholder="Make it dark and mysterious" 
-                    value={this.state.aspects.aspectOne}
-                    onChange={(event) => this.handleFormChange(event, 'aspects')}
-                    required
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td className="stat-name">
-                  <label className="form-label" htmlFor="aspectTwo">Aspect Two:</label>
-                </td>
-                <td className="form-input">
-                  <input
-                    className="character-sheet-text primary-input"
-                    type="text" 
-                    id="aspectTwo" 
-                    placeholder="Make it dark and mysterious" 
-                    value={this.state.aspects.aspectTwo}
-                    onChange={(event) => this.handleFormChange(event, 'aspects')}
-                    required
-                  />
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td className="stat-name">
+                    <label htmlFor="highConcept">High Concept:</label>
+                  </td>
+                  <td className="form-input">
+                    <input
+                      className="character-sheet-text primary-input"
+                      type="text" 
+                      id="highConcept" 
+                      placeholder="Make sure they sound banging!" 
+                      value={this.state.aspects.highConcept}
+                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="stat-name">
+                    <label className="form-label" htmlFor="trouble">Trouble:</label>
+                  </td>
+                  <td className="form-input">
+                    <input
+                      className="character-sheet-text primary-input"
+                      type="text" 
+                      id="trouble" 
+                      placeholder="Make it dark and mysterious" 
+                      value={this.state.aspects.trouble}
+                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="stat-name">
+                    <label className="form-label" htmlFor="relationship">Relationship:</label>
+                  </td>
+                  <td className="form-input">
+                    <input
+                      className="character-sheet-text primary-input"
+                      type="text" 
+                      id="relationship" 
+                      placeholder="Make sure they sound banging!" 
+                      value={this.state.aspects.relationship}
+                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      required
+                    /> 
+                  </td>
+                </tr>
+                <tr>
+                  <td className="stat-name">
+                    <label className="form-label" htmlFor="aspectOne">Aspect One:</label>
+                  </td>
+                  <td className="form-input">
+                    <input
+                      className="character-sheet-text primary-input"
+                      type="text" 
+                      id="aspectOne" 
+                      placeholder="Make it dark and mysterious" 
+                      value={this.state.aspects.aspectOne}
+                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="stat-name">
+                    <label className="form-label" htmlFor="aspectTwo">Aspect Two:</label>
+                  </td>
+                  <td className="form-input">
+                    <input
+                      className="character-sheet-text primary-input"
+                      type="text" 
+                      id="aspectTwo" 
+                      placeholder="Make it dark and mysterious" 
+                      value={this.state.aspects.aspectTwo}
+                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      required
+                    />
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </section>
           <input className="primary-button" type="submit" value="Add Character"/>
