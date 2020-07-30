@@ -41,16 +41,10 @@ class CharacterForm extends Component {
     this.setState({name:event.target.value})
   }
 
-  handleHighConceptChange = (event) => {
-    const aspects = this.state.aspects
-    aspects.highConcept = event.target.value
-    this.setState({aspects : aspects})
-  }
-
-  handleTroubleChange = (event) => {
-    const aspects = this.state.aspects
-    aspects.trouble = event.target.value
-    this.setState({aspects : aspects})
+  handleFormChange = (event, characterStatGroup, characterStat) => {
+    const statGroup = this.state[characterStatGroup]
+    statGroup[characterStat] = event.target.value
+    this.setState({aspects : statGroup})
   }
 
   handleSubmit = (event) => {
@@ -155,7 +149,7 @@ class CharacterForm extends Component {
                     id="characterConcept" 
                     placeholder="Make sure they sound banging!" 
                     value={this.state.aspects.highConcept}
-                    onChange={(event) => this.handleHighConceptChange(event)}
+                    onChange={(event) => this.handleFormChange(event, 'aspects', 'highConcept')}
                     required
                   />
                 </td>
@@ -171,7 +165,7 @@ class CharacterForm extends Component {
                     id="characterTrouble" 
                     placeholder="Make it dark and mysterious" 
                     value={this.state.aspects.trouble}
-                    onChange={(event) => this.handleTroubleChange(event)}
+                    onChange={(event) => this.handleFormChange(event, 'aspects', 'trouble')}
                     required
                   />
                 </td>
