@@ -41,9 +41,9 @@ class CharacterForm extends Component {
     this.setState({name:event.target.value})
   }
 
-  handleFormChange = (event, characterStatGroup, characterStat) => {
+  handleFormChange = (event, characterStatGroup) => {
     const statGroup = this.state[characterStatGroup]
-    statGroup[characterStat] = event.target.value
+    statGroup[event.target.id] = event.target.value
     this.setState({characterStatGroup : statGroup})
   }
 
@@ -140,80 +140,80 @@ class CharacterForm extends Component {
               <caption>Aspects</caption>
               <tr>
                 <td className="stat-name">
-                  <label htmlFor="characterConcept">High Concept:</label>
+                  <label htmlFor="highConcept">High Concept:</label>
                 </td>
                 <td className="form-input">
                   <input
                     className="character-sheet-text primary-input"
                     type="text" 
-                    id="characterConcept" 
+                    id="highConcept" 
                     placeholder="Make sure they sound banging!" 
                     value={this.state.aspects.highConcept}
-                    onChange={(event) => this.handleFormChange(event, 'aspects', 'highConcept')}
+                    onChange={(event) => this.handleFormChange(event, 'aspects')}
                     required
                   />
                 </td>
               </tr>
               <tr>
                 <td className="stat-name">
-                  <label className="form-label" htmlFor="characterTrouble">Trouble:</label>
+                  <label className="form-label" htmlFor="trouble">Trouble:</label>
                 </td>
                 <td className="form-input">
                   <input
                     className="character-sheet-text primary-input"
                     type="text" 
-                    id="characterTrouble" 
+                    id="trouble" 
                     placeholder="Make it dark and mysterious" 
                     value={this.state.aspects.trouble}
-                    onChange={(event) => this.handleFormChange(event, 'aspects', 'trouble')}
+                    onChange={(event) => this.handleFormChange(event, 'aspects')}
                     required
                   />
                 </td>
               </tr>
               <tr>
                 <td className="stat-name">
-                  <label className="form-label" htmlFor="characterConcept">Relationship:</label>
+                  <label className="form-label" htmlFor="relationship">Relationship:</label>
                 </td>
                 <td className="form-input">
                   <input
                     className="character-sheet-text primary-input"
                     type="text" 
-                    id="characterConcept" 
+                    id="relationship" 
                     placeholder="Make sure they sound banging!" 
-                    value={this.state.aspects.highConcept}
-                    onChange={this.handleHighConceptChange}
+                    value={this.state.aspects.relationship}
+                    onChange={(event) => this.handleFormChange(event, 'aspects')}
                     required
                   /> 
                 </td>
               </tr>
               <tr>
                 <td className="stat-name">
-                  <label className="form-label" htmlFor="characterTrouble">Aspect One:</label>
+                  <label className="form-label" htmlFor="aspectOne">Aspect One:</label>
                 </td>
                 <td className="form-input">
                   <input
                     className="character-sheet-text primary-input"
                     type="text" 
-                    id="characterTrouble" 
+                    id="aspectOne" 
                     placeholder="Make it dark and mysterious" 
-                    value={this.state.aspects.trouble}
-                    onChange={this.handleTroubleChange}
+                    value={this.state.aspects.aspectOne}
+                    onChange={(event) => this.handleFormChange(event, 'aspects')}
                     required
                   />
                 </td>
               </tr>
               <tr>
                 <td className="stat-name">
-                  <label className="form-label" htmlFor="characterTrouble">Aspect Two:</label>
+                  <label className="form-label" htmlFor="aspectTwo">Aspect Two:</label>
                 </td>
                 <td className="form-input">
                   <input
                     className="character-sheet-text primary-input"
                     type="text" 
-                    id="characterTrouble" 
+                    id="aspectTwo" 
                     placeholder="Make it dark and mysterious" 
-                    value={this.state.aspects.trouble}
-                    onChange={this.handleTroubleChange}
+                    value={this.state.aspects.aspectTwo}
+                    onChange={(event) => this.handleFormChange(event, 'aspects')}
                     required
                   />
                 </td>
