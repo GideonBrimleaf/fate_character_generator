@@ -44,7 +44,7 @@ class CharacterForm extends Component {
   handleFormChange = (event, characterStatGroup, characterStat) => {
     const statGroup = this.state[characterStatGroup]
     statGroup[characterStat] = event.target.value
-    this.setState({aspects : statGroup})
+    this.setState({characterStatGroup : statGroup})
   }
 
   handleSubmit = (event) => {
