@@ -133,6 +133,7 @@ class CharacterForm extends Component {
               className="character-refresh-input"
               type="text"
               id="refresh"
+              value={this.state.refresh}
             />
           </section>
           <section className="character-stats character-form-section">
@@ -148,7 +149,8 @@ class CharacterForm extends Component {
                       className="character-sheet-text primary-input"
                       type="text" 
                       id="highConcept" 
-                      placeholder="Make sure they sound banging!"
+                      placeholder="Make sure they sound banging!" 
+                      value={this.state.aspects.highConcept}
                       onChange={(event) => this.handleFormChange(event, 'aspects')}
                       required
                     />
@@ -163,7 +165,8 @@ class CharacterForm extends Component {
                       className="character-sheet-text primary-input"
                       type="text" 
                       id="trouble" 
-                      placeholder="Make it dark and mysterious"
+                      placeholder="Make it dark and mysterious" 
+                      value={this.state.aspects.trouble}
                       onChange={(event) => this.handleFormChange(event, 'aspects')}
                       required
                     />
@@ -178,7 +181,8 @@ class CharacterForm extends Component {
                       className="character-sheet-text primary-input"
                       type="text" 
                       id="relationship" 
-                      placeholder="Make sure they sound banging!"
+                      placeholder="Make sure they sound banging!" 
+                      value={this.state.aspects.relationship}
                       onChange={(event) => this.handleFormChange(event, 'aspects')}
                       required
                     /> 
@@ -193,7 +197,8 @@ class CharacterForm extends Component {
                       className="character-sheet-text primary-input"
                       type="text" 
                       id="aspectOne" 
-                      placeholder="Make it dark and mysterious"
+                      placeholder="Make it dark and mysterious" 
+                      value={this.state.aspects.aspectOne}
                       onChange={(event) => this.handleFormChange(event, 'aspects')}
                       required
                     />
@@ -208,7 +213,8 @@ class CharacterForm extends Component {
                       className="character-sheet-text primary-input"
                       type="text" 
                       id="aspectTwo" 
-                      placeholder="Make it dark and mysterious"
+                      placeholder="Make it dark and mysterious" 
+                      value={this.state.aspects.aspectTwo}
                       onChange={(event) => this.handleFormChange(event, 'aspects')}
                       required
                     />
