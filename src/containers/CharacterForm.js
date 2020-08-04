@@ -49,6 +49,10 @@ class CharacterForm extends Component {
     this.setState({characterStatGroup : statGroup})
   }
 
+  handleStuntChange = () => {
+
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
 
@@ -155,13 +159,25 @@ class CharacterForm extends Component {
               <h5 className="character-sheet-header stunt-header character-sheet-text">Stunts</h5>
               <ul>
                 <li>
-                  <input className="primary-input character-sheet-text" type="text" placeholder="Stunt 1"/>
+                  <input 
+                    className="primary-input character-sheet-text" 
+                    type="text" 
+                    placeholder="Stunt 1"
+                  />
                 </li>
                 <li>
-                  <input className="primary-input character-sheet-text" type="text" placeholder="Stunt 2"/>
+                  <input 
+                    className="primary-input character-sheet-text" 
+                    type="text" 
+                    placeholder="Stunt 2"
+                  />
                 </li>
                 <li>
-                  <input className="primary-input character-sheet-text" type="text" placeholder="Stunt 3"/>
+                  <input 
+                    className="primary-input character-sheet-text" 
+                    type="text" 
+                    placeholder="Stunt 3"
+                  />
                 </li>
               </ul>
             </article>
