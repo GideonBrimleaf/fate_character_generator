@@ -37,6 +37,10 @@ class CharacterForm extends Component {
     }
   }
 
+  handleFormChange = (event) => {
+    this.setState({ [event.target.id]:event.target.value })
+  }
+
   handleNameChange = (event) => {
     this.setState({ name:event.target.value })
   }
@@ -126,10 +130,10 @@ class CharacterForm extends Component {
             <input 
               className="character-name character-sheet-item-primary character-name-input"
               type="text" 
-              id="characterName" 
+              id="name" 
               placeholder="Character Name" 
               value={this.state.name}
-              onChange={this.handleNameChange}
+              onChange={this.handleFormChange}
               required
             />
             <label htmlFor="refresh" className="refresh-form-header character-sheet-text">Refesh:</label>
@@ -138,7 +142,7 @@ class CharacterForm extends Component {
               type="text"
               id="refresh"
               value={this.state.refresh}
-              onChange={this.handleRefreshChange}
+              onChange={this.handleFormChange}
             />
           </section>
           <section className="character-stats character-form-section">
