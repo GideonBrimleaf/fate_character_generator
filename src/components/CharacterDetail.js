@@ -11,7 +11,7 @@ const CharacterDetail = (props) => {
   
   const characterStunts = foundCharacter.stunts.map(stunt => {
     return (
-      <li key={stunt} className="align-left">{ stunt }</li>
+      <li key={stunt}>{ stunt }</li>
       )
   })
 

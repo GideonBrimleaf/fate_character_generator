@@ -5,6 +5,7 @@ import '../components/CharacterDetail.css'
 import '../components/CharacterStatBlock.css'
 import { withRouter } from 'react-router-dom'
 import CharacterFormStatBlock from './CharacterFormStatBlock'
+import StressBox from '../components/StressBox'
 
 class CharacterForm extends Component {
 
@@ -147,6 +148,30 @@ class CharacterForm extends Component {
             </article>
             <article className="character-sheet-item-secondary">
               <CharacterFormStatBlock stats={this.state.approaches} tableName="approaches" handleFormStatChange={this.handleFormStatChange} statBlockType="secondary" />
+            </article>
+          </section>
+          <section className="character-stats character-form-section">
+            <article className="character-sheet-item-primary">
+              <h5 className="character-sheet-header stunt-header character-sheet-text">Stunts</h5>
+              <ul>
+                <li>
+                  <input className="primary-input character-sheet-text" type="text" placeholder="Stunt 1"/>
+                </li>
+                <li>
+                  <input className="primary-input character-sheet-text" type="text" placeholder="Stunt 2"/>
+                </li>
+                <li>
+                  <input className="primary-input character-sheet-text" type="text" placeholder="Stunt 3"/>
+                </li>
+              </ul>
+            </article>
+          </section>
+          <section className="character-stats character-form-section">
+            <article className="character-sheet-item-primary">
+              <CharacterFormStatBlock stats={this.state.consequences} tableName="consequences" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
+            </article>
+            <article className="character-sheet-item-secondary">
+              <StressBox />
             </article>
           </section>
           <input className="primary-button" type="submit" value="Add Character"/>
