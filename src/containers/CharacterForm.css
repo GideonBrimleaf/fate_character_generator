@@ -66,4 +66,5 @@ input:focus:hover {
 .secondary-input {
   background-color: #f0f0f0;
   text-align: left;
+  max-width: 30px;
 }

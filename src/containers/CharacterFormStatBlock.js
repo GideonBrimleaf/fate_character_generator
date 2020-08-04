@@ -32,7 +32,7 @@ const CharacterFormStatBlock = (props) => {
   })
 
   return(
-    <table className={`character-sheet-item-${props.statBlockType}`}>
+    <table>
       <caption>{ prettyTableName }</caption>
       <tbody>
         { tableRows }
