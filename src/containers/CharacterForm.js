@@ -38,10 +38,14 @@ class CharacterForm extends Component {
   }
 
   handleNameChange = (event) => {
-    this.setState({name:event.target.value})
+    this.setState({ name:event.target.value })
   }
 
-  handleFormChange = (event, characterStatGroup) => {
+  handleRefreshChange = (event) => {
+    this.setState({ refresh:event.target.value })
+  }
+
+  handleFormStatChange = (event, characterStatGroup) => {
     const statGroup = this.state[characterStatGroup]
     statGroup[event.target.id] = event.target.value
     this.setState({characterStatGroup : statGroup})
@@ -134,6 +138,7 @@ class CharacterForm extends Component {
               type="text"
               id="refresh"
               value={this.state.refresh}
+              onChange={this.handleRefreshChange}
             />
           </section>
           <section className="character-stats character-form-section">
@@ -151,7 +156,7 @@ class CharacterForm extends Component {
                       id="highConcept" 
                       placeholder="Make sure they sound banging!" 
                       value={this.state.aspects.highConcept}
-                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      onChange={(event) => this.handleFormStatChange(event, 'aspects')}
                       required
                     />
                   </td>
@@ -167,7 +172,7 @@ class CharacterForm extends Component {
                       id="trouble" 
                       placeholder="Make it dark and mysterious" 
                       value={this.state.aspects.trouble}
-                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      onChange={(event) => this.handleFormStatChange(event, 'aspects')}
                       required
                     />
                   </td>
@@ -183,7 +188,7 @@ class CharacterForm extends Component {
                       id="relationship" 
                       placeholder="Make sure they sound banging!" 
                       value={this.state.aspects.relationship}
-                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      onChange={(event) => this.handleFormStatChange(event, 'aspects')}
                       required
                     /> 
                   </td>
@@ -199,7 +204,7 @@ class CharacterForm extends Component {
                       id="aspectOne" 
                       placeholder="Make it dark and mysterious" 
                       value={this.state.aspects.aspectOne}
-                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      onChange={(event) => this.handleFormStatChange(event, 'aspects')}
                       required
                     />
                   </td>
@@ -215,7 +220,7 @@ class CharacterForm extends Component {
                       id="aspectTwo" 
                       placeholder="Make it dark and mysterious" 
                       value={this.state.aspects.aspectTwo}
-                      onChange={(event) => this.handleFormChange(event, 'aspects')}
+                      onChange={(event) => this.handleFormStatChange(event, 'aspects')}
                       required
                     />
                   </td>
