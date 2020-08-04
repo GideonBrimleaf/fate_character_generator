@@ -7,7 +7,6 @@
 }
 
 .checked-box {
-  width:25%;
   background: linear-gradient(to top right, #fff calc(50% - 1px), #aaa, #fff calc(50% + 1px) )
 }
 
