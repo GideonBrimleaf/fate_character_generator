@@ -41,14 +41,6 @@ class CharacterForm extends Component {
     this.setState({ [event.target.id]:event.target.value })
   }
 
-  handleNameChange = (event) => {
-    this.setState({ name:event.target.value })
-  }
-
-  handleRefreshChange = (event) => {
-    this.setState({ refresh:event.target.value })
-  }
-
   handleFormStatChange = (event, characterStatGroup) => {
     const statGroup = this.state[characterStatGroup]
     statGroup[event.target.id] = event.target.value
