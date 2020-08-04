@@ -142,7 +142,7 @@ class CharacterForm extends Component {
             />
           </section>
           <section className="character-stats character-form-section">
-            <CharacterFormStatBlock stats={this.state.aspects} tableName="aspects" handleFormStatChange={this.handleFormStatChange} />
+            <CharacterFormStatBlock stats={this.state.aspects} tableName="aspects" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
           </section>
           <input className="primary-button" type="submit" value="Add Character"/>
         </form>

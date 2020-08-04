@@ -1,8 +1,6 @@
 import React from 'react'
-import '../App.css'
 import './CharacterForm.css'
 import '../components/CharacterDetail.css'
-import '../components/CharacterStatBlock.css'
 
 const CharacterFormStatBlock = (props) => {
 
@@ -21,7 +19,7 @@ const CharacterFormStatBlock = (props) => {
         </td>
         <td className="form-input">
           <input
-            className="character-sheet-text primary-input"
+            className={`character-sheet-text ${props.statBlockType}-input`}
             type="text" 
             id={stat}
             value={props.stats[stat]}
@@ -34,7 +32,7 @@ const CharacterFormStatBlock = (props) => {
   })
 
   return(
-    <table className="character-sheet-item-primary">
+    <table className={`character-sheet-item-${props.statBlockType}`}>
       <caption>{ prettyTableName }</caption>
       <tbody>
         { tableRows }
