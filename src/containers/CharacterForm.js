@@ -29,7 +29,7 @@ class CharacterForm extends Component {
         quick: '',
         sneaky: ''
       },
-      stunts: [''],
+      stunts: [],
       consequences: {
         mild: '',
         moderate: '',
@@ -49,8 +49,10 @@ class CharacterForm extends Component {
     this.setState({characterStatGroup : statGroup})
   }
 
-  handleStuntChange = () => {
-
+  handleStuntChange = (event) => {
+    let existingStunts = this.state.stunts
+    existingStunts[event.target.id] = event.target.value
+    this.setState({ stunts:existingStunts })
   }
 
   handleSubmit = (event) => {
@@ -63,6 +65,18 @@ class CharacterForm extends Component {
     const relationship = this.state.aspects.relationship.trim()
     const aspectOne = this.state.aspects.aspectOne.trim()
     const aspectTwo = this.state.aspects.aspectTwo.trim()
+    const careful = this.state.approaches.careful.trim()
+    const clever = this.state.approaches.clever.trim()
+    const flashy = this.state.approaches.flashy.trim()
+    const forceful = this.state.approaches.forceful.trim()
+    const quick = this.state.approaches.quick.trim()
+    const sneaky = this.state.approaches.sneaky.trim()
+    const stunts = this.state.stunts
+    const mild = this.state.consequences.mild.trim()
+    const moderate = this.state.consequences.moderate.trim()
+    const severe = this.state.consequences.severe.trim()
+    const refresh = parseInt(this.state.refresh, 10)
+
 
     if(!name || !highConcept || !trouble || !relationship || !aspectOne || !aspectTwo){
       return
@@ -79,20 +93,20 @@ class CharacterForm extends Component {
         aspectTwo: aspectTwo
       },
       approaches: {
-        careful: '',
-        clever: '',
-        flashy: '',
-        forceful: '',
-        quick: '',
-        sneaky: ''
+        careful: careful,
+        clever: clever,
+        flashy: flashy,
+        forceful: forceful,
+        quick: quick,
+        sneaky: sneaky
       },
-      stunts: [],
+      stunts: stunts,
       consequences: {
-        mild: '',
-        moderate: '',
-        severe: ''
+        mild: mild,
+        moderate: moderate,
+        severe: severe
       },
-      refresh : 3
+      refresh : refresh
     })
 
     this.setState({
@@ -163,6 +177,9 @@ class CharacterForm extends Component {
                     className="primary-input character-sheet-text" 
                     type="text" 
                     placeholder="Stunt 1"
+                    id="0"
+                    value={this.state.stunts[0] || ''}
+                    onChange={this.handleStuntChange}
                   />
                 </li>
                 <li>
@@ -170,6 +187,9 @@ class CharacterForm extends Component {
                     className="primary-input character-sheet-text" 
                     type="text" 
                     placeholder="Stunt 2"
+                    id="1"
+                    value={this.state.stunts[1] || ''}
+                    onChange={this.handleStuntChange}
                   />
                 </li>
                 <li>
@@ -177,6 +197,9 @@ class CharacterForm extends Component {
                     className="primary-input character-sheet-text" 
                     type="text" 
                     placeholder="Stunt 3"
+                    id="2"
+                    value={this.state.stunts[2] || ''}
+                    onChange={this.handleStuntChange}
                   />
                 </li>
               </ul>
