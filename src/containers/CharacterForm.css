@@ -22,8 +22,8 @@ input:focus:hover {
   outline: none;
 }
 
-.character-form-section {
-  padding: 1%;
+form {
+  display: inline-block;
 }
 
 .refresh-form-header {
@@ -37,7 +37,9 @@ input:focus:hover {
   text-align: center;
   font-size: calc(30px + 1vw);
   font-weight: bold;
-  width: 10vw
+  width: 10vw;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
 }
 
 .character-refresh-input {
@@ -47,6 +49,7 @@ input:focus:hover {
   height: calc(12px + 0.75vw);
   align-self: flex-end;
   margin-bottom: 5px;
+  max-width: 30px;
 }
 
 .form-label {
@@ -67,4 +70,33 @@ input:focus:hover {
   background-color: #f0f0f0;
   text-align: left;
   max-width: 30px;
+}
+
+@media (max-width: 1100px) {
+  .primary-input {
+    min-width: 0px;
+  }
+}
+
+@media (max-width: 770px) {
+
+  .primary-input {
+    min-width: calc(200px + 10vw);
+  }
+
+  .character-form-item-primary {
+    min-width: 90%;
+  }
+
+  .character-name-input {
+    width: 90%;
+  }
+
+  .refresh-form-header {
+    align-self: auto;
+  }
+  
+  .character-refresh-input {
+    align-self: auto;
+  }
 }

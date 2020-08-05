@@ -141,7 +141,7 @@ class CharacterForm extends Component {
       <main>
         <h1>Add a New Character</h1>
         <form autoComplete="off" className="character-sheet character-sheet-text" onSubmit={this.handleSubmit}>
-          <section className="character-stats character-form-section">
+          <section className="character-stats">
             <input 
               className="character-name character-sheet-item-primary character-name-input"
               type="text" 
@@ -151,16 +151,18 @@ class CharacterForm extends Component {
               onChange={this.handleFormChange}
               required
             />
-            <label htmlFor="refresh" className="refresh-form-header character-sheet-text">Refesh:</label>
-            <input
-              className="character-refresh-input"
-              type="text"
-              id="refresh"
-              value={this.state.refresh}
-              onChange={this.handleFormChange}
-            />
+            <h5 className="refresh-form-header character-sheet-text character-sheet-item-secondary character-sheet-header">
+              <label htmlFor="refresh">Refresh:</label>
+              <input
+                className="character-refresh-input"
+                type="text"
+                id="refresh"
+                value={this.state.refresh}
+                onChange={this.handleFormChange}
+              />
+            </h5>
           </section>
-          <section className="character-stats character-form-section">
+          <section className="character-stats">
             <article className="character-sheet-item-primary">
               <CharacterFormStatBlock stats={this.state.aspects} tableName="aspects" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
             </article>
@@ -168,8 +170,8 @@ class CharacterForm extends Component {
               <CharacterFormStatBlock stats={this.state.approaches} tableName="approaches" handleFormStatChange={this.handleFormStatChange} statBlockType="secondary" />
             </article>
           </section>
-          <section className="character-stats character-form-section">
-            <article className="character-sheet-item-primary">
+          <section className="character-stats">
+            <article className="character-sheet-item-primary character-form-item-primary">
               <h5 className="character-sheet-header stunt-header character-sheet-text">Stunts</h5>
               <ul>
                 <li>
@@ -205,7 +207,7 @@ class CharacterForm extends Component {
               </ul>
             </article>
           </section>
-          <section className="character-stats character-form-section">
+          <section className="character-stats">
             <article className="character-sheet-item-primary">
               <CharacterFormStatBlock stats={this.state.consequences} tableName="consequences" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
             </article>

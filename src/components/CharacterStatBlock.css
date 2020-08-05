@@ -17,7 +17,7 @@
   border: 1px solid red;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 770px) {
   .secondary-stat-description {
     text-align: center;
     min-width: calc(100px + 10vw);
