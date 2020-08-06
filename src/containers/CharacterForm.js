@@ -11,8 +11,11 @@ class CharacterForm extends Component {
 
   constructor(props){
     super(props)
-    this.state={
-      id:'',
+
+    const foundCharacter = props.characters ? props.characters.find(character => {
+      return parseInt(props.match.params.characterId) === character.id
+    }) : {
+      id: '',
       name:'',
       aspects: {
         highConcept:'',
@@ -37,6 +40,8 @@ class CharacterForm extends Component {
       },
       refresh : 3
     }
+
+    this.state = foundCharacter
   }
 
   handleFormChange = (event) => {
