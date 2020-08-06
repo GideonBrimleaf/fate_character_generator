@@ -143,7 +143,7 @@ class CharacterForm extends Component {
         <form autoComplete="off" className="character-sheet character-sheet-text" onSubmit={this.handleSubmit}>
           <section className="character-stats">
             <input 
-              className="character-name character-sheet-item-primary character-name-input"
+              className="character-sheet-item-primary character-name-input"
               type="text" 
               id="name" 
               placeholder="Character Name" 

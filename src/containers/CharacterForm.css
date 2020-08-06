@@ -79,7 +79,6 @@ form {
 }
 
 @media (max-width: 770px) {
-
   .primary-input {
     min-width: calc(200px + 10vw);
   }
@@ -98,5 +97,29 @@ form {
   
   .character-refresh-input {
     align-self: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .primary-input {
+    min-width: calc(100px + 10vw);
+  }
+}
+
+@media (max-width: 520px) {
+  .primary-input {
+    min-width: calc(100px + 10vw);
+  }
+}
+
+@media (max-width: 360px) {
+  .character-name-input {
+    width: 90%;
+    font-size: 25px;
+  }
+
+  .primary-input {
+    width: calc(50px + 15vw);
+    min-width: 0px;
   }
 }
