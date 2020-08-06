@@ -35,13 +35,16 @@ class App extends Component {
     return Helpers.updateCharacters(filteredCharacters)
   }
 
-  // editCharacter = (editedCharacter) => {
-  //   const filteredCharacters = this.state.characters.filter(character => {
-  //     return character.id !== editedCharacter.id
-  //   })
+  editCharacter = (editedCharacter) => {
+    const filteredCharacters = this.state.characters.filter(character => {
+      return character.id !== editedCharacter.id
+    })
 
+    const updatedCharacters = [...filteredCharacters, editedCharacter]
+    this.setState({characters: updatedCharacters})
 
-  // }
+    return Helpers.updateCharacters(updatedCharacters)
+  }
 
   componentDidMount(){
     if(!localStorage.getItem('characters')){

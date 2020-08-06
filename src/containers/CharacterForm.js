@@ -87,32 +87,36 @@ class CharacterForm extends Component {
       return
     }
 
-    this.props.onCharacterCreated({
-      id:id,
-      name:name,
-      aspects: {
-        highConcept:highConcept,
-        trouble:trouble,
-        relationship: relationship,
-        aspectOne: aspectOne,
-        aspectTwo: aspectTwo
-      },
-      approaches: {
-        careful: careful,
-        clever: clever,
-        flashy: flashy,
-        forceful: forceful,
-        quick: quick,
-        sneaky: sneaky
-      },
-      stunts: stunts,
-      consequences: {
-        mild: mild,
-        moderate: moderate,
-        severe: severe
-      },
-      refresh : refresh
-    })
+    if (!props.character.id) {
+      this.props.onCharacterCreated({
+        id:id,
+        name:name,
+        aspects: {
+          highConcept:highConcept,
+          trouble:trouble,
+          relationship: relationship,
+          aspectOne: aspectOne,
+          aspectTwo: aspectTwo
+        },
+        approaches: {
+          careful: careful,
+          clever: clever,
+          flashy: flashy,
+          forceful: forceful,
+          quick: quick,
+          sneaky: sneaky
+        },
+        stunts: stunts,
+        consequences: {
+          mild: mild,
+          moderate: moderate,
+          severe: severe
+        },
+        refresh : refresh
+      })
+    } else {
+      return
+    }
 
     this.setState({
       id:'',
