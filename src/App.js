@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   addCharacter = (character) => {
-    const updatedCharacters = [...JSON.parse(localStorage.getItem('characters')), character]
+    const updatedCharacters = [...this.state.characters, character]
     this.setState({characters: updatedCharacters})
 
     return Helpers.updateCharacters(updatedCharacters)
@@ -34,6 +34,14 @@ class App extends Component {
 
     return Helpers.updateCharacters(filteredCharacters)
   }
+
+  // editCharacter = (editedCharacter) => {
+  //   const filteredCharacters = this.state.characters.filter(character => {
+  //     return character.id !== editedCharacter.id
+  //   })
+
+
+  // }
 
   componentDidMount(){
     if(!localStorage.getItem('characters')){
