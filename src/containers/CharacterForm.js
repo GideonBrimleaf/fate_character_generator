@@ -6,6 +6,7 @@ import '../components/CharacterStatBlock.css'
 import { withRouter } from 'react-router-dom'
 import CharacterFormStatBlock from './CharacterFormStatBlock'
 import StressBox from '../components/StressBox'
+import { Link } from 'react-router-dom'
 
 class CharacterForm extends Component {
 
@@ -115,7 +116,6 @@ class CharacterForm extends Component {
         refresh : refresh
       })
     } else {
-      {
         this.props.onCharacterEdited({
           id:id,
           name:name,
@@ -142,7 +142,6 @@ class CharacterForm extends Component {
           },
           refresh : refresh
         })
-      }
     }
 
     this.setState({
@@ -250,7 +249,8 @@ class CharacterForm extends Component {
               <StressBox />
             </article>
           </section>
-          <input className="primary-button" type="submit" value="Add Character"/>
+          <input className="primary-button" type="submit" value={this.state.id ? "Update Character" : "Add Character"}/>
+          <Link className="primary-button" to={this.state.id ? `/character/${this.state.id}` : '/'}>Cancel</Link>
         </form>
       </main>
     )

@@ -68,6 +68,10 @@ article > ul > li {
     max-width: 1080px;
     font-size: 22.125px;
   }
+
+  .character-sheet-text {
+    font-size: 22.125px;
+  }
 }
 
 @media (max-width: 770px) {
