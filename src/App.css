@@ -2,6 +2,14 @@ h1 {
   margin: 1rem
 }
 
+h3 {
+  margin: 1rem
+}
+
+p {
+  margin: 0.5rem;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
