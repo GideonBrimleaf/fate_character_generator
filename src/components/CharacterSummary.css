@@ -5,7 +5,12 @@
   flex-basis: 0;
   flex-wrap: wrap;
   min-width: 380px;
-  min-height: 380px;
+  display: flex;
+  justify-content: center;
+}
+
+.option-links {
+  align-self: flex-end;
 }
 
 .character-link {

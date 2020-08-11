@@ -13,13 +13,17 @@ const CharacterSummary = (props) => {
 
   return (
     <li className="characterSummaryTile">
-      <Link className="character-link" to={`/character/${props.characterDetails.id}`}>
-        <h3>{props.characterDetails.name}</h3>
-        <p>{props.characterDetails.aspects.highConcept}</p>
-        <p>{props.characterDetails.aspects.trouble}</p>
-      </Link>
-      <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button>
-      <Link className="primary-button" to={`/character/${props.characterDetails.id}/edit`}>Edit</Link>
+      <section>
+        <Link className="character-link" to={`/character/${props.characterDetails.id}`}>
+          <h3>{props.characterDetails.name}</h3>
+          <p>{props.characterDetails.aspects.highConcept}</p>
+          <p>{props.characterDetails.aspects.trouble}</p>
+        </Link>
+      </section>
+      <section className="option-links">
+        <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button>
+        <Link className="primary-button" to={`/character/${props.characterDetails.id}/edit`}>Edit</Link>
+      </section>
     </li>
   )
 }
