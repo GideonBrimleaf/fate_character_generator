@@ -1,9 +1,11 @@
 .characterSummaryTile {
   background-color: lightcyan;
   text-decoration: none;
-  margin-right: 1em;
+  margin: 1rem;
   flex-basis: 0;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  min-width: 380px;
+  min-height: 380px;
 }
 
 .character-link {
