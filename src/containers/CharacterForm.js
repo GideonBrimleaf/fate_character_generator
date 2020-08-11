@@ -12,8 +12,8 @@ class CharacterForm extends Component {
   constructor(props){
     super(props)
 
-    const foundCharacter = props.characters ? props.characters.find(character => {
-      return parseInt(props.match.params.characterId) === character.id
+    const foundCharacter = this.props.characters ? this.props.characters.find(character => {
+      return parseInt(this.props.match.params.characterId) === character.id
     }) : {
       id: '',
       name:'',
@@ -87,7 +87,7 @@ class CharacterForm extends Component {
       return
     }
 
-    if (!props.character.id) {
+    if (!this.state.id) {
       this.props.onCharacterCreated({
         id:id,
         name:name,
