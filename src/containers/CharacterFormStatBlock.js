@@ -24,7 +24,6 @@ const CharacterFormStatBlock = (props) => {
             id={stat}
             value={props.stats[stat]}
             onChange={(event) => props.handleFormStatChange(event, props.tableName)}
-            required
           />
         </td>
       </tr>

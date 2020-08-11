@@ -72,6 +72,12 @@ form {
   max-width: 30px;
 }
 
+.stunt-input {
+  width: -webkit-fill-available;
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
 @media (max-width: 1100px) {
   .primary-input {
     min-width: 0px;

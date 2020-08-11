@@ -63,7 +63,7 @@ class CharacterForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    const id = Date.now()
+    const id = this.state.id ? this.state.id : Date.now()
     const name = this.state.name.trim()
     const highConcept = this.state.aspects.highConcept.trim()
     const trouble = this.state.aspects.trouble.trim()
@@ -115,7 +115,34 @@ class CharacterForm extends Component {
         refresh : refresh
       })
     } else {
-      return
+      {
+        this.props.onCharacterEdited({
+          id:id,
+          name:name,
+          aspects: {
+            highConcept:highConcept,
+            trouble:trouble,
+            relationship: relationship,
+            aspectOne: aspectOne,
+            aspectTwo: aspectTwo
+          },
+          approaches: {
+            careful: careful,
+            clever: clever,
+            flashy: flashy,
+            forceful: forceful,
+            quick: quick,
+            sneaky: sneaky
+          },
+          stunts: stunts,
+          consequences: {
+            mild: mild,
+            moderate: moderate,
+            severe: severe
+          },
+          refresh : refresh
+        })
+      }
     }
 
     this.setState({
@@ -148,14 +175,13 @@ class CharacterForm extends Component {
   render() {
     return (
       <main>
-        <h1>Add a New Character</h1>
         <form autoComplete="off" className="character-sheet character-sheet-text" onSubmit={this.handleSubmit}>
           <section className="character-stats">
             <input 
               className="character-sheet-item-primary character-name-input"
               type="text" 
               id="name" 
-              placeholder="Character Name" 
+              placeholder="New Character" 
               value={this.state.name}
               onChange={this.handleFormChange}
               required
@@ -185,7 +211,7 @@ class CharacterForm extends Component {
               <ul>
                 <li>
                   <input 
-                    className="primary-input character-sheet-text" 
+                    className="stunt-input character-sheet-text" 
                     type="text" 
                     placeholder="Stunt 1"
                     id="0"
@@ -195,7 +221,7 @@ class CharacterForm extends Component {
                 </li>
                 <li>
                   <input 
-                    className="primary-input character-sheet-text" 
+                    className="stunt-input character-sheet-text" 
                     type="text" 
                     placeholder="Stunt 2"
                     id="1"
@@ -205,7 +231,7 @@ class CharacterForm extends Component {
                 </li>
                 <li>
                   <input 
-                    className="primary-input character-sheet-text" 
+                    className="stunt-input character-sheet-text" 
                     type="text" 
                     placeholder="Stunt 3"
                     id="2"
