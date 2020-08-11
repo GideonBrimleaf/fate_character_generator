@@ -44,5 +44,7 @@
   display: inline-block;
   border: none;
   transition: all 0.4s ease 0s;
-  margin: 1rem
+  margin: 1rem;
+  font-size: 13px;
+  min-width: 50.5px;
 }

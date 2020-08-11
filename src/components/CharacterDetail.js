@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext }  from 'react'
 import './CharacterDetail.css'
 import CharacterStatBlock from './CharacterStatBlock'
 import StressBox from './StressBox'
+import { AuthContext } from '../auth/Auth'
+import { Link } from 'react-router-dom'
 
 const CharacterDetail = (props) => {
+
+  const {currentUser} = useContext(AuthContext)
 
   const foundCharacter = props.characters.find(character => {
     return parseInt(props.match.params.characterId) === character.id
@@ -14,6 +18,19 @@ const CharacterDetail = (props) => {
       <li key={stunt}>{ stunt }</li>
       )
   })
+
+  const handleCharacterDeletion = () => {
+    if (window.confirm("Are you sure you want to delete this character?")) {
+      props.deleteCharacter(foundCharacter)
+      props.history.push('/')
+    }
+  }
+
+  const editCharacterButton = currentUser ? 
+      <Link className="primary-button" to={`/character/${foundCharacter.id}/edit`}>Edit</Link> : null
+
+  const deleteCharacterButton = currentUser ?
+      <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button> : null
 
   return (
     <main className="character-sheet character-sheet-text">
@@ -45,6 +62,8 @@ const CharacterDetail = (props) => {
           <StressBox />
         </article>
       </section>
+      { editCharacterButton }
+      { deleteCharacterButton }
     </main>
   )
 }

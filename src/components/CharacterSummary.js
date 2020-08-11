@@ -19,6 +19,7 @@ const CharacterSummary = (props) => {
         <p>{props.characterDetails.aspects.trouble}</p>
       </Link>
       <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button>
+      <Link className="primary-button" to={`/character/${props.characterDetails.id}/edit`}>Edit</Link>
     </li>
   )
 }
