@@ -13,10 +13,6 @@
   text-align: left;
 }
 
-.fred, .fred td, .fred tr {
-  border: 1px solid red;
-}
-
 @media (max-width: 770px) {
   .secondary-stat-description {
     text-align: center;

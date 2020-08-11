@@ -1,6 +1,13 @@
 .characterList {
+  padding-left: 0px;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .characterList {
+    flex-direction: column;
+  }
 }

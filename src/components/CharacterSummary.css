@@ -7,6 +7,21 @@
   min-width: 380px;
   display: flex;
   justify-content: center;
+  padding: 1rem
+}
+
+.character-summary-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.character-skills-table {
+  margin-top: auto;
+}
+
+.character-skills-table td {
+  border-bottom: 1px solid darkgrey;
 }
 
 .option-links {
@@ -16,11 +31,16 @@
 .character-link {
   text-decoration: none;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width:600px) {
   .characterSummaryTile {
     flex-direction: column;
+    min-width: auto;
+    margin: 0rem, 1rem;
   }
 
   .option-links {
