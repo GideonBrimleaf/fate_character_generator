@@ -19,11 +19,11 @@ const CharacterDetail = (props) => {
 
   if (!foundCharacter) {return <p>Loading</p>}
   
-  const characterStunts = foundCharacter ? foundCharacter.stunts.map(stunt => {
+  const characterStunts = foundCharacter.stunts.map(stunt => {
     return (
       <li key={stunt}>{ stunt }</li>
       )
-  }) : null
+  })
 
   const handleCharacterDeletion = () => {
     if (window.confirm("Are you sure you want to delete this character?")) {
