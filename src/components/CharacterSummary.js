@@ -30,8 +30,8 @@ const CharacterSummary = (props) => {
         <Link className="character-link" to={`/character/${props.characterDetails.id}`}>
           <div className="character-summary-details">
             <h3>{props.characterDetails.name}</h3>
-            <p>{props.characterDetails.aspects.highConcept}</p>
-            <p>{props.characterDetails.aspects.trouble}</p>
+            <p className="highConcept">{props.characterDetails.aspects.highConcept}</p>
+            <p className="trouble">"{props.characterDetails.aspects.trouble}"</p>
           </div>
         </Link>
       </section>

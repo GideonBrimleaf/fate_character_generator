@@ -17,12 +17,33 @@
   justify-content: center;
 }
 
+.character-summary-details h3 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.character-summary-details .highConcept {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: calc(12px + 0.75vw);
+  color: #444;
+}
+
+.character-summary-details .trouble {
+  font-style: italic;
+  font-size: calc(12px + 0.75vw);
+}
+
 .character-skills-table {
   margin-top: auto;
 }
 
 .character-skills-table td {
   border-bottom: 1px solid darkgrey;
+}
+
+.character-skills-table caption {
+  font-size: calc(16px + 0.75vw);
 }
 
 .option-links {
