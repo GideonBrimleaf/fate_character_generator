@@ -41,7 +41,7 @@
 @media (max-width:600px) {
   .characterSummaryTile {
     flex-direction: column;
-    min-width: auto;
+    min-width: 80vw;
     margin: 0rem, 1rem;
   }
 

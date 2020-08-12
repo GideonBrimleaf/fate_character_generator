@@ -5,9 +5,3 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
-@media (max-width: 600px) {
-  .characterList {
-    flex-direction: column;
-  }
-}
