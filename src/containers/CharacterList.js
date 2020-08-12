@@ -6,23 +6,21 @@ import { auth } from "../fire"
 
 const CharacterList = (props) => {
 
-  if (!props.characters) return null
-
-  const characterList = props.characters.map(character =>{
+  const characterList = props.characters ? props.characters.map(character =>{
     return (
       <CharacterSummary characterDetails={character} key={character.id} deleteCharacter={props.deleteCharacter}/>
     )
-  })
+  }) : null
 
-    return (
-      <main>
-        <h1>Welcome to the Fate Accelerated Character Manager!</h1>
-        <ul className="characterList">
-          {characterList}
-        </ul>
-        <button className="primary-button" onClick={() => auth.signOut()}>Sign out</button>
-      </main>
-    )
+  return (
+    <main>
+      <h1>Welcome to the Fate Accelerated Character Manager!</h1>
+      <ul className="characterList">
+        {characterList}
+      </ul>
+      <button className="primary-button" onClick={() => auth.signOut()}>Sign out</button>
+    </main>
+  )
 }
 
 export default CharacterList

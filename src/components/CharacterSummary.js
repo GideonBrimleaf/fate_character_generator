@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 
 const CharacterSummary = (props) => {
 
+  if (!props.characterDetails) return null
+
   const handleCharacterDeletion = () => {
     if (window.confirm("Are you sure you want to delete this character?")) {
       props.deleteCharacter(props.characterDetails)
