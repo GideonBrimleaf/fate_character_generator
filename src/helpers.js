@@ -27,7 +27,9 @@ export default {
       .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
     }
     else {
-      return rootRef.once('value').then(data => localStorage.setItem('characters', JSON.stringify(data.val())))
+      return rootRef.once('value').then(data => {
+        localStorage.setItem('characters', JSON.stringify(data.val()))
+      })
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useContext }  from 'react'
+import React, { useContext, useState, useEffect }  from 'react'
 import './CharacterDetail.css'
 import CharacterStatBlock from './CharacterStatBlock'
 import StressBox from './StressBox'
@@ -9,15 +9,21 @@ const CharacterDetail = (props) => {
 
   const {currentUser} = useContext(AuthContext)
 
-  const foundCharacter = props.characters.find(character => {
-    return parseInt(props.match.params.characterId) === character.id
-  })
+  const [foundCharacter, setFoundCharacter] = useState(![])
+
+  useEffect(() => {
+      setFoundCharacter(props.characters.find(character => {
+        return parseInt(props.match.params.characterId) === character.id
+      }))
+  }, [props.characters, props.match.params.characterId])
+
+  if (!foundCharacter) {return <p>Loading</p>}
   
-  const characterStunts = foundCharacter.stunts.map(stunt => {
+  const characterStunts = foundCharacter ? foundCharacter.stunts.map(stunt => {
     return (
       <li key={stunt}>{ stunt }</li>
       )
-  })
+  }) : null
 
   const handleCharacterDeletion = () => {
     if (window.confirm("Are you sure you want to delete this character?")) {
