@@ -15,28 +15,34 @@ const CharacterSummary = (props) => {
 
   const skillsHeaders = characterApproaches.map(skill => {
     const abbreviatedSkill = skill.substring(0,2)
-    return <td>{abbreviatedSkill.charAt(0).toUpperCase() + abbreviatedSkill.slice(1)}</td>
+    return <td key={props.characterDetails.id + skill}>{abbreviatedSkill.charAt(0).toUpperCase() + abbreviatedSkill.slice(1)}</td>
   })
 
   const skills = characterApproaches.map(skill => {
-    return <td>{props.characterDetails.approaches[skill]}</td>
+    return <td key={props.characterDetails.id + skill}>{props.characterDetails.approaches[skill]}</td>
   })
 
   return (
     <li className="characterSummaryTile">
-      <Link className="character-link" to={`/character/${props.characterDetails.id}`}>
-        <div className="character-summary-details">
-          <h3>{props.characterDetails.name}</h3>
-          <p>{props.characterDetails.aspects.highConcept}</p>
-          <p>{props.characterDetails.aspects.trouble}</p>
-        </div>
-        <table className="character-skills-table">
-          <caption>Approaches</caption>
-          <tr>{ skillsHeaders }</tr>
-          <tr>{ skills }</tr>
-        </table>
-      </Link>
+      <section>
+        <Link className="character-link" to={`/character/${props.characterDetails.id}`}>
+          <div className="character-summary-details">
+            <h3>{props.characterDetails.name}</h3>
+            <p>{props.characterDetails.aspects.highConcept}</p>
+            <p>{props.characterDetails.aspects.trouble}</p>
+          </div>
+        </Link>
+      </section>
       <section className="option-links">
+        <Link className="character-link" to={`/character/${props.characterDetails.id}`}>
+          <table className="character-skills-table">
+            <caption>Approaches</caption>
+            <tbody>
+              <tr>{ skillsHeaders }</tr>
+              <tr>{ skills }</tr>
+            </tbody>
+          </table>
+        </Link>
         <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button>
         <Link className="primary-button" to={`/character/${props.characterDetails.id}/edit`}>Edit</Link>
       </section>

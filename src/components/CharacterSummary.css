@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   min-width: 380px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 1rem
 }
@@ -25,7 +26,8 @@
 }
 
 .option-links {
-  align-self: flex-end;
+  /* align-self: flex-end; */
+  margin-top: auto;
 }
 
 .character-link {
