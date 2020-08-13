@@ -35,6 +35,10 @@ p {
   margin: 1rem;
   font-size: 13px;
   min-width: 50.5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 1;
 }
 
 .danger-button {
