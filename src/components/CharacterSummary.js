@@ -16,34 +16,18 @@ const CharacterSummary = (props) => {
 
   const characterApproaches = Object.keys(props.characterDetails.approaches)
 
-  // We want to create this structure for every pair of skills we have
-  // <tr>
-  //  <td>Sneaky</td>
-  //  <td>1</td>
-  //  <td>Clever</td>
-  //  <td>2</td>
-  // <tr>
-  // if we just loop over the skills, we can insert the <tr> for every second item very
-  // easily. Instead, we chunk the approach into an array of pairs 
-  // [["sneaky", "clever"], ["forceful", "quick"]]
-  // we can then map these to a <td> for each pair, and insert them both into a parent
-  // <tr> element
-  const skills = chunkos(characterApproaches, 2).reduce((acc, skillsPair) => {
-   // get the first set of pairs and map the skill names to <td> elements with
-   // the corresponding attribute to make
-   // [<td>Sneaky</td><td>1</td>, <td>Quick</td><td>2</td>]
-    let items = skillsPair.map(skill => {
-      let approach = props.characterDetails.approaches[skill]
-      return <>
-        <td>{skill.charAt(0).toUpperCase() + skill.slice(1)}</td>
-        <td>{approach}</td>
-      </>
-   })
-   // pop this into the accumulator array with the parent <tr> tag attached
-   // note this has taken the 2 items from the array and made it into just one item
-   // [<tr><td>Sneaky</td><td>1</td><td>Quick</td><td>2</td></tr>]
-    acc.push(<tr>{items[0]}{items[1]}</tr>)
-    return acc;
+  const skills = chunkos(characterApproaches, 2).reduce((tableRow, skillsPair) => {
+    const items = skillsPair.map(skill => {
+      const approach = props.characterDetails.approaches[skill]
+      return (
+        <>
+          <td className="summary-skill-header">{skill.charAt(0).toUpperCase() + skill.slice(1)}:</td>
+          <td className="summary-skill-attribute">{approach}</td>
+        </>
+      )
+    })
+    tableRow.push(<tr>{items}</tr>)
+    return tableRow
   }, [])
 
   return (
