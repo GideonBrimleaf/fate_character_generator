@@ -63,6 +63,10 @@ article > ul > li {
   align-self: flex-end;
 }
 
+.top-padding {
+  margin-top: 10vw;
+}
+
 @media (min-width:1350px) {
   .character-sheet {
     max-width: 1080px;

@@ -39,7 +39,7 @@ const CharacterDetail = (props) => {
       <button className="primary-button danger-button" onClick={handleCharacterDeletion}>Delete</button> : null
 
   return (
-    <main className="character-sheet character-sheet-text">
+    <main className={`character-sheet character-sheet-text ${currentUser ? null: "top-padding"}`}>
       <section className="character-stats">
         <h1 className="character-name character-sheet-item-primary">{ foundCharacter.name }</h1>
         <h5 className="character-sheet-header refresh-header character-sheet-text">Refresh: { foundCharacter.refresh }</h5>
