@@ -37,6 +37,11 @@ p {
   min-width: 50.5px;
 }
 
+.danger-button {
+  background: #ED6A5E;
+}
+
+
 
 @media (min-width:1350px) {
   .App {

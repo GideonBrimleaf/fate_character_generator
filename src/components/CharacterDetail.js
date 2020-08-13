@@ -36,7 +36,7 @@ const CharacterDetail = (props) => {
       <Link className="primary-button" to={`/character/${foundCharacter.id}/edit`}>Edit</Link> : null
 
   const deleteCharacterButton = currentUser ?
-      <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button> : null
+      <button className="primary-button danger-button" onClick={handleCharacterDeletion}>Delete</button> : null
 
   return (
     <main className="character-sheet character-sheet-text">

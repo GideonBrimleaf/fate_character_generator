@@ -49,8 +49,8 @@ const CharacterSummary = (props) => {
             </tbody>
           </table>
         </Link>
-        <button className="primary-button" onClick={handleCharacterDeletion}>Delete</button>
         <Link className="primary-button" to={`/character/${props.characterDetails.id}/edit`}>Edit</Link>
+        <button className="primary-button danger-button" onClick={handleCharacterDeletion}>Delete</button>
       </section>
     </li>
   )
