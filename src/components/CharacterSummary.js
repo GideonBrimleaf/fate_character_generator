@@ -21,8 +21,7 @@ const CharacterSummary = (props) => {
       const approach = props.characterDetails.approaches[skill]
       return (
         <>
-          <td className="summary-skill-header">{skill.charAt(0).toUpperCase() + skill.slice(1)}:</td>
-          <td className="summary-skill-attribute">{approach}</td>
+          <td className="summary-skill-header">{skill.charAt(0).toUpperCase() + skill.slice(1)}:{approach}</td>
         </>
       )
     })

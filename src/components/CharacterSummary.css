@@ -41,7 +41,7 @@
 .character-skills-table td {
   border-bottom: 1px solid darkgrey;
   font-size: calc(12px + 0.75vw);
-  display: inline-block;
+  padding: 0rem 0.5rem;
 }
 
 .character-skills-table caption {
@@ -50,7 +50,6 @@
 }
 
 .option-links {
-  /* align-self: flex-end; */
   margin-top: auto;
 }
 
