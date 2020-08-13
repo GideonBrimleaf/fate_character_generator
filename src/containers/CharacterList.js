@@ -2,7 +2,7 @@ import React from 'react'
 import CharacterSummary from '../components/CharacterSummary'
 import './CharacterList.css'
 import '../App.css'
-import { auth } from "../fire"
+import { Link } from 'react-router-dom'
 
 const CharacterList = (props) => {
 
@@ -14,11 +14,12 @@ const CharacterList = (props) => {
 
   return (
     <main>
-      <h1>Welcome to the Fate Accelerated Character Manager!</h1>
+      <h1>Fate Character Manager</h1>
+      <Link className="primary-button" to="/new">Create a New Character</Link>
       <ul className="characterList">
         {characterList}
       </ul>
-      <button className="primary-button" onClick={() => auth.signOut()}>Sign out</button>
+      <Link className="primary-button" to="/new">Create a New Character</Link>
     </main>
   )
 }

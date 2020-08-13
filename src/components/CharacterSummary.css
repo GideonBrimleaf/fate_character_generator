@@ -80,3 +80,9 @@
     align-self: auto;
   }
 }
+
+@media (max-width:300px) {
+  .characterSummaryTile {
+    margin: 1rem 0rem;
+  }
+}
