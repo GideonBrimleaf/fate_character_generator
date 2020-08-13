@@ -22,8 +22,8 @@ const CharacterStatBlock = (props) => {
   })
 
   return (
-    <table>
-      <caption>{ props.characterStatCategory }</caption>
+    <table className="padded-table">
+      <caption className="table-header">{ props.characterStatCategory }</caption>
       <tbody>
         { statItems }
       </tbody>

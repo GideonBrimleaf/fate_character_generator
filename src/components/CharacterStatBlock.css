@@ -13,6 +13,11 @@
   text-align: left;
 }
 
+.padded-table {
+  border-collapse:separate; 
+  border-spacing:0 8px; 
+}
+
 @media (max-width: 770px) {
   .secondary-stat-description {
     text-align: center;

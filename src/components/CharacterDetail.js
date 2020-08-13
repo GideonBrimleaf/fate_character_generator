@@ -21,7 +21,7 @@ const CharacterDetail = (props) => {
   
   const characterStunts = foundCharacter.stunts.map(stunt => {
     return (
-      <li key={stunt}>{ stunt }</li>
+      <li key={stunt} className="stunt-entry">{ stunt }</li>
       )
   })
 
@@ -54,8 +54,8 @@ const CharacterDetail = (props) => {
       </section>
       <section className="character-stats">
         <article className="character-sheet-item-primary">
-          <h5 className="character-sheet-header stunt-header character-sheet-text">Stunts</h5>
-          <ul>
+          <h5 className="character-sheet-header stunt-header character-sheet-text table-header">Stunts</h5>
+          <ul className="stunt-list">
             { characterStunts }
           </ul>
         </article>
