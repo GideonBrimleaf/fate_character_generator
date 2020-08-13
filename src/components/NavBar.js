@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 import { auth } from "../fire"
+import { AuthContext } from '../auth/Auth'
 
 const NavBar = () => {
 
-  return (
+  const {currentUser} = useContext(AuthContext)
+
+  return currentUser ?  
     <ul className="nav-bar">
       <li className="nav-item">
         <Link className="nav-link" to='/'>Home</Link>
@@ -14,7 +17,7 @@ const NavBar = () => {
         <Link className="nav-link" onClick={() => auth.signOut()}>Sign Out</Link>
       </li>
     </ul>
-  )
+   : null
 }
 
 export default NavBar
