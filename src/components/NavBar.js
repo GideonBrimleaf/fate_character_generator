@@ -14,7 +14,7 @@ const NavBar = () => {
         <Link className="nav-link" to='/'>Home</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" onClick={() => auth.signOut()}>Sign Out</Link>
+        <Link className="nav-link" to="/" onClick={() => auth.signOut()}>Sign Out</Link>
       </li>
     </ul>
    : null

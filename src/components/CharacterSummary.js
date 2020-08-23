@@ -20,12 +20,10 @@ const CharacterSummary = (props) => {
     const items = skillsPair.map(skill => {
       const approach = props.characterDetails.approaches[skill]
       return (
-        <>
-          <td className="summary-skill-header">{skill.charAt(0).toUpperCase() + skill.slice(1)}:{approach}</td>
-        </>
+          <td key={props.characterDetails.id + skill} className="summary-skill-header">{skill.charAt(0).toUpperCase() + skill.slice(1)}:{approach}</td>
       )
     })
-    tableRow.push(<tr>{items}</tr>)
+    tableRow.push(<tr key={props.characterDetails.id + skillsPair[0]}>{items}</tr>)
     return tableRow
   }, [])
 

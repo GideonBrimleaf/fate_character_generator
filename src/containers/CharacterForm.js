@@ -63,7 +63,7 @@ class CharacterForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-
+    
     const id = this.state.id ? this.state.id : Date.now()
     const name = this.state.name.trim()
     const highConcept = this.state.aspects.highConcept.trim()
@@ -82,11 +82,6 @@ class CharacterForm extends Component {
     const moderate = this.state.consequences.moderate.trim()
     const severe = this.state.consequences.severe.trim()
     const refresh = parseInt(this.state.refresh, 10)
-
-
-    if(!name || !highConcept || !trouble || !relationship || !aspectOne || !aspectTwo){
-      return
-    }
 
     if (!this.state.id) {
       this.props.onCharacterCreated({
