@@ -28,7 +28,11 @@ export default {
     }
     else {
       return rootRef.once('value').then(data => {
-        localStorage.setItem('characters', JSON.stringify(data.val()))
+        if (data.val()) {
+          localStorage.setItem('characters', JSON.stringify(data.val()))
+        } else {
+          localStorage.setItem('characters', JSON.stringify([]))
+        }
       })
     }
   }
