@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
-import { auth } from "../fire";
+import { auth } from "../lib/fire";
 import { AuthContext } from "./Auth.js";
 import './Login.css'
 

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
-import { auth } from "../fire"
+import { auth } from "../lib/fire"
 import { AuthContext } from '../auth/Auth'
 
 const NavBar = () => {
