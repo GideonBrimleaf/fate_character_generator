@@ -193,7 +193,7 @@ class CharacterForm extends Component {
           </section>
           <section className="character-stats">
             <article className="character-sheet-item-primary">
-              <CharacterFormStatBlock stats={this.state.aspects} tableName="aspects" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
+              <CharacterFormStatBlock stats={this.state.aspects} ordered={ true } tableName="aspects" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
             </article>
             <article className="character-sheet-item-secondary">
               <CharacterFormStatBlock stats={this.state.approaches} tableName="approaches" handleFormStatChange={this.handleFormStatChange} statBlockType="secondary" />

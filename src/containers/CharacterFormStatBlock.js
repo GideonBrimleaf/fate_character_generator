@@ -1,10 +1,19 @@
 import React from 'react'
 import './CharacterForm.css'
 import '../components/CharacterDetail.css'
+import aspects from '../lib/aspects'
+
 
 const CharacterFormStatBlock = (props) => {
 
-  const statNames = Object.keys(props.stats)
+  let statNames
+
+  if (props.ordered) {
+    statNames = aspects
+  } else {
+    statNames = Object.keys(props.stats)
+  }
+  
   const prettyTableName = props.tableName.charAt(0).toUpperCase() + props.tableName.slice(1)
 
   const tableRows = statNames.map(stat => {
