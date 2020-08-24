@@ -1,9 +1,17 @@
 import React from 'react'
 import './CharacterStatBlock.css'
+import '../lib/aspects'
+import aspects from '../lib/aspects'
 
 const CharacterStatBlock = (props) => {
 
-  const statItemNames = Object.keys(props.characterStats)
+  let statItemNames
+
+  if (props.ordered) {
+    statItemNames = aspects
+  } else {
+    statItemNames = Object.keys(props.characterStats)
+  }
 
   const prettifyName = (objectKey) => {
     const capitalisedFirstLetter = objectKey.charAt(0).toUpperCase() + objectKey.slice(1)
@@ -12,7 +20,6 @@ const CharacterStatBlock = (props) => {
   }
 
   const statItems = statItemNames.map(stat => {
-    console.log()
     return (
       <tr key={prettifyName(stat)}>
         <td className='stat-name'>{ prettifyName(stat) }:</td>

@@ -46,7 +46,7 @@ const CharacterDetail = (props) => {
       </section>
       <section className="character-stats">
         <article className="character-sheet-item-primary">
-          <CharacterStatBlock characterStatCategory="Aspects" characterStats={ foundCharacter.aspects } statBlock="primary" />
+          <CharacterStatBlock characterStatCategory="Aspects" characterStats={ foundCharacter.aspects } ordered={ true } statBlock="primary" />
         </article>
         <article className="character-sheet-item-secondary">
           <CharacterStatBlock characterStatCategory="Approaches" characterStats={ foundCharacter.approaches } statBlock="secondary" />
