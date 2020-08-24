@@ -24,16 +24,10 @@ export default {
     if(process.env.NODE_ENV !== 'production') {
       return fetch(devURL)
       .then(res => res.json())
-      .then(data => localStorage.setItem('characters', JSON.stringify(data.characters)))
+      .then(data => data.characters)
     }
     else {
-      return rootRef.once('value').then(data => {
-        if (data.val()) {
-          localStorage.setItem('characters', JSON.stringify(data.val()))
-        } else {
-          localStorage.setItem('characters', JSON.stringify([]))
-        }
-      })
+      return rootRef.once('value').then(data => data.val())
     }
   }
 }

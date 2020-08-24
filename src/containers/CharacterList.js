@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 
 const CharacterList = (props) => {
 
+  if (props.characters.length === 0) {return <p>Loading</p>}
+
   const characterList = props.characters ? props.characters.map(character =>{
     return (
       <CharacterSummary characterDetails={character} key={character.id} deleteCharacter={props.deleteCharacter}/>

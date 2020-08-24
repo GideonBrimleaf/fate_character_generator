@@ -12,9 +12,9 @@ const CharacterDetail = (props) => {
   const [foundCharacter, setFoundCharacter] = useState(![])
 
   useEffect(() => {
-      setFoundCharacter(props.characters.find(character => {
-        return parseInt(props.match.params.characterId) === character.id
-      }))
+    setFoundCharacter(props.characters.find(character => {
+      return parseInt(props.match.params.characterId) === character.id
+    }))
   }, [props.characters, props.match.params.characterId])
 
   if (!foundCharacter) {return <p>Loading</p>}

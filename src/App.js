@@ -47,14 +47,12 @@ class App extends Component {
   }
 
   componentDidMount(){
-    if(!localStorage.getItem('characters')){
-      Helpers.getCharacters()
-      .then(() => {
-        this.setState({characters: JSON.parse(localStorage.getItem('characters'))})
-      })
-    } else {
-      this.setState({characters: JSON.parse(localStorage.getItem('characters'))})
-    }
+    Helpers.getCharacters()
+    .then(data => {
+      if (data) {
+        this.setState({characters: data})
+      }
+    })
   }
 
   render(){
