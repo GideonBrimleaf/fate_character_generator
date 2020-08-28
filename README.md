@@ -1,9 +1,11 @@
 # Fate Accelerated Character Manager
 
 React Web App to store character sheets for [Fate Accelerated Edition](https://www.evilhat.com/home/fae/) 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and was built to test the functionality of React Router and Local Storage
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and was built to test the functionality of React Router and Local Storage.
 
 ## Running the Project
+
+In development - this project runs with the [Fate Character Development Server](https://github.com/GideonBrimleaf/fate_character_dev_server) in development.  Ensure you clone down this repository as well to get the project running locally.
 
 ### `npm install`
 
@@ -17,10 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Testing the project with Firebase
+
+
 
 ### `npm run build`
 
