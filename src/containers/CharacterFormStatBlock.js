@@ -3,9 +3,7 @@ import './CharacterForm.css'
 import '../components/CharacterDetail.css'
 import aspects from '../lib/aspects'
 
-
 const CharacterFormStatBlock = (props) => {
-
   let statNames
 
   if (props.ordered) {
@@ -13,23 +11,26 @@ const CharacterFormStatBlock = (props) => {
   } else {
     statNames = Object.keys(props.stats)
   }
-  
+
   const prettyTableName = props.tableName.charAt(0).toUpperCase() + props.tableName.slice(1)
 
-  const tableRows = statNames.map(stat => {
+  const tableRows = statNames.map((stat) => {
     const capitalisedFirstLetter = stat.charAt(0).toUpperCase() + stat.slice(1)
     const splitName = capitalisedFirstLetter.split(/(?=[A-Z])/)
-    const prettyStatLabel = splitName.join(' ') 
+    const prettyStatLabel = splitName.join(' ')
 
     return (
       <tr key={stat}>
         <td className="stat-name">
-          <label htmlFor={stat}>{ prettyStatLabel }:</label>
+          <label htmlFor={stat}>
+            { prettyStatLabel }
+            :
+          </label>
         </td>
         <td className="form-input">
           <input
             className={`character-sheet-text ${props.statBlockType}-input`}
-            type="text" 
+            type="text"
             id={stat}
             value={props.stats[stat]}
             onChange={(event) => props.handleFormStatChange(event, props.tableName)}
@@ -39,7 +40,7 @@ const CharacterFormStatBlock = (props) => {
     )
   })
 
-  return(
+  return (
     <table>
       <caption>{ prettyTableName }</caption>
       <tbody>

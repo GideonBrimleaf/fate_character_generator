@@ -1,10 +1,8 @@
 import React from 'react'
 import './CharacterStatBlock.css'
-import '../lib/aspects'
 import aspects from '../lib/aspects'
 
 const CharacterStatBlock = (props) => {
-
   let statItemNames
 
   if (props.ordered) {
@@ -19,14 +17,15 @@ const CharacterStatBlock = (props) => {
     return splitName.join(' ')
   }
 
-  const statItems = statItemNames.map(stat => {
-    return (
-      <tr key={prettifyName(stat)}>
-        <td className='stat-name'>{ prettifyName(stat) }:</td>
-        <td className={`${props.statBlock}-stat-description`}>{ props.characterStats[stat] }</td>
-      </tr>
-    )
-  })
+  const statItems = statItemNames.map((stat) => (
+    <tr key={prettifyName(stat)}>
+      <td className="stat-name">
+        { prettifyName(stat) }
+        :
+      </td>
+      <td className={`${props.statBlock}-stat-description`}>{ props.characterStats[stat] }</td>
+    </tr>
+  ))
 
   return (
     <table className="padded-table">

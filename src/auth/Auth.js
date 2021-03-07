@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { auth } from "../lib/fire";
+import React, { useEffect, useState } from 'react';
+import { auth } from '../lib/fire';
 
 export const AuthContext = React.createContext();
 
@@ -14,14 +14,14 @@ export const AuthProvider = ({ children }) => {
     });
   }, []);
 
-  if(pending){
+  if (pending) {
     return <>Loading...</>
   }
 
   return (
     <AuthContext.Provider
       value={{
-        currentUser
+        currentUser,
       }}
     >
       {children}

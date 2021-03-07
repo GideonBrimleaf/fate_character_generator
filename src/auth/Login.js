@@ -1,22 +1,22 @@
-import React, { useCallback, useContext } from "react";
-import { withRouter, Redirect } from "react-router";
-import { auth } from "../lib/fire";
-import { AuthContext } from "./Auth.js";
+import React, { useCallback, useContext } from 'react';
+import { withRouter, Redirect } from 'react-router';
+import { auth } from '../lib/fire';
+import { AuthContext } from './Auth.js';
 import './Login.css'
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
-    async event => {
+    async (event) => {
       event.preventDefault();
       const { email, password } = event.target.elements;
       try {
         await auth.signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
+        history.push('/');
       } catch (error) {
         alert(error);
       }
     },
-    [history]
+    [history],
   );
 
   const { currentUser } = useContext(AuthContext);

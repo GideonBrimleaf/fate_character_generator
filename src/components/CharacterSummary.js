@@ -5,22 +5,25 @@ import { Link } from 'react-router-dom'
 import chunkos from '../lib/chunkos'
 
 const CharacterSummary = (props) => {
-
   if (!props.characterDetails) return null
 
   const handleCharacterDeletion = () => {
-    if (window.confirm("Are you sure you want to delete this character?")) {
+    if (window.confirm('Are you sure you want to delete this character?')) {
       props.deleteCharacter(props.characterDetails)
     }
-  } 
+  }
 
   const characterApproaches = Object.keys(props.characterDetails.approaches)
 
   const skills = chunkos(characterApproaches, 2).reduce((tableRow, skillsPair) => {
-    const items = skillsPair.map(skill => {
+    const items = skillsPair.map((skill) => {
       const approach = props.characterDetails.approaches[skill]
       return (
-          <td key={props.characterDetails.id + skill} className="summary-skill-header">{skill.charAt(0).toUpperCase() + skill.slice(1)}:{approach}</td>
+        <td key={props.characterDetails.id + skill} className="summary-skill-header">
+          {skill.charAt(0).toUpperCase() + skill.slice(1)}
+          :
+          {approach}
+        </td>
       )
     })
     tableRow.push(<tr key={props.characterDetails.id + skillsPair[0]}>{items}</tr>)
@@ -34,7 +37,11 @@ const CharacterSummary = (props) => {
           <div className="character-summary-details">
             <h3>{props.characterDetails.name}</h3>
             <p className="highConcept">{props.characterDetails.aspects.highConcept}</p>
-            <p className="trouble">"{props.characterDetails.aspects.trouble}"</p>
+            <p className="trouble">
+              "
+              {props.characterDetails.aspects.trouble}
+              "
+            </p>
           </div>
         </Link>
       </section>
