@@ -17,9 +17,11 @@ class App extends Component {
     this.state = {
       characters: []
     }
+
+    this.addCharacter = this.addCharacter.bind(this)
   }
 
-  addCharacter = (character) => {
+  addCharacter(character) {
     const updatedCharacters = [...this.state.characters, character]
     this.setState({characters: updatedCharacters})
 
