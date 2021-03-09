@@ -1,3 +1,4 @@
+/* eslint react/no-access-state-in-setstate:"off" */
 import React, { Component } from 'react'
 import '../App.css'
 import './CharacterForm.css'

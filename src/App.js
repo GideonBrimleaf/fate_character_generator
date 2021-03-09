@@ -1,4 +1,4 @@
-/* eslint react/jsx-props-no-spreading: "off" */
+/* eslint react/jsx-props-no-spreading: "off", react/no-access-state-in-setstate:"off" */
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
