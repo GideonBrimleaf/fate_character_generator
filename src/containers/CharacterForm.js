@@ -3,27 +3,23 @@ import '../App.css'
 import './CharacterForm.css'
 import '../components/CharacterDetail.css'
 import '../components/CharacterStatBlock.css'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import CharacterFormStatBlock from './CharacterFormStatBlock'
 import StressBox from '../components/StressBox'
-import { Link } from 'react-router-dom'
 
 class CharacterForm extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props)
 
-    const foundCharacter = this.props.characters ? this.props.characters.find(character => {
-      return parseInt(this.props.match.params.characterId) === character.id
-    }) : {
+    const foundCharacter = this.props.characters ? this.props.characters.find((character) => parseInt(this.props.match.params.characterId) === character.id) : {
       id: '',
-      name:'',
+      name: '',
       aspects: {
-        highConcept:'',
-        trouble:'',
+        highConcept: '',
+        trouble: '',
         relationship: '',
         aspectOne: '',
-        aspectTwo: ''
+        aspectTwo: '',
       },
       approaches: {
         careful: '',
@@ -31,39 +27,44 @@ class CharacterForm extends Component {
         flashy: '',
         forceful: '',
         quick: '',
-        sneaky: ''
+        sneaky: '',
       },
       stunts: [],
       consequences: {
         mild: '',
         moderate: '',
-        severe: ''
+        severe: '',
       },
-      refresh : 3
+      refresh: 3,
     }
 
     this.state = foundCharacter
+
+    this.handleFormChange = this.handleFormChange.bind(this)
+    this.handleFormStatChange = this.handleFormStatChange.bind(this)
+    this.handleStuntChange = this.handleStuntChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleFormChange = (event) => {
-    this.setState({ [event.target.id]:event.target.value })
+  handleFormChange(event) {
+    this.setState({ [event.target.id]: event.target.value })
   }
 
-  handleFormStatChange = (event, characterStatGroup) => {
+  handleFormStatChange(event, characterStatGroup) {
     const statGroup = this.state[characterStatGroup]
     statGroup[event.target.id] = event.target.value
-    this.setState({characterStatGroup : statGroup})
+    this.setState({ characterStatGroup: statGroup })
   }
 
-  handleStuntChange = (event) => {
-    let existingStunts = this.state.stunts
+  handleStuntChange(event) {
+    const existingStunts = this.state.stunts
     existingStunts[event.target.id] = event.target.value
-    this.setState({ stunts:existingStunts })
+    this.setState({ stunts: existingStunts })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     event.preventDefault()
-    
+
     const id = this.state.id ? this.state.id : Date.now()
     const name = this.state.name.trim()
     const highConcept = this.state.aspects.highConcept.trim()
@@ -77,7 +78,7 @@ class CharacterForm extends Component {
     const forceful = this.state.approaches.forceful.trim()
     const quick = this.state.approaches.quick.trim()
     const sneaky = this.state.approaches.sneaky.trim()
-    const stunts = this.state.stunts
+    const { stunts } = this.state
     const mild = this.state.consequences.mild.trim()
     const moderate = this.state.consequences.moderate.trim()
     const severe = this.state.consequences.severe.trim()
@@ -85,66 +86,66 @@ class CharacterForm extends Component {
 
     if (!this.state.id) {
       this.props.onCharacterCreated({
-        id:id,
-        name:name,
+        id,
+        name,
         aspects: {
-          highConcept:highConcept,
-          trouble:trouble,
-          relationship: relationship,
-          aspectOne: aspectOne,
-          aspectTwo: aspectTwo
+          highConcept,
+          trouble,
+          relationship,
+          aspectOne,
+          aspectTwo,
         },
         approaches: {
-          careful: careful,
-          clever: clever,
-          flashy: flashy,
-          forceful: forceful,
-          quick: quick,
-          sneaky: sneaky
+          careful,
+          clever,
+          flashy,
+          forceful,
+          quick,
+          sneaky,
         },
-        stunts: stunts,
+        stunts,
         consequences: {
-          mild: mild,
-          moderate: moderate,
-          severe: severe
+          mild,
+          moderate,
+          severe,
         },
-        refresh : refresh
+        refresh,
       })
     } else {
-        this.props.onCharacterEdited({
-          id:id,
-          name:name,
-          aspects: {
-            highConcept:highConcept,
-            trouble:trouble,
-            relationship: relationship,
-            aspectOne: aspectOne,
-            aspectTwo: aspectTwo
-          },
-          approaches: {
-            careful: careful,
-            clever: clever,
-            flashy: flashy,
-            forceful: forceful,
-            quick: quick,
-            sneaky: sneaky
-          },
-          stunts: stunts,
-          consequences: {
-            mild: mild,
-            moderate: moderate,
-            severe: severe
-          },
-          refresh : refresh
-        })
+      this.props.onCharacterEdited({
+        id,
+        name,
+        aspects: {
+          highConcept,
+          trouble,
+          relationship,
+          aspectOne,
+          aspectTwo,
+        },
+        approaches: {
+          careful,
+          clever,
+          flashy,
+          forceful,
+          quick,
+          sneaky,
+        },
+        stunts,
+        consequences: {
+          mild,
+          moderate,
+          severe,
+        },
+        refresh,
+      })
     }
 
     this.setState({
-      id:'',
-      name:'',
+      id: '',
+      name: '',
       aspects: {
-        highConcept:'',
-        trouble:''
+        highConcept: '',
+        trouble: '',
       },
       approaches: {
         careful: '',
@@ -152,15 +153,15 @@ class CharacterForm extends Component {
         flashy: '',
         forceful: '',
         quick: '',
-        sneaky: ''
+        sneaky: '',
       },
       stunts: [],
       consequences: {
         mild: '',
         moderate: '',
-        severe: ''
+        severe: '',
       },
-      refresh : 3
+      refresh: 3,
     })
 
     this.props.history.push('/')
@@ -171,11 +172,11 @@ class CharacterForm extends Component {
       <main>
         <form autoComplete="off" className="character-sheet character-sheet-text" onSubmit={this.handleSubmit}>
           <section className="character-stats">
-            <input 
+            <input
               className="character-sheet-item-primary character-name-input"
-              type="text" 
-              id="name" 
-              placeholder="New Character" 
+              type="text"
+              id="name"
+              placeholder="New Character"
               value={this.state.name}
               onChange={this.handleFormChange}
               required
@@ -193,7 +194,7 @@ class CharacterForm extends Component {
           </section>
           <section className="character-stats">
             <article className="character-sheet-item-primary">
-              <CharacterFormStatBlock stats={this.state.aspects} ordered={ true } tableName="aspects" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
+              <CharacterFormStatBlock stats={this.state.aspects} ordered tableName="aspects" handleFormStatChange={this.handleFormStatChange} statBlockType="primary" />
             </article>
             <article className="character-sheet-item-secondary">
               <CharacterFormStatBlock stats={this.state.approaches} tableName="approaches" handleFormStatChange={this.handleFormStatChange} statBlockType="secondary" />
@@ -204,9 +205,9 @@ class CharacterForm extends Component {
               <h5 className="character-sheet-header stunt-header character-sheet-text">Stunts</h5>
               <ul>
                 <li>
-                  <input 
-                    className="stunt-input character-sheet-text" 
-                    type="text" 
+                  <input
+                    className="stunt-input character-sheet-text"
+                    type="text"
                     placeholder="Stunt 1"
                     id="0"
                     value={this.state.stunts[0] || ''}
@@ -214,9 +215,9 @@ class CharacterForm extends Component {
                   />
                 </li>
                 <li>
-                  <input 
-                    className="stunt-input character-sheet-text" 
-                    type="text" 
+                  <input
+                    className="stunt-input character-sheet-text"
+                    type="text"
                     placeholder="Stunt 2"
                     id="1"
                     value={this.state.stunts[1] || ''}
@@ -224,9 +225,9 @@ class CharacterForm extends Component {
                   />
                 </li>
                 <li>
-                  <input 
-                    className="stunt-input character-sheet-text" 
-                    type="text" 
+                  <input
+                    className="stunt-input character-sheet-text"
+                    type="text"
                     placeholder="Stunt 3"
                     id="2"
                     value={this.state.stunts[2] || ''}
@@ -244,7 +245,7 @@ class CharacterForm extends Component {
               <StressBox />
             </article>
           </section>
-          <input className="primary-button" type="submit" value={this.state.id ? "Update Character" : "Add Character"}/>
+          <input className="primary-button" type="submit" value={this.state.id ? 'Update Character' : 'Add Character'} />
           <Link className="primary-button" to={this.state.id ? `/character/${this.state.id}` : '/'}>Cancel</Link>
         </form>
       </main>

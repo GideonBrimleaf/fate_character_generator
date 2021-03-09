@@ -1,3 +1,4 @@
+/* eslint no-console: "off" */
 import { db } from './fire'
 
 const devURL = 'http://localhost:8080/characters'
