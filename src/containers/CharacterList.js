@@ -1,14 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CharacterSummary from '../components/CharacterSummary'
 import './CharacterList.css'
 import '../App.css'
-import { Link } from 'react-router-dom'
 
 const CharacterList = (props) => {
   if (props.characters.length === 0) { return <p>Loading</p> }
 
   const characterList = props.characters ? props.characters.map((character) => (
-    <CharacterSummary characterDetails={character} key={character.id} deleteCharacter={props.deleteCharacter} />
+    <CharacterSummary
+      characterDetails={character}
+      key={character.id}
+      deleteCharacter={props.deleteCharacter}
+    />
   )) : null
 
   return (
