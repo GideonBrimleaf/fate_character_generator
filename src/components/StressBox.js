@@ -25,9 +25,15 @@ const StressBox = () => {
       <caption>Stress</caption>
       <tbody>
         <tr>
-          <td onClick={checkBox} className={`stress-box ${checked[0] ? 'checked-box' : ''}`}>1</td>
-          <td onClick={checkBox} className={`stress-box ${checked[1] ? 'checked-box' : ''}`}>2</td>
-          <td onClick={checkBox} className={`stress-box ${checked[2] ? 'checked-box' : ''}`}>3</td>
+          <td>
+            <button onClick={checkBox} type="button" className={`stress-box ${checked[0] ? 'checked-box' : ''}`}>1</button>
+          </td>
+          <td>
+            <button onClick={checkBox} type="button" className={`stress-box ${checked[1] ? 'checked-box' : ''}`}>2</button>
+          </td>
+          <td>
+            <button onClick={checkBox} type="button" className={`stress-box ${checked[2] ? 'checked-box' : ''}`}>3</button>
+          </td>
         </tr>
       </tbody>
     </table>
