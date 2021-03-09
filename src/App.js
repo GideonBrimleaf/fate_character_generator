@@ -19,6 +19,8 @@ class App extends Component {
     }
 
     this.addCharacter = this.addCharacter.bind(this)
+    this.deleteCharacter = this.deleteCharacter.bind(this)
+    this.editCharacter = this.editCharacter.bind(this)
   }
 
   addCharacter(character) {
@@ -28,7 +30,7 @@ class App extends Component {
     return Helpers.updateCharacters(updatedCharacters)
   }
 
-  deleteCharacter = (characterToDelete) => {
+  deleteCharacter(characterToDelete) {
     const filteredCharacters = this.state.characters.filter(character => {
       return character.id !== characterToDelete.id
     })
@@ -37,7 +39,7 @@ class App extends Component {
     return Helpers.updateCharacters(filteredCharacters)
   }
 
-  editCharacter = (editedCharacter) => {
+  editCharacter(editedCharacter) {
     const filteredCharacters = this.state.characters.filter(character => {
       return character.id !== editedCharacter.id
     })
@@ -58,7 +60,6 @@ class App extends Component {
   }
 
   render(){
-
     return (
       <div className="App">
         <AuthProvider>
