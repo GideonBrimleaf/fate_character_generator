@@ -11,32 +11,35 @@ class CharacterForm extends Component {
   constructor(props) {
     super(props)
 
-    const foundCharacter = this.props.characters ? this.props.characters.find((character) => parseInt(this.props.match.params.characterId) === character.id) : {
-      id: '',
-      name: '',
-      aspects: {
-        highConcept: '',
-        trouble: '',
-        relationship: '',
-        aspectOne: '',
-        aspectTwo: '',
-      },
-      approaches: {
-        careful: '',
-        clever: '',
-        flashy: '',
-        forceful: '',
-        quick: '',
-        sneaky: '',
-      },
-      stunts: [],
-      consequences: {
-        mild: '',
-        moderate: '',
-        severe: '',
-      },
-      refresh: 3,
-    }
+    const foundCharacter = this.props.characters
+      ? this.props.characters.find(
+        (character) => parseInt(this.props.match.params.characterId) === character.id,
+      ) : {
+        id: '',
+        name: '',
+        aspects: {
+          highConcept: '',
+          trouble: '',
+          relationship: '',
+          aspectOne: '',
+          aspectTwo: '',
+        },
+        approaches: {
+          careful: '',
+          clever: '',
+          flashy: '',
+          forceful: '',
+          quick: '',
+          sneaky: '',
+        },
+        stunts: [],
+        consequences: {
+          mild: '',
+          moderate: '',
+          severe: '',
+        },
+        refresh: 3,
+      }
 
     this.state = foundCharacter
 
@@ -82,7 +85,7 @@ class CharacterForm extends Component {
     const mild = this.state.consequences.mild.trim()
     const moderate = this.state.consequences.moderate.trim()
     const severe = this.state.consequences.severe.trim()
-    const refresh = parseInt(this.state.refresh, 10)
+    const refresh = parseInt(this.state.refresh)
 
     if (!this.state.id) {
       this.props.onCharacterCreated({
@@ -182,14 +185,16 @@ class CharacterForm extends Component {
               required
             />
             <h5 className="refresh-form-header character-sheet-text character-sheet-item-secondary character-sheet-header">
-              <label htmlFor="refresh">Refresh:</label>
-              <input
-                className="character-refresh-input"
-                type="text"
-                id="refresh"
-                value={this.state.refresh}
-                onChange={this.handleFormChange}
-              />
+              <label htmlFor="refresh">
+                Refresh:
+                <input
+                  className="character-refresh-input"
+                  type="text"
+                  id="refresh"
+                  value={this.state.refresh}
+                  onChange={this.handleFormChange}
+                />
+              </label>
             </h5>
           </section>
           <section className="character-stats">
