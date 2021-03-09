@@ -25,6 +25,7 @@
         "semi": "off",
         "react/jsx-filename-extension": "off",
         "react/destructuring-assignment": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "radix": ["error", "as-needed"] 
     }
 }

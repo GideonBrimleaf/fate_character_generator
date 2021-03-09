@@ -1,3 +1,4 @@
+/* eslint no-alert: "off" */
 import React, { useContext, useState, useEffect } from 'react'
 import './CharacterDetail.css'
 import { Link } from 'react-router-dom'
@@ -11,7 +12,9 @@ const CharacterDetail = (props) => {
   const [foundCharacter, setFoundCharacter] = useState(![])
 
   useEffect(() => {
-    setFoundCharacter(props.characters.find((character) => parseInt(props.match.params.characterId) === character.id))
+    setFoundCharacter(props.characters.find(
+      (character) => parseInt(props.match.params.characterId) === character.id,
+    ))
   }, [props.characters, props.match.params.characterId])
 
   if (!foundCharacter) { return <p>Loading</p> }
@@ -31,7 +34,8 @@ const CharacterDetail = (props) => {
     ? <Link className="primary-button" to={`/character/${foundCharacter.id}/edit`}>Edit</Link> : null
 
   const deleteCharacterButton = currentUser
-    ? <button className="primary-button danger-button" onClick={handleCharacterDeletion}>Delete</button> : null
+    ? <button className="primary-button danger-button" type="submit" onClick={handleCharacterDeletion}>Delete</button>
+    : null
 
   return (
     <main className={`character-sheet character-sheet-text ${currentUser ? null : 'top-padding'}`}>

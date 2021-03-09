@@ -1,3 +1,4 @@
+/* eslint no-alert: "off" */
 import React from 'react'
 import './CharacterSummary.css'
 import '../App.css'
@@ -38,9 +39,7 @@ const CharacterSummary = (props) => {
             <h3>{props.characterDetails.name}</h3>
             <p className="highConcept">{props.characterDetails.aspects.highConcept}</p>
             <p className="trouble">
-              "
               {props.characterDetails.aspects.trouble}
-              "
             </p>
           </div>
         </Link>
@@ -55,7 +54,7 @@ const CharacterSummary = (props) => {
           </table>
         </Link>
         <Link className="primary-button" to={`/character/${props.characterDetails.id}/edit`}>Edit</Link>
-        <button className="primary-button danger-button" onClick={handleCharacterDeletion}>Delete</button>
+        <button className="primary-button danger-button" type="submit" onClick={handleCharacterDeletion}>Delete</button>
       </section>
     </li>
   )
