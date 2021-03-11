@@ -4,7 +4,7 @@ import CharacterSummary from '../components/CharacterSummary'
 import './CharacterList.css'
 import '../App.css'
 
-const CharacterList = (props) => {
+const CharacterList = (props) => {
   const characterList = props.characters ? props.characters.map((character) => (
     <CharacterSummary
       characterDetails={character}
@@ -15,7 +15,7 @@ const CharacterList = (props) => {
 
   const newCharacterButton = <Link className="primary-button" to="/new">Create a New Character</Link>
 
-  const optionalCharacterButton = (
+  const optionalCharacterButton = (
     props.characters.length > 0 ? newCharacterButton : null
   )
 
