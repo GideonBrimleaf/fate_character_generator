@@ -37,6 +37,13 @@ In order to set this up, `cp .env .env.local` and modify `.env.local` with your 
 
 You will also need a DB connection string for a Realtime Firebase DB - though this is not used in development mode.
 
+## Automated testing
+The app is setup tests powered by jest.
+
+### `npm run tests`
+Runs the tests. 
+
+You will need to update snapshots where changes have impacted the DOM output of a component or component stack.
 
 ## Testing the project with Firebase
 
