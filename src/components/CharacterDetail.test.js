@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { AuthContext } from '../auth/Auth';
+import { createFakeCharacter } from '../test/fakes/character.fake';
 import CharacterDetail from './CharacterDetail';
 
 it('renders a loading message is character is not found', () => {
@@ -34,16 +35,7 @@ it('renders character when a character is found', async () => {
         characterId: '1234',
       }
     },
-    characters: [
-      {
-        id: 1234,
-        name: 'expected name',
-        stunts: [],
-        aspects: {expectedAspectName: 'expected aspect value'},
-        approaches: {expectedApproachName: 'expected appraoch value'},
-        consequences: {expectedConName: 'expected con value'},
-      }
-    ],
+    characters: [ createFakeCharacter(1234) ],
   }
 
   let result;

@@ -14,14 +14,18 @@ exports[`renders correctly 1`] = `
           class="character-summary-details"
         >
           <h3>
-            expected name
+            1234 name
           </h3>
           <p
             class="highConcept"
-          />
+          >
+            1234 highConcept
+          </p>
           <p
             class="trouble"
-          />
+          >
+            1234 trouble
+          </p>
         </div>
       </a>
     </section>
@@ -43,7 +47,36 @@ exports[`renders correctly 1`] = `
               <td
                 class="summary-skill-header"
               >
-                ExpectedApproachName:expected appraoch value
+                Careful:1234 careful
+              </td>
+              <td
+                class="summary-skill-header"
+              >
+                Clever:1234 clever
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="summary-skill-header"
+              >
+                Flashy:1234 flashy
+              </td>
+              <td
+                class="summary-skill-header"
+              >
+                Forceful:1234 forceful
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="summary-skill-header"
+              >
+                Quick:1234 quick
+              </td>
+              <td
+                class="summary-skill-header"
+              >
+                Sneaky:1234 sneaky
               </td>
             </tr>
           </tbody>

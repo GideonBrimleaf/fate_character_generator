@@ -3,18 +3,18 @@ import { render } from '@testing-library/react';
 import { MemoryRouter } from "react-router-dom";
 
 import { createFakeCharacter } from '../test/fakes/character.fake';
-import CharacterSummary from './CharacterSummary';
+import CharacterList from './CharacterList';
 
 it('renders correctly', () => {
   // Arrange
   const props = {
-    characterDetails:  createFakeCharacter(1234),
+    characters: [ createFakeCharacter(1234) ],
   }
 
   // Act
   const result = render(
     <MemoryRouter>
-      <CharacterSummary {...props} />
+      <CharacterList {...props} />
     </MemoryRouter>
   );
 

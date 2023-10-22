@@ -19,12 +19,12 @@ exports[`renders character when a character is found 1`] = `
       <h1
         class="character-name character-sheet-item-primary"
       >
-        expected name
+        1234 name
       </h1>
       <h5
         class="character-sheet-header refresh-header character-sheet-text"
       >
-        Refresh:
+        Refresh:3
       </h5>
     </section>
     <section
@@ -50,7 +50,9 @@ exports[`renders character when a character is found 1`] = `
               </td>
               <td
                 class="primary-stat-description"
-              />
+              >
+                1234 highConcept
+              </td>
             </tr>
             <tr>
               <td
@@ -60,7 +62,9 @@ exports[`renders character when a character is found 1`] = `
               </td>
               <td
                 class="primary-stat-description"
-              />
+              >
+                1234 trouble
+              </td>
             </tr>
             <tr>
               <td
@@ -70,7 +74,9 @@ exports[`renders character when a character is found 1`] = `
               </td>
               <td
                 class="primary-stat-description"
-              />
+              >
+                1234 relationship
+              </td>
             </tr>
             <tr>
               <td
@@ -80,7 +86,9 @@ exports[`renders character when a character is found 1`] = `
               </td>
               <td
                 class="primary-stat-description"
-              />
+              >
+                1234 aspectOne
+              </td>
             </tr>
             <tr>
               <td
@@ -90,7 +98,9 @@ exports[`renders character when a character is found 1`] = `
               </td>
               <td
                 class="primary-stat-description"
-              />
+              >
+                1234 aspectTwo
+              </td>
             </tr>
           </tbody>
         </table>
@@ -111,12 +121,72 @@ exports[`renders character when a character is found 1`] = `
               <td
                 class="stat-name"
               >
-                Expected Approach Name:
+                Careful:
               </td>
               <td
                 class="secondary-stat-description"
               >
-                expected appraoch value
+                1234 careful
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Clever:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 clever
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Flashy:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 flashy
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Forceful:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 forceful
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Quick:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 quick
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Sneaky:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 sneaky
               </td>
             </tr>
           </tbody>
@@ -158,12 +228,36 @@ exports[`renders character when a character is found 1`] = `
               <td
                 class="stat-name"
               >
-                Expected Con Name:
+                Mild:
               </td>
               <td
                 class="primary-stat-description"
               >
-                expected con value
+                1234 mild
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Moderate:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 moderate
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Severe:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 severe
               </td>
             </tr>
           </tbody>
