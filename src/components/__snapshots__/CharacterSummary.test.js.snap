@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DocumentFragment>
+  <li
+    class="characterSummaryTile"
+  >
+    <section>
+      <a
+        class="character-link"
+        href="/character/1234"
+      >
+        <div
+          class="character-summary-details"
+        >
+          <h3>
+            expected name
+          </h3>
+          <p
+            class="highConcept"
+          />
+          <p
+            class="trouble"
+          />
+        </div>
+      </a>
+    </section>
+    <section
+      class="option-links"
+    >
+      <a
+        class="character-link"
+        href="/character/1234"
+      >
+        <table
+          class="character-skills-table"
+        >
+          <caption>
+            Approaches
+          </caption>
+          <tbody>
+            <tr>
+              <td
+                class="summary-skill-header"
+              >
+                ExpectedApproachName:expected appraoch value
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </a>
+      <a
+        class="primary-button"
+        href="/character/1234/edit"
+      >
+        Edit
+      </a>
+      <button
+        class="primary-button danger-button"
+        type="submit"
+      >
+        Delete
+      </button>
+    </section>
+  </li>
+</DocumentFragment>
+`;

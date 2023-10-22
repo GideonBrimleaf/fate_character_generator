@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DocumentFragment>
+  <table
+    class="padded-table"
+  >
+    <caption
+      class="table-header"
+    />
+    <tbody>
+      <tr>
+        <td
+          class="stat-name"
+        >
+          Expected Name:
+        </td>
+        <td
+          class="expected-block-stat-description"
+        >
+          Expected value
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
