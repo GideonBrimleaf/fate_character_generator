@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when the user is not logged in 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Log In
+    </h1>
+    <form
+      class="login-form"
+    >
+      <input
+        class="login-input"
+        name="email"
+        placeholder="Email:"
+        type="email"
+      />
+      <input
+        class="login-input"
+        name="password"
+        placeholder="Password:"
+        type="password"
+      />
+      <button
+        class="primary-button"
+        type="submit"
+      >
+        Log in
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
