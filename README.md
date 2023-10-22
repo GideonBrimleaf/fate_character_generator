@@ -7,6 +7,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In development - this project runs with the [Fate Character Development Server](https://github.com/GideonBrimleaf/fate_character_dev_server) in development.  Ensure you clone down this repository as well to get the project running locally.
 
+***Note:*** this project does not support node versions >= 17 (17 introduced a loophole fix for OpenSSL which is not backwards compatible).
+
+Until dependencies are updated you will need to be using node version less then 17 - eg:
+
+```
+$ nvm install 16
+$ nvm use 16
+```
+
 ### `npm install`
 
 Download the dependencies
