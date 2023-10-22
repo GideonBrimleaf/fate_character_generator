@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -7,14 +9,14 @@ it('renders correctly', () => {
   // Arrange
   const props = {
     characterStats: {
-      expectedName: 'Expected value'
+      expectedName: 'Expected value',
     },
-    statBlock: 'expected-block'
+    statBlock: 'expected-block',
   }
 
   // Act
   const result = render(
-      <CharacterStatBlock {...props} />
+    <CharacterStatBlock {...props} />,
   );
 
   // Assert

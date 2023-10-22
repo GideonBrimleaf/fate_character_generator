@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { render } from '@testing-library/react';
-import { MemoryRouter, Route } from "react-router-dom";
+import { MemoryRouter, Route } from 'react-router-dom';
 
 import { createFakeCharacter } from '../test/fakes/character.fake';
 import CharacterForm from './CharacterForm';
@@ -14,11 +16,11 @@ it.skip('renders correctly when a character does not exist', () => {
 
   // Act
   const result = render(
-    <MemoryRouter initialEntries={[`/character/1234/edit`]}>
+    <MemoryRouter initialEntries={['/character/1234/edit']}>
       <Route exact path="/character/:characterId/edit">
         <CharacterForm {...props} />
       </Route>
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 
   // Assert
@@ -39,7 +41,7 @@ it('renders correctly when a character exists', () => {
       <Route exact path="/character/:characterId/edit">
         <CharacterForm {...props} />
       </Route>
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 
   // Assert

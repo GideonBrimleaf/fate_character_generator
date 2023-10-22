@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { render } from '@testing-library/react';
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from 'react-router-dom';
 
 import { AuthContext } from '../auth/Auth';
 import NavBar from './NavBar';
@@ -13,7 +15,7 @@ it('renders correctly when user is not logged in', () => {
   const result = render(
     <AuthContext.Provider value={{ currentUser: null }}>
       <NavBar {...props} />
-    </AuthContext.Provider>
+    </AuthContext.Provider>,
   );
 
   // Assert
@@ -30,7 +32,7 @@ it('renders correctly when user is logged in', () => {
       <MemoryRouter>
         <NavBar {...props} />
       </MemoryRouter>
-    </AuthContext.Provider>
+    </AuthContext.Provider>,
   );
 
   // Assert

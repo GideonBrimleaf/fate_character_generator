@@ -1,8 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { render } from '@testing-library/react';
-import { MemoryRouter } from "react-router-dom";
 
-import { AuthContext } from '../auth/Auth';
 import StressBox from './StressBox';
 
 it('renders correctly', () => {
@@ -11,7 +11,7 @@ it('renders correctly', () => {
 
   // Act
   const result = render(
-    <StressBox {...props}/>
+    <StressBox {...props} />,
   );
 
   // Assert
