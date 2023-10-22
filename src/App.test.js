@@ -1,9 +1,21 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+
+import { act, render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('renders correctly', () => {
+  const result = render(<App />);
+
+  expect(result.asFragment()).toMatchSnapshot();
+});
+
+// TODO - a warning is being fired to console due to uncaptured side effects - there must be a better pattern for this
+it('renders the login screen on when the user is not logged in', async () => {
+  let result = null; 
+
+  await act(() => {
+    result = render(<App />);
+  });
+
+  expect(result.getByText('Log In')).toBeTruthy();
 });
