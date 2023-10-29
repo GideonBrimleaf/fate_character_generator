@@ -4,7 +4,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter, Route } from 'react-router-dom';
 
-import { createFakeCharacter } from '../test/fakes/character.fake';
+import { createFakeCharacter } from '../models/Character/__test__/character.fake';
 import CharacterForm from './CharacterForm';
 
 // TODO - this.state.name bombs because state is undefined (set to the result of an array find)

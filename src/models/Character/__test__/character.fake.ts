@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Character } from '../../models/Character';
+import { Character } from '..';
 
 export const createFakeCharacter = (id:string) : Character => {
   return {

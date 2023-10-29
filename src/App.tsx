@@ -6,7 +6,6 @@ import CharacterList from './containers/CharacterList';
 import CharacterForm from './containers/CharacterForm';
 import NavBar from './components/NavBar';
 import CharacterDetail from './components/CharacterDetail';
-import Helpers from './lib/helpers';
 import { AuthProvider } from './auth/Auth';
 import Login from './auth/Login';
 import PrivateRoute from './auth/PrivateRoute';
@@ -32,7 +31,7 @@ class App extends Component<AppProps, AppState> {
   }
 
   async componentDidMount(): Promise<void> {
-    const characters = await Helpers.getCharacters();
+    const characters = await this.props.characterStore.getCharacters();
 
     if (characters) {
       this.setState({ characters });
@@ -43,7 +42,7 @@ class App extends Component<AppProps, AppState> {
     const updatedCharacters = [...this.state.characters, character];
     this.setState({ characters: updatedCharacters });
 
-    return Helpers.updateCharacters(updatedCharacters);
+    return this.props.characterStore.updateCharacters(updatedCharacters);
   }
 
   deleteCharacter(characterToDelete: Character): Promise<any> {
@@ -52,7 +51,7 @@ class App extends Component<AppProps, AppState> {
     );
     this.setState({ characters: filteredCharacters });
 
-    return Helpers.updateCharacters(filteredCharacters);
+    return this.props.characterStore.updateCharacters(filteredCharacters);
   }
 
   editCharacter(editedCharacter: Character): Promise<any> {
@@ -63,7 +62,7 @@ class App extends Component<AppProps, AppState> {
     const updatedCharacters = [...filteredCharacters, editedCharacter];
     this.setState({ characters: updatedCharacters });
 
-    return Helpers.updateCharacters(updatedCharacters);
+    return this.props.characterStore.updateCharacters(updatedCharacters);
   }
 
   render() {
