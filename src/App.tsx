@@ -18,7 +18,7 @@ interface AppState {
 }
 
 class App extends Component<AppProps, AppState> {
-  constructor(props) {
+  constructor(props: AppProps) {
     super(props);
     this.state = {
       characters: [],
@@ -29,23 +29,22 @@ class App extends Component<AppProps, AppState> {
     this.editCharacter = this.editCharacter.bind(this);
   }
 
-  componentDidMount() {
-    Helpers.getCharacters()
-      .then((data) => {
-        if (data) {
-          this.setState({ characters: data });
-        }
-      });
+  async componentDidMount(): Promise<void> {
+    const characters = await Helpers.getCharacters();
+
+    if (characters) {
+      this.setState({ characters });
+    }
   }
 
-  addCharacter(character) {
+  addCharacter(character: Character): Promise<any> {
     const updatedCharacters = [...this.state.characters, character];
     this.setState({ characters: updatedCharacters });
 
     return Helpers.updateCharacters(updatedCharacters);
   }
 
-  deleteCharacter(characterToDelete) {
+  deleteCharacter(characterToDelete: Character): Promise<any> {
     const filteredCharacters = this.state.characters.filter(
       (character) => character.id !== characterToDelete.id,
     );
@@ -54,7 +53,7 @@ class App extends Component<AppProps, AppState> {
     return Helpers.updateCharacters(filteredCharacters);
   }
 
-  editCharacter(editedCharacter) {
+  editCharacter(editedCharacter: Character): Promise<any> {
     const filteredCharacters = this.state.characters.filter(
       (character) => character.id !== editedCharacter.id,
     );

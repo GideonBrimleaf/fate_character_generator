@@ -21,7 +21,7 @@ export default {
     return rootRef.set(charactersToStore);
   },
 
-  getCharacters(): Promise<Character[]> {
+  getCharacters(): Promise<Character[] | undefined> {
     if (process.env.NODE_ENV !== 'production') {
       return fetch(devURL)
         .then((res) => res.json())
