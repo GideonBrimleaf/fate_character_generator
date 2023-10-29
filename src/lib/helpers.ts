@@ -1,6 +1,6 @@
 /* eslint no-console: "off" */
 import { db } from './fire';
-import { Character } from './models/Character';
+import { Character } from '../models/Character';
 
 const devURL = 'http://localhost:8080/characters';
 const rootRef = db.ref('characters');

@@ -10,9 +10,11 @@ import Helpers from './lib/helpers';
 import { AuthProvider } from './auth/Auth';
 import Login from './auth/Login';
 import PrivateRoute from './auth/PrivateRoute';
-import { Character } from './lib/models/Character';
+import { Character, CharacterStore } from './models/Character';
 
-interface AppProps {}
+interface AppProps {
+  characterStore: CharacterStore;
+}
 interface AppState {
   characters: Character[],
 }
