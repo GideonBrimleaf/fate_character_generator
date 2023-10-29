@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DocumentFragment>
+  <li
+    class="characterSummaryTile"
+  >
+    <section>
+      <a
+        class="character-link"
+        href="/character/1234"
+      >
+        <div
+          class="character-summary-details"
+        >
+          <h3>
+            1234 name
+          </h3>
+          <p
+            class="highConcept"
+          >
+            1234 highConcept
+          </p>
+          <p
+            class="trouble"
+          >
+            1234 trouble
+          </p>
+        </div>
+      </a>
+    </section>
+    <section
+      class="option-links"
+    >
+      <a
+        class="character-link"
+        href="/character/1234"
+      >
+        <table
+          class="character-skills-table"
+        >
+          <caption>
+            Approaches
+          </caption>
+          <tbody>
+            <tr>
+              <td
+                class="summary-skill-header"
+              >
+                Careful:1234 careful
+              </td>
+              <td
+                class="summary-skill-header"
+              >
+                Clever:1234 clever
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="summary-skill-header"
+              >
+                Flashy:1234 flashy
+              </td>
+              <td
+                class="summary-skill-header"
+              >
+                Forceful:1234 forceful
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="summary-skill-header"
+              >
+                Quick:1234 quick
+              </td>
+              <td
+                class="summary-skill-header"
+              >
+                Sneaky:1234 sneaky
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </a>
+      <a
+        class="primary-button"
+        href="/character/1234/edit"
+      >
+        Edit
+      </a>
+      <button
+        class="primary-button danger-button"
+        type="submit"
+      >
+        Delete
+      </button>
+    </section>
+  </li>
+</DocumentFragment>
+`;

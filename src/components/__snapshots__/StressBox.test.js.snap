@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DocumentFragment>
+  <table>
+    <caption>
+      Stress
+    </caption>
+    <tbody>
+      <tr>
+        <td>
+          <button
+            class="stress-box "
+            type="button"
+          >
+            1
+          </button>
+        </td>
+        <td>
+          <button
+            class="stress-box "
+            type="button"
+          >
+            2
+          </button>
+        </td>
+        <td>
+          <button
+            class="stress-box "
+            type="button"
+          >
+            3
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders children when the user is not set 1`] = `
+<DocumentFragment>
+  <div
+    id="expected"
+  />
+</DocumentFragment>
+`;
+
+exports[`renders nothing when the user is not logged in 1`] = `<DocumentFragment />`;

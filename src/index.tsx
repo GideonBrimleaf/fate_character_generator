@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { FirebaseCharacterStore } from './models/Character';
+
+const characterStore = new FirebaseCharacterStore(
+  {
+    devServer: process.env.NODE_ENV === 'production' ? null : 'http://localhost:8080/characters',
+  },
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App characterStore={characterStore} />
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -1,35 +1,35 @@
 /* eslint no-alert: "off" */
-import React from 'react'
-import './CharacterSummary.css'
-import '../App.css'
-import { Link } from 'react-router-dom'
-import chunkos from '../lib/chunkos'
+import React from 'react';
+import './CharacterSummary.css';
+import '../App.css';
+import { Link } from 'react-router-dom';
+import chunkos from '../lib/chunkos';
 
 const CharacterSummary = (props) => {
-  if (!props.characterDetails) return null
+  if (!props.characterDetails) return null;
 
   const handleCharacterDeletion = () => {
     if (window.confirm('Are you sure you want to delete this character?')) {
-      props.deleteCharacter(props.characterDetails)
+      props.deleteCharacter(props.characterDetails);
     }
-  }
+  };
 
-  const characterApproaches = Object.keys(props.characterDetails.approaches)
+  const characterApproaches = Object.keys(props.characterDetails.approaches);
 
   const skills = chunkos(characterApproaches, 2).reduce((tableRow, skillsPair) => {
     const items = skillsPair.map((skill) => {
-      const approach = props.characterDetails.approaches[skill]
+      const approach = props.characterDetails.approaches[skill];
       return (
         <td key={props.characterDetails.id + skill} className="summary-skill-header">
           {skill.charAt(0).toUpperCase() + skill.slice(1)}
           :
           {approach}
         </td>
-      )
-    })
-    tableRow.push(<tr key={props.characterDetails.id + skillsPair[0]}>{items}</tr>)
-    return tableRow
-  }, [])
+      );
+    });
+    tableRow.push(<tr key={props.characterDetails.id + skillsPair[0]}>{items}</tr>);
+    return tableRow;
+  }, []);
 
   return (
     <li className="characterSummaryTile">
@@ -57,7 +57,7 @@ const CharacterSummary = (props) => {
         <button className="primary-button danger-button" type="submit" onClick={handleCharacterDeletion}>Delete</button>
       </section>
     </li>
-  )
-}
+  );
+};
 
-export default CharacterSummary
+export default CharacterSummary;

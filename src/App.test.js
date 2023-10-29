@@ -1,9 +1,14 @@
 import React from 'react';
+
 import { render } from '@testing-library/react';
+
+import { MockCharacterStore } from './models/Character/__test__'
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+
+it('renders correctly', () => {
+  const result = render(<App characterStore={new MockCharacterStore()}/>);
+
+  expect(result.asFragment()).toMatchSnapshot();
 });

@@ -1,16 +1,16 @@
 /* eslint react/no-access-state-in-setstate:"off" */
-import React, { Component } from 'react'
-import '../App.css'
-import './CharacterForm.css'
-import '../components/CharacterDetail.css'
-import '../components/CharacterStatBlock.css'
-import { withRouter, Link } from 'react-router-dom'
-import CharacterFormStatBlock from './CharacterFormStatBlock'
-import StressBox from '../components/StressBox'
+import React, { Component } from 'react';
+import '../App.css';
+import './CharacterForm.css';
+import '../components/CharacterDetail.css';
+import '../components/CharacterStatBlock.css';
+import { withRouter, Link } from 'react-router-dom';
+import CharacterFormStatBlock from './CharacterFormStatBlock';
+import StressBox from '../components/StressBox';
 
 class CharacterForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     const foundCharacter = this.props.characters
       ? this.props.characters.find(
@@ -40,53 +40,53 @@ class CharacterForm extends Component {
           severe: '',
         },
         refresh: 3,
-      }
+      };
 
-    this.state = foundCharacter
+    this.state = foundCharacter;
 
-    this.handleFormChange = this.handleFormChange.bind(this)
-    this.handleFormStatChange = this.handleFormStatChange.bind(this)
-    this.handleStuntChange = this.handleStuntChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleFormChange = this.handleFormChange.bind(this);
+    this.handleFormStatChange = this.handleFormStatChange.bind(this);
+    this.handleStuntChange = this.handleStuntChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleFormChange(event) {
-    this.setState({ [event.target.id]: event.target.value })
+    this.setState({ [event.target.id]: event.target.value });
   }
 
   handleFormStatChange(event, characterStatGroup) {
-    const statGroup = this.state[characterStatGroup]
-    statGroup[event.target.id] = event.target.value
-    this.setState({ characterStatGroup: statGroup })
+    const statGroup = this.state[characterStatGroup];
+    statGroup[event.target.id] = event.target.value;
+    this.setState({ characterStatGroup: statGroup });
   }
 
   handleStuntChange(event) {
-    const existingStunts = this.state.stunts
-    existingStunts[event.target.id] = event.target.value
-    this.setState({ stunts: existingStunts })
+    const existingStunts = this.state.stunts;
+    existingStunts[event.target.id] = event.target.value;
+    this.setState({ stunts: existingStunts });
   }
 
   handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
 
-    const id = this.state.id ? this.state.id : Date.now()
-    const name = this.state.name.trim()
-    const highConcept = this.state.aspects.highConcept.trim()
-    const trouble = this.state.aspects.trouble.trim()
-    const relationship = this.state.aspects.relationship.trim()
-    const aspectOne = this.state.aspects.aspectOne.trim()
-    const aspectTwo = this.state.aspects.aspectTwo.trim()
-    const careful = this.state.approaches.careful.trim()
-    const clever = this.state.approaches.clever.trim()
-    const flashy = this.state.approaches.flashy.trim()
-    const forceful = this.state.approaches.forceful.trim()
-    const quick = this.state.approaches.quick.trim()
-    const sneaky = this.state.approaches.sneaky.trim()
-    const { stunts } = this.state
-    const mild = this.state.consequences.mild.trim()
-    const moderate = this.state.consequences.moderate.trim()
-    const severe = this.state.consequences.severe.trim()
-    const refresh = parseInt(this.state.refresh)
+    const id = this.state.id ? this.state.id : Date.now();
+    const name = this.state.name.trim();
+    const highConcept = this.state.aspects.highConcept.trim();
+    const trouble = this.state.aspects.trouble.trim();
+    const relationship = this.state.aspects.relationship.trim();
+    const aspectOne = this.state.aspects.aspectOne.trim();
+    const aspectTwo = this.state.aspects.aspectTwo.trim();
+    const careful = this.state.approaches.careful.trim();
+    const clever = this.state.approaches.clever.trim();
+    const flashy = this.state.approaches.flashy.trim();
+    const forceful = this.state.approaches.forceful.trim();
+    const quick = this.state.approaches.quick.trim();
+    const sneaky = this.state.approaches.sneaky.trim();
+    const { stunts } = this.state;
+    const mild = this.state.consequences.mild.trim();
+    const moderate = this.state.consequences.moderate.trim();
+    const severe = this.state.consequences.severe.trim();
+    const refresh = parseInt(this.state.refresh);
 
     if (!this.state.id) {
       this.props.onCharacterCreated({
@@ -114,7 +114,7 @@ class CharacterForm extends Component {
           severe,
         },
         refresh,
-      })
+      });
     } else {
       this.props.onCharacterEdited({
         id,
@@ -141,7 +141,7 @@ class CharacterForm extends Component {
           severe,
         },
         refresh,
-      })
+      });
     }
 
     this.setState({
@@ -166,9 +166,9 @@ class CharacterForm extends Component {
         severe: '',
       },
       refresh: 3,
-    })
+    });
 
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
 
   render() {
@@ -255,8 +255,8 @@ class CharacterForm extends Component {
           <Link className="primary-button" to={this.state.id ? `/character/${this.state.id}` : '/'}>Cancel</Link>
         </form>
       </main>
-    )
+    );
   }
 }
 
-export default withRouter(CharacterForm)
+export default withRouter(CharacterForm);

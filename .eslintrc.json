@@ -1,11 +1,13 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "airbnb-typescript"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -16,7 +18,8 @@
             "jsx": true
         },
         "ecmaVersion": 2018,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react"
@@ -26,6 +29,8 @@
         "react/jsx-filename-extension": "off",
         "react/destructuring-assignment": "off",
         "react/prop-types": "off",
-        "radix": ["error", "as-needed"] 
+        "radix": ["error", "as-needed"],
+        "arrow-body-style": "off" ,
+        "import/prefer-default-export": "off"
     }
 }

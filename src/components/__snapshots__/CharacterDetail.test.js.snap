@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a loading message is character is not found 1`] = `
+<DocumentFragment>
+  <p>
+    Loading
+  </p>
+</DocumentFragment>
+`;
+
+exports[`renders character when a character is found 1`] = `
+<DocumentFragment>
+  <main
+    class="character-sheet character-sheet-text top-padding"
+  >
+    <section
+      class="character-stats"
+    >
+      <h1
+        class="character-name character-sheet-item-primary"
+      >
+        1234 name
+      </h1>
+      <h5
+        class="character-sheet-header refresh-header character-sheet-text"
+      >
+        Refresh:3
+      </h5>
+    </section>
+    <section
+      class="character-stats"
+    >
+      <article
+        class="character-sheet-item-primary"
+      >
+        <table
+          class="padded-table"
+        >
+          <caption
+            class="table-header"
+          >
+            Aspects
+          </caption>
+          <tbody>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                High Concept:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 highConcept
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Trouble:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 trouble
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Relationship:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 relationship
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Aspect One:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 aspectOne
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Aspect Two:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 aspectTwo
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <article
+        class="character-sheet-item-secondary"
+      >
+        <table
+          class="padded-table"
+        >
+          <caption
+            class="table-header"
+          >
+            Approaches
+          </caption>
+          <tbody>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Careful:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 careful
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Clever:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 clever
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Flashy:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 flashy
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Forceful:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 forceful
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Quick:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 quick
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Sneaky:
+              </td>
+              <td
+                class="secondary-stat-description"
+              >
+                1234 sneaky
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+    <section
+      class="character-stats"
+    >
+      <article
+        class="character-sheet-item-primary"
+      >
+        <h5
+          class="character-sheet-header stunt-header character-sheet-text table-header"
+        >
+          Stunts
+        </h5>
+        <ul
+          class="stunt-list"
+        />
+      </article>
+    </section>
+    <section
+      class="character-stats"
+    >
+      <article
+        class="character-sheet-item-primary"
+      >
+        <table
+          class="padded-table"
+        >
+          <caption
+            class="table-header"
+          >
+            Consequences
+          </caption>
+          <tbody>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Mild:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 mild
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Moderate:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 moderate
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="stat-name"
+              >
+                Severe:
+              </td>
+              <td
+                class="primary-stat-description"
+              >
+                1234 severe
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <article
+        class="character-sheet-item-secondary"
+      >
+        <table>
+          <caption>
+            Stress
+          </caption>
+          <tbody>
+            <tr>
+              <td>
+                <button
+                  class="stress-box "
+                  type="button"
+                >
+                  1
+                </button>
+              </td>
+              <td>
+                <button
+                  class="stress-box "
+                  type="button"
+                >
+                  2
+                </button>
+              </td>
+              <td>
+                <button
+                  class="stress-box "
+                  type="button"
+                >
+                  3
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+  </main>
+</DocumentFragment>
+`;

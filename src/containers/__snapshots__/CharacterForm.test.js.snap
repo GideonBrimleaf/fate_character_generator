@@ -1,0 +1,465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when a character exists 1`] = `
+<DocumentFragment>
+  <main>
+    <form
+      autocomplete="off"
+      class="character-sheet character-sheet-text"
+    >
+      <section
+        class="character-stats"
+      >
+        <input
+          class="character-sheet-item-primary character-name-input"
+          id="name"
+          placeholder="New Character"
+          required=""
+          type="text"
+          value="1234 name"
+        />
+        <h5
+          class="refresh-form-header character-sheet-text character-sheet-item-secondary character-sheet-header"
+        >
+          <label
+            for="refresh"
+          >
+            Refresh:
+            <input
+              class="character-refresh-input"
+              id="refresh"
+              type="text"
+              value="3"
+            />
+          </label>
+        </h5>
+      </section>
+      <section
+        class="character-stats"
+      >
+        <article
+          class="character-sheet-item-primary"
+        >
+          <table>
+            <caption>
+              Aspects
+            </caption>
+            <tbody>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="highConcept"
+                  >
+                    High Concept:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="highConcept"
+                    type="text"
+                    value="1234 highConcept"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="trouble"
+                  >
+                    Trouble:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="trouble"
+                    type="text"
+                    value="1234 trouble"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="relationship"
+                  >
+                    Relationship:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="relationship"
+                    type="text"
+                    value="1234 relationship"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="aspectOne"
+                  >
+                    Aspect One:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="aspectOne"
+                    type="text"
+                    value="1234 aspectOne"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="aspectTwo"
+                  >
+                    Aspect Two:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="aspectTwo"
+                    type="text"
+                    value="1234 aspectTwo"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article
+          class="character-sheet-item-secondary"
+        >
+          <table>
+            <caption>
+              Approaches
+            </caption>
+            <tbody>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="careful"
+                  >
+                    Careful:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text secondary-input"
+                    id="careful"
+                    type="text"
+                    value="1234 careful"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="clever"
+                  >
+                    Clever:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text secondary-input"
+                    id="clever"
+                    type="text"
+                    value="1234 clever"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="flashy"
+                  >
+                    Flashy:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text secondary-input"
+                    id="flashy"
+                    type="text"
+                    value="1234 flashy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="forceful"
+                  >
+                    Forceful:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text secondary-input"
+                    id="forceful"
+                    type="text"
+                    value="1234 forceful"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="quick"
+                  >
+                    Quick:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text secondary-input"
+                    id="quick"
+                    type="text"
+                    value="1234 quick"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="sneaky"
+                  >
+                    Sneaky:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text secondary-input"
+                    id="sneaky"
+                    type="text"
+                    value="1234 sneaky"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+      <section
+        class="character-stats"
+      >
+        <article
+          class="character-sheet-item-primary character-form-item-primary"
+        >
+          <h5
+            class="character-sheet-header stunt-header character-sheet-text"
+          >
+            Stunts
+          </h5>
+          <ul>
+            <li>
+              <input
+                class="stunt-input character-sheet-text"
+                id="0"
+                placeholder="Stunt 1"
+                type="text"
+                value=""
+              />
+            </li>
+            <li>
+              <input
+                class="stunt-input character-sheet-text"
+                id="1"
+                placeholder="Stunt 2"
+                type="text"
+                value=""
+              />
+            </li>
+            <li>
+              <input
+                class="stunt-input character-sheet-text"
+                id="2"
+                placeholder="Stunt 3"
+                type="text"
+                value=""
+              />
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section
+        class="character-stats"
+      >
+        <article
+          class="character-sheet-item-primary"
+        >
+          <table>
+            <caption>
+              Consequences
+            </caption>
+            <tbody>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="mild"
+                  >
+                    Mild:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="mild"
+                    type="text"
+                    value="1234 mild"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="moderate"
+                  >
+                    Moderate:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="moderate"
+                    type="text"
+                    value="1234 moderate"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td
+                  class="stat-name"
+                >
+                  <label
+                    for="severe"
+                  >
+                    Severe:
+                  </label>
+                </td>
+                <td
+                  class="form-input"
+                >
+                  <input
+                    class="character-sheet-text primary-input"
+                    id="severe"
+                    type="text"
+                    value="1234 severe"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article
+          class="character-sheet-item-secondary"
+        >
+          <table>
+            <caption>
+              Stress
+            </caption>
+            <tbody>
+              <tr>
+                <td>
+                  <button
+                    class="stress-box "
+                    type="button"
+                  >
+                    1
+                  </button>
+                </td>
+                <td>
+                  <button
+                    class="stress-box "
+                    type="button"
+                  >
+                    2
+                  </button>
+                </td>
+                <td>
+                  <button
+                    class="stress-box "
+                    type="button"
+                  >
+                    3
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+      <input
+        class="primary-button"
+        type="submit"
+        value="Update Character"
+      />
+      <a
+        class="primary-button"
+        href="/character/1234"
+      >
+        Cancel
+      </a>
+    </form>
+  </main>
+</DocumentFragment>
+`;

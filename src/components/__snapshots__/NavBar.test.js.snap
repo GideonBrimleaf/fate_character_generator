@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when user is logged in 1`] = `
+<DocumentFragment>
+  <ul
+    class="nav-bar"
+  >
+    <li
+      class="nav-item"
+    >
+      <a
+        class="nav-link"
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      class="nav-item"
+    >
+      <a
+        class="nav-link"
+        href="/"
+      >
+        Sign Out
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`renders correctly when user is not logged in 1`] = `<DocumentFragment />`;

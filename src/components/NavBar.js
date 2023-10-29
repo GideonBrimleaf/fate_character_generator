@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import './NavBar.css'
-import { auth } from '../lib/fire'
-import { AuthContext } from '../auth/Auth'
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css';
+import { auth } from '../lib/fire';
+import { AuthContext } from '../auth/Auth';
 
 const NavBar = () => {
-  const { currentUser } = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
 
   return currentUser
     ? (
@@ -18,7 +18,7 @@ const NavBar = () => {
         </li>
       </ul>
     )
-    : null
-}
+    : null;
+};
 
-export default NavBar
+export default NavBar;
