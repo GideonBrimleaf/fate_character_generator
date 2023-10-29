@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import App from './App';
+import { AuthProvider } from './Auth';
 
-it('renders correctly', () => {
-  const result = render(<App />);
-
+it('renders correctly when pending', () => {
+  const result = render(<AuthProvider />);
   expect(result.asFragment()).toMatchSnapshot();
 });

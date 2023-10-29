@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DocumentFragment>
+  <table>
+    <caption>
+      Expected table name
+    </caption>
+    <tbody>
+      <tr>
+        <td
+          class="stat-name"
+        >
+          <label
+            for="mild"
+          >
+            Mild:
+          </label>
+        </td>
+        <td
+          class="form-input"
+        >
+          <input
+            class="character-sheet-text undefined-input"
+            id="mild"
+            type="text"
+            value="1234 mild"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="stat-name"
+        >
+          <label
+            for="moderate"
+          >
+            Moderate:
+          </label>
+        </td>
+        <td
+          class="form-input"
+        >
+          <input
+            class="character-sheet-text undefined-input"
+            id="moderate"
+            type="text"
+            value="1234 moderate"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="stat-name"
+        >
+          <label
+            for="severe"
+          >
+            Severe:
+          </label>
+        </td>
+        <td
+          class="form-input"
+        >
+          <input
+            class="character-sheet-text undefined-input"
+            id="severe"
+            type="text"
+            value="1234 severe"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

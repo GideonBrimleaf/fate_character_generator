@@ -8,7 +8,8 @@ export const AuthProvider = ({ children }) => {
   const [pending, setPending] = useState(true);
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    // TODO - this observer is firing and triggering state changes in test renders which can't be handled with "act", this is creating console warnings in test runs
+    auth.onAuthStateChanged((user) => { 
       setCurrentUser(user)
       setPending(false)
     });

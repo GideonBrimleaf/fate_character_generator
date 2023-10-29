@@ -7,6 +7,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In development - this project runs with the [Fate Character Development Server](https://github.com/GideonBrimleaf/fate_character_dev_server) in development.  Ensure you clone down this repository as well to get the project running locally.
 
+***Note:*** this project does not support node versions >= 17 (17 introduced a loophole fix for OpenSSL which is not backwards compatible).
+
+Until dependencies are updated you will need to be using node version less then 17 - eg:
+
+```
+$ nvm install 16
+$ nvm use 16
+```
+
 ### `npm install`
 
 Download the dependencies
@@ -19,6 +28,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### Logging in
+Once the app is running you will need to login.
+
+You will need a Firebase web app and project configured for email address and passoword authentication. 
+
+In order to set this up, `cp .env .env.local` and modify `.env.local` with your firebase config.
+
+You will also need a DB connection string for a Realtime Firebase DB - though this is not used in development mode.
+
+## Automated testing
+The app is setup tests powered by jest.
+
+### `npm run tests`
+Runs the tests. 
+
+You will need to update snapshots where changes have impacted the DOM output of a component or component stack.
 
 ## Testing the project with Firebase
 
