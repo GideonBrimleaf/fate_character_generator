@@ -29,6 +29,7 @@
         "react/jsx-filename-extension": "off",
         "react/destructuring-assignment": "off",
         "react/prop-types": "off",
-        "radix": ["error", "as-needed"] 
+        "radix": ["error", "as-needed"],
+        "arrow-body-style": "off" 
     }
 }
