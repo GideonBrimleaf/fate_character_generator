@@ -10,8 +10,14 @@ import Helpers from './lib/helpers';
 import { AuthProvider } from './auth/Auth';
 import Login from './auth/Login';
 import PrivateRoute from './auth/PrivateRoute';
+import { Character } from './lib/models/Character';
 
-class App extends Component {
+interface AppProps {}
+interface AppState {
+  characters: Character[],
+}
+
+class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
     this.state = {
