@@ -1,11 +1,12 @@
 /* eslint no-console: "off" */
 import { db } from './fire';
+import { Character } from './models/Character';
 
 const devURL = 'http://localhost:8080/characters';
 const rootRef = db.ref('characters');
 
 export default {
-  updateCharacters(charactersToStore) {
+  updateCharacters(charactersToStore: Character[]): Promise<any> {
     localStorage.setItem('characters', JSON.stringify(charactersToStore));
 
     if (process.env.NODE_ENV !== 'production') {
@@ -20,7 +21,7 @@ export default {
     return rootRef.set(charactersToStore);
   },
 
-  getCharacters() {
+  getCharacters(): Promise<Character[]> {
     if (process.env.NODE_ENV !== 'production') {
       return fetch(devURL)
         .then((res) => res.json())
