@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { render } from '@testing-library/react';
-import { MemoryRouter, Route } from "react-router-dom";
 
 import { createFakeCharacter } from '../test/fakes/character.fake';
 import CharacterFormStatBlock from './CharacterFormStatBlock';
@@ -11,12 +12,12 @@ it('renders correctly', () => {
 
   const props = {
     stats: character.consequences,
-    tableName: 'expected table name'
+    tableName: 'expected table name',
   }
 
   // Act
   const result = render(
-        <CharacterFormStatBlock {...props} />
+    <CharacterFormStatBlock {...props} />,
   );
 
   // Assert

@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -11,7 +13,7 @@ it('renders a loading message is character is not found', () => {
     match: {
       params: {
         characterId: '1234',
-      }
+      },
     },
     characters: [],
   }
@@ -20,7 +22,7 @@ it('renders a loading message is character is not found', () => {
   const result = render(
     <AuthContext.Provider value={{ currentUser: null }}>
       <CharacterDetail {...props} />
-    </AuthContext.Provider>
+    </AuthContext.Provider>,
   );
 
   // Assert
@@ -33,18 +35,16 @@ it('renders character when a character is found', async () => {
     match: {
       params: {
         characterId: '1234',
-      }
+      },
     },
-    characters: [ createFakeCharacter(1234) ],
+    characters: [createFakeCharacter(1234)],
   }
 
-  let result;
-
   // Act
-  result = render(
+  const result = render(
     <AuthContext.Provider value={{ currentUser: null }}>
       <CharacterDetail {...props} />
-    </AuthContext.Provider>
+    </AuthContext.Provider>,
   );
 
   expect(result).toBeDefined();
