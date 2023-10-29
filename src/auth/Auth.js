@@ -12,13 +12,13 @@ export const AuthProvider = ({ children }) => {
     // changes in test renders which can't be handled with "act",
     // this is creating console warnings in test runs
     auth.onAuthStateChanged((user) => {
-      setCurrentUser(user)
-      setPending(false)
+      setCurrentUser(user);
+      setPending(false);
     });
   }, []);
 
   if (pending) {
-    return <>Loading...</>
+    return <>Loading...</>;
   }
 
   return (

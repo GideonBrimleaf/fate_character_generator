@@ -16,7 +16,7 @@ it('renders a loading message is character is not found', () => {
       },
     },
     characters: [],
-  }
+  };
 
   // Act
   const result = render(
@@ -38,7 +38,7 @@ it('renders character when a character is found', async () => {
       },
     },
     characters: [createFakeCharacter(1234)],
-  }
+  };
 
   // Act
   const result = render(

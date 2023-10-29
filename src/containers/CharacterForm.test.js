@@ -12,7 +12,7 @@ it.skip('renders correctly when a character does not exist', () => {
   // Arrange
   const props = {
     characters: [],
-  }
+  };
 
   // Act
   const result = render(
@@ -33,7 +33,7 @@ it('renders correctly when a character exists', () => {
 
   const props = {
     characters: [createFakeCharacter(id)],
-  }
+  };
 
   // Act
   const result = render(

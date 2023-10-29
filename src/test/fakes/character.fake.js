@@ -25,4 +25,4 @@ export const createFakeCharacter = (id) => ({
     severe: `${id} severe`,
   },
   refresh: 3,
-})
+});

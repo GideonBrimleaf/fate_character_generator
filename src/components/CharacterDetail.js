@@ -1,41 +1,41 @@
 /* eslint no-alert: "off" */
-import React, { useContext, useState, useEffect } from 'react'
-import './CharacterDetail.css'
-import { Link } from 'react-router-dom'
-import CharacterStatBlock from './CharacterStatBlock'
-import StressBox from './StressBox'
-import { AuthContext } from '../auth/Auth'
+import React, { useContext, useState, useEffect } from 'react';
+import './CharacterDetail.css';
+import { Link } from 'react-router-dom';
+import CharacterStatBlock from './CharacterStatBlock';
+import StressBox from './StressBox';
+import { AuthContext } from '../auth/Auth';
 
 const CharacterDetail = (props) => {
-  const { currentUser } = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
 
-  const [foundCharacter, setFoundCharacter] = useState(![])
+  const [foundCharacter, setFoundCharacter] = useState(![]);
 
   useEffect(() => {
     setFoundCharacter(props.characters.find(
       (character) => parseInt(props.match.params.characterId) === character.id,
-    ))
-  }, [props.characters, props.match.params.characterId])
+    ));
+  }, [props.characters, props.match.params.characterId]);
 
-  if (!foundCharacter) { return <p>Loading</p> }
+  if (!foundCharacter) { return <p>Loading</p>; }
 
   const characterStunts = foundCharacter.stunts.map((stunt) => (
     <li key={stunt} className="stunt-entry">{ stunt }</li>
-  ))
+  ));
 
   const handleCharacterDeletion = () => {
     if (window.confirm('Are you sure you want to delete this character?')) {
-      props.deleteCharacter(foundCharacter)
-      props.history.push('/')
+      props.deleteCharacter(foundCharacter);
+      props.history.push('/');
     }
-  }
+  };
 
   const editCharacterButton = currentUser
-    ? <Link className="primary-button" to={`/character/${foundCharacter.id}/edit`}>Edit</Link> : null
+    ? <Link className="primary-button" to={`/character/${foundCharacter.id}/edit`}>Edit</Link> : null;
 
   const deleteCharacterButton = currentUser
     ? <button className="primary-button danger-button" type="submit" onClick={handleCharacterDeletion}>Delete</button>
-    : null
+    : null;
 
   return (
     <main className={`character-sheet character-sheet-text ${currentUser ? null : 'top-padding'}`}>
@@ -73,6 +73,6 @@ const CharacterDetail = (props) => {
       { editCharacterButton }
       { deleteCharacterButton }
     </main>
-  )
-}
-export default CharacterDetail
+  );
+};
+export default CharacterDetail;

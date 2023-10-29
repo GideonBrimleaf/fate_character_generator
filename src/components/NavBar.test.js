@@ -9,7 +9,7 @@ import NavBar from './NavBar';
 
 it('renders correctly when user is not logged in', () => {
   // Arrange
-  const props = {}
+  const props = {};
 
   // Act
   const result = render(
@@ -24,7 +24,7 @@ it('renders correctly when user is not logged in', () => {
 
 it('renders correctly when user is logged in', () => {
   // Arrange
-  const props = {}
+  const props = {};
 
   // Act
   const result = render(

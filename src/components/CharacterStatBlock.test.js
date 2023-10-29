@@ -12,7 +12,7 @@ it('renders correctly', () => {
       expectedName: 'Expected value',
     },
     statBlock: 'expected-block',
-  }
+  };
 
   // Act
   const result = render(

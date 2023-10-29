@@ -7,7 +7,7 @@ import StressBox from './StressBox';
 
 it('renders correctly', () => {
   // Arrange
-  const props = {}
+  const props = {};
 
   // Act
   const result = render(

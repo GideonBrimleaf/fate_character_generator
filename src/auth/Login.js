@@ -3,7 +3,7 @@ import React, { useCallback, useContext } from 'react';
 import { withRouter, Redirect } from 'react-router';
 import { auth } from '../lib/fire';
 import { AuthContext } from './Auth';
-import './Login.css'
+import './Login.css';
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(

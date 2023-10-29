@@ -11,7 +11,7 @@ it('renders correctly', () => {
   // Arrange
   const props = {
     characters: [createFakeCharacter(1234)],
-  }
+  };
 
   // Act
   const result = render(

@@ -13,7 +13,7 @@ it('renders correctly', () => {
   const props = {
     stats: character.consequences,
     tableName: 'expected table name',
-  }
+  };
 
   // Act
   const result = render(

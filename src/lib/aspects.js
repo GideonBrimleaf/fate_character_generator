@@ -1,3 +1,3 @@
-const aspects = ['highConcept', 'trouble', 'relationship', 'aspectOne', 'aspectTwo']
+const aspects = ['highConcept', 'trouble', 'relationship', 'aspectOne', 'aspectTwo'];
 
-export default aspects
+export default aspects;

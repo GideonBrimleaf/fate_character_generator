@@ -1,23 +1,23 @@
-import React from 'react'
-import './CharacterForm.css'
-import '../components/CharacterDetail.css'
-import aspects from '../lib/aspects'
+import React from 'react';
+import './CharacterForm.css';
+import '../components/CharacterDetail.css';
+import aspects from '../lib/aspects';
 
 const CharacterFormStatBlock = (props) => {
-  let statNames
+  let statNames;
 
   if (props.ordered) {
-    statNames = aspects
+    statNames = aspects;
   } else {
-    statNames = Object.keys(props.stats)
+    statNames = Object.keys(props.stats);
   }
 
-  const prettyTableName = props.tableName.charAt(0).toUpperCase() + props.tableName.slice(1)
+  const prettyTableName = props.tableName.charAt(0).toUpperCase() + props.tableName.slice(1);
 
   const tableRows = statNames.map((stat) => {
-    const capitalisedFirstLetter = stat.charAt(0).toUpperCase() + stat.slice(1)
-    const splitName = capitalisedFirstLetter.split(/(?=[A-Z])/)
-    const prettyStatLabel = splitName.join(' ')
+    const capitalisedFirstLetter = stat.charAt(0).toUpperCase() + stat.slice(1);
+    const splitName = capitalisedFirstLetter.split(/(?=[A-Z])/);
+    const prettyStatLabel = splitName.join(' ');
 
     return (
       <tr key={stat}>
@@ -37,8 +37,8 @@ const CharacterFormStatBlock = (props) => {
           />
         </td>
       </tr>
-    )
-  })
+    );
+  });
 
   return (
     <table>
@@ -47,7 +47,7 @@ const CharacterFormStatBlock = (props) => {
         { tableRows }
       </tbody>
     </table>
-  )
-}
+  );
+};
 
-export default CharacterFormStatBlock
+export default CharacterFormStatBlock;

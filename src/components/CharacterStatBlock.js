@@ -1,21 +1,21 @@
-import React from 'react'
-import './CharacterStatBlock.css'
-import aspects from '../lib/aspects'
+import React from 'react';
+import './CharacterStatBlock.css';
+import aspects from '../lib/aspects';
 
 const CharacterStatBlock = (props) => {
-  let statItemNames
+  let statItemNames;
 
   if (props.ordered) {
-    statItemNames = aspects
+    statItemNames = aspects;
   } else {
-    statItemNames = Object.keys(props.characterStats)
+    statItemNames = Object.keys(props.characterStats);
   }
 
   const prettifyName = (objectKey) => {
-    const capitalisedFirstLetter = objectKey.charAt(0).toUpperCase() + objectKey.slice(1)
-    const splitName = capitalisedFirstLetter.split(/(?=[A-Z])/)
-    return splitName.join(' ')
-  }
+    const capitalisedFirstLetter = objectKey.charAt(0).toUpperCase() + objectKey.slice(1);
+    const splitName = capitalisedFirstLetter.split(/(?=[A-Z])/);
+    return splitName.join(' ');
+  };
 
   const statItems = statItemNames.map((stat) => (
     <tr key={prettifyName(stat)}>
@@ -25,7 +25,7 @@ const CharacterStatBlock = (props) => {
       </td>
       <td className={`${props.statBlock}-stat-description`}>{ props.characterStats[stat] }</td>
     </tr>
-  ))
+  ));
 
   return (
     <table className="padded-table">
@@ -34,7 +34,7 @@ const CharacterStatBlock = (props) => {
         { statItems }
       </tbody>
     </table>
-  )
-}
+  );
+};
 
-export default CharacterStatBlock
+export default CharacterStatBlock;
